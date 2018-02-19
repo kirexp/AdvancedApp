@@ -26,10 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ESA.Common\Common.csproj" />
-    <ProjectReference Include="..\ESA.Constants\Constants.csproj" />
-    <ProjectReference Include="..\ESA.DAL.Almaty\DAL.csproj" />
-    <ProjectReference Include="..\ESA.Enums\Enums.csproj" />
+    <ProjectReference Include="..\DAL\DAL.csproj" />
   </ItemGroup>
 
 </Project>
