@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ProcessedStateDeny" xml:space="preserve">
+    <value>Отказать</value>
+  </data>
+  <data name="ProcessedStateInstall" xml:space="preserve">
+    <value>Установить</value>
+  </data>
+  <data name="ProcessedStateNone" xml:space="preserve">
+    <value>Неизвестно</value>
+  </data>
+  <data name="AllowPaymentTask" xml:space="preserve">
+    <value>Назначить выплату пособия опекунам</value>
+    <comment>new</comment>
+  </data>
+  <data name="DenyPaymentTask" xml:space="preserve">
+    <value>Отказать в назначении выплаты пособия опекунам</value>
+    <comment>new</comment>
+  </data>
+  <data name="GiveTrusteeshipCertTask" xml:space="preserve">
+    <value>Выдать справку</value>
+    <comment>new</comment>
+  </data>
+  <data name="DenyTrusteeshipCertTask" xml:space="preserve">
+    <value>Отказать в выдаче справки</value>
+    <comment>new</comment>
+  </data>
+  <data name="AllowTrusteeshipTask" xml:space="preserve">
+    <value>Установить опеку или попечительство</value>
+    <comment>new</comment>
+  </data>
+  <data name="DenyTrusteeshipTask" xml:space="preserve">
+    <value>Отказать в установлении опеки или попечительства</value>
+    <comment>new</comment>
+  </data>
+  <data name="AllowancePaymentDenyStep" xml:space="preserve">
+    <value>Согласование решения Отказать в назначении выплаты пособия опекунам или попечителям</value>
+    <comment>new</comment>
+  </data>
+  <data name="AllowancePaymentAllowStep" xml:space="preserve">
+    <value>Согласование решения Назначить выплату пособия опекунам или попечителям</value>
+    <comment>new</comment>
+  </data>
+  <data name="TrusteeshipProcessDenyStep" xml:space="preserve">
+    <value>Согласование решения Отказать в установлении опеки или попечительства</value>
+    <comment>new</comment>
+  </data>
+  <data name="TrusteeshipProcessAllowStep" xml:space="preserve">
+    <value>Согласование решения Установить опеку или попечительство</value>
+    <comment>new</comment>
+  </data>
+  <data name="TrusteeshipCertConfirmStep" xml:space="preserve">
+    <value>Принятие решения по услуге</value>
+    <comment>new</comment>
+  </data>
+  <data name="ProcessStepNotImplemented" xml:space="preserve">
+    <value>Для данного состояния не реализован шаг процессинга</value>
+    <comment>new</comment>
+  </data>
+  <data name="ServiceRefused" xml:space="preserve">
+    <value>Отказ по услуге</value>
+    <comment>new</comment>
+  </data>
+  <data name="ReasonForRemovalOfTrustee" xml:space="preserve">
+    <value>Причина снятия статуса опекуна или попечителя</value>
+  </data>
+  <data name="MsgLoadDocIfMarried" xml:space="preserve">
+    <value>Если заявитель указал в поле «Члены семьи заявителя» супруга(у), то документ: {0} - является обязательным для загрузки</value>
+  </data>
+  <data name="MsgLoadDocIfFamMembers" xml:space="preserve">
+    <value>Если заявитель не указал в поле «Члены семьи заявителя» супруга(у), то документ: {0} - является обязательным для загрузки</value>
+  </data>
+  <data name="TrusteeIIN" xml:space="preserve">
+    <value>ИИН опекуна</value>
+  </data>
+  <data name="WardIIN" xml:space="preserve">
+    <value>ИИН опекаемого</value>
+  </data>
+  <data name="DocumentBirthCert" xml:space="preserve">
+    <value>электронная копия свидетельства о рождении ребенка (детей) в случае рождения ребенка до 13 августа 2007 года либо за пределами Республики Казахстан</value>
+    <comment>new</comment>
+  </data>
+  <data name="DocumentId" xml:space="preserve">
+    <value>электронная копия удостоверения личности</value>
+    <comment>new</comment>
+  </data>
+  <data name="DocumentTrusteeship" xml:space="preserve">
+    <value>электронная копия решения местного исполнительного органа о назначении опекуном или попечителем</value>
+    <comment>new</comment>
+  </data>
+  <data name="DocumentMiscTrusteeship" xml:space="preserve">
+    <value>электронная копия документов, подтверждающих факт отсутствия попечения над ребенком единственного или обоих родителей (свидетельство о смерти, решение суда о лишении родителей родительских прав, ограничении их в родительских правах, признании родителей безвестно отсутствующими, недееспособными (ограниченно дееспособными), объявлении их умершими, приговор суда об отбывании родителями наказания в местах лишения свободы, документы, подтверждающие розыск родителей, отобрание ребенка (детей) у родителей, нахождение родителей на длительном лечении в организациях здравоохранения, акт о подкидывании ребенка (детей), заявление об отказе от ребенка (детей))</value>
+    <comment>new</comment>
+  </data>
+  <data name="DocumentAccountNumber" xml:space="preserve">
+    <value>электронная копия договора об открытии лицевого счета на имя опекуна или попечителя в банке второго уровня или в организации, имеющей лицензию Национального банка Республики Казахстан на осуществление отдельных видов банковских операций</value>
+    <comment>new</comment>
+  </data>
+  <data name="DocumentChildIncomes" xml:space="preserve">
+    <value>электронные копии документов о доходах ребенка (детей), подтверждающие получение государственных социальных пособий и иных социальных выплат, алиментов, сведения об имеющихся доходах от имущества ребенка (детей)</value>
+    <comment>new</comment>
+  </data>
+  <data name="AllowanceOfPayments" xml:space="preserve">
+    <value>Назначение выплаты пособия опекунам</value>
+    <comment>new</comment>
+  </data>
+  <data name="TrusteeshipServiceResult" xml:space="preserve">
+    <value>Решение о назначении пособия опекуну или попечителю на содержание ребенка-сироты (детей-сирот) и ребенка (детей), оставшегося без попечения родителей, либо мотивированный отказ</value>
+    <comment>new</comment>
+  </data>
+  <data name="TrusteeshipReason" xml:space="preserve">
+    <value>Причина оформления опеки или попечительства</value>
+  </data>
+  <data name="TrusteeshipStatement" xml:space="preserve">
+    <value>Постановление о назначении опеки</value>
+  </data>
+  <data name="EGuardianship" xml:space="preserve">
+    <value>Е-попечительство</value>
+  </data>
+</root>

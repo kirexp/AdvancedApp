@@ -1,0 +1,1341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Email" xml:space="preserve">
+    <value>E-mail:</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Қосу</value>
+  </data>
+  <data name="AgreeForData" xml:space="preserve">
+    <value>Дербес деректерді жинауға келісімімді беремін</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>Барлығы</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>ӨТІНІМДІ БЕРУ</value>
+  </data>
+  <data name="ApplycationLog" xml:space="preserve">
+    <value>Өтініштер журналы</value>
+  </data>
+  <data name="ArchivalStatements" xml:space="preserve">
+    <value>Мұрағаттық өтініштер</value>
+  </data>
+  <data name="AsAnEmployee" xml:space="preserve">
+    <value>Қызметкер ретінде</value>
+  </data>
+  <data name="LinkChildToParent" xml:space="preserve">
+    <value>"Мектепке дейінгі балалар ұйымдарына жіберу үшін мектепке дейінгі жастағы (7 жасқа дейін) балаларды кезекке қою" қызметі бойынша ата-ана ЖСН өтінішіне тіркеу</value>
+  </data>
+  <data name="AutomatedService" xml:space="preserve">
+    <value>Автоматтандырылған (мемлекеттік қызмет болып табылмайды)</value>
+  </data>
+  <data name="Basis" xml:space="preserve">
+    <value>Негіздеме</value>
+  </data>
+  <data name="LinkChildToParentSummary" xml:space="preserve">
+    <value>Сіздің профиліңізге "Мектепке дейінгі балалар ұйымдарына жіберу үшін мектепке дейінгі жастағы (7 жасқа дейін) балаларды кезекке қою" қызметі бойынша берілген өтінішіңізді тіркеу үшін баланың ЖСН көрсетіп, "Сақтау" батырмасын басу қажет. Назар аударыңыз: Баланы кезекке қою туралы өтініш көріну үшін баланың ата-анасының біреуінің ЖСН көрсету қажет.</value>
+  </data>
+  <data name="Blocked" xml:space="preserve">
+    <value>Бұғатталды</value>
+  </data>
+  <data name="BusBoard" xml:space="preserve">
+    <value>АСТАНА Қ. АВТОБЕКЕТІНІҢ ТАБЛОСЫ</value>
+  </data>
+  <data name="ByDigitalSignature" xml:space="preserve">
+    <value>ЭСҚ бойынша</value>
+  </data>
+  <data name="Completed" xml:space="preserve">
+    <value>Аяқталды</value>
+  </data>
+  <data name="Contains" xml:space="preserve">
+    <value>Құрамында бар</value>
+  </data>
+  <data name="ControlResources" xml:space="preserve">
+    <value>Табиғи ресурстар басқармасы</value>
+  </data>
+  <data name="CorporationAgree" xml:space="preserve">
+    <value>Мемлекеттік корпорацияға немесе қызмет берушіге мемлекеттік қызметтерді көрсету кезінде егер Қазақстан Республикасы заңнамасында өзге қарастырылмаса, ақпараттық жүйелердегі заңмен қорғалатын құпияны құрайтын мәліметтерді пайдалануға келісімімді беремін</value>
+  </data>
+  <data name="CostOfService" xml:space="preserve">
+    <value>Қызметтің құны мен төлем тәртібі</value>
+  </data>
+  <data name="Count" xml:space="preserve">
+    <value>Саны</value>
+  </data>
+  <data name="CreateEdit" xml:space="preserve">
+    <value>Әзірлеген/өзгерткен</value>
+  </data>
+  <data name="CurrentState" xml:space="preserve">
+    <value>Ағымдағы жағдай</value>
+  </data>
+  <data name="DataProcessing" xml:space="preserve">
+    <value>ДЕРЕКТЕРДІ ӨҢДЕУ</value>
+  </data>
+  <data name="DateCreateEdit" xml:space="preserve">
+    <value>Құрастыру/өзгерту күні</value>
+  </data>
+  <data name="DenialOfService" xml:space="preserve">
+    <value>Қандай жағдайда мемлекеттік қызметтерді көрсетуден бас тарту немесе тоқтату мүмкін?</value>
+  </data>
+  <data name="DepartmentEducation" xml:space="preserve">
+    <value>Білім беру басқармасы</value>
+  </data>
+  <data name="Direct" xml:space="preserve">
+    <value>Тағайындау</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Түзету енгізу</value>
+  </data>
+  <data name="EditContacts" xml:space="preserve">
+    <value>Байланыс деректеріне түзету енгізу</value>
+  </data>
+  <data name="EditInstruction" xml:space="preserve">
+    <value>Байланыс деректеріне түзету енгізу жөніндегі нұсқаулық</value>
+  </data>
+  <data name="ElectronicServicesCard" xml:space="preserve">
+    <value>Электрондық қызметтер картасы</value>
+  </data>
+  <data name="Empty" xml:space="preserve">
+    <value>Бос</value>
+  </data>
+  <data name="EmptyField" xml:space="preserve">
+    <value>Жолақты толтырыңыз</value>
+  </data>
+  <data name="EndsOn" xml:space="preserve">
+    <value>.. Аяқталады</value>
+  </data>
+  <data name="Enter" xml:space="preserve">
+    <value>КІРУ</value>
+  </data>
+  <data name="EnterApplicantInformation" xml:space="preserve">
+    <value>ӨТІНІШ БЕРУШІ ТУРАЛЫ АҚПАРАТТЫ ЕНГІЗУ</value>
+  </data>
+  <data name="EnterApplicantionInformation" xml:space="preserve">
+    <value>ӨТІНІМ ТУРАЛЫ АҚПАРАТТЫ ЕНГІЗУ</value>
+  </data>
+  <data name="ExportTo" xml:space="preserve">
+    <value>Экспорттау</value>
+  </data>
+  <data name="FileDownload" xml:space="preserve">
+    <value>ФАЙЛДАРДЫ ЖҮКТЕУ</value>
+  </data>
+  <data name="FilingAnApplication" xml:space="preserve">
+    <value>ЭСҚ-ға өтінім беру үшін сілтеме бойынша өтіңіз</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>Аты</value>
+  </data>
+  <data name="FirstNameApplicant" xml:space="preserve">
+    <value>Өтініш берушінің аты</value>
+  </data>
+  <data name="MsgEditContactsSummary" xml:space="preserve">
+    <value>Байланыс деректеріне түзету енгізу үшін байланыс деректерін енгізу жолақтарына өзгерістерді енгізіп, "Сақтау" батырмасын басыңыз</value>
+  </data>
+  <data name="FormService" xml:space="preserve">
+    <value>Қызметті көрсету нысаны</value>
+  </data>
+  <data name="FreeOfCharge" xml:space="preserve">
+    <value>Тегін</value>
+  </data>
+  <data name="ForService" xml:space="preserve">
+    <value>"{0}" қызметті бойынша</value>
+  </data>
+  <data name="GettingContacts" xml:space="preserve">
+    <value>ХҚО байланыс мәліметтерін алу үшін сілтеме бойынша өтіңіз</value>
+  </data>
+  <data name="GoOut" xml:space="preserve">
+    <value>ШЫҒУ</value>
+  </data>
+  <data name="DenialReasons" xml:space="preserve">
+    <value>Мемлекеттік қызметті көрсету келесі негіздер бойынша көрсетілмеуі мүмкін</value>
+  </data>
+  <data name="DenialReasonAbsence" xml:space="preserve">
+    <value>осы мемлекеттік қызметті көрсету үшін талап етілетін құжаттардың бірінің болмауы</value>
+  </data>
+  <data name="DenialReasonAbsenceOrErrors" xml:space="preserve">
+    <value>сұралған мұрағаттық анықтаманы беруге құзыретсіздігі</value>
+  </data>
+  <data name="Individuals" xml:space="preserve">
+    <value>Жеке тұлғалар</value>
+  </data>
+  <data name="IndividualsAndLegalEntities" xml:space="preserve">
+    <value>Жеке және заңды тұлғалар</value>
+  </data>
+  <data name="IndividualsInformation" xml:space="preserve">
+    <value>Жеке тұлға туралы ақпарат</value>
+  </data>
+  <data name="InForce" xml:space="preserve">
+    <value>Әрекет етеді</value>
+  </data>
+  <data name="InQueue" xml:space="preserve">
+    <value>Кезекте</value>
+  </data>
+  <data name="Instruction" xml:space="preserve">
+    <value>Нұсқаулық</value>
+  </data>
+  <data name="Instructions" xml:space="preserve">
+    <value>Нұсқаулықтар</value>
+  </data>
+  <data name="IntroductionInstructions" xml:space="preserve">
+    <value>Нұсқаулықпен танысқандығымды растаймын</value>
+  </data>
+  <data name="LastChange" xml:space="preserve">
+    <value>Соңғы өзгерту</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Орналасқан жері</value>
+  </data>
+  <data name="LoginToSystem" xml:space="preserve">
+    <value>Жүйеге кіру</value>
+  </data>
+  <data name="Look" xml:space="preserve">
+    <value>ҚАРАП ШЫҒУ</value>
+  </data>
+  <data name="ManagementDocument" xml:space="preserve">
+    <value>Мәдениет, мұрағаттар және құжаттама басқармасы</value>
+  </data>
+  <data name="ManagementLand" xml:space="preserve">
+    <value>Жер қатынастары басқармасы</value>
+  </data>
+  <data name="ManagementPolicy" xml:space="preserve">
+    <value>Ішкі саясат басқармасы</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Хабарлама</value>
+  </data>
+  <data name="News" xml:space="preserve">
+    <value>ЖАҢАЛЫҚТАР</value>
+  </data>
+  <data name="NoData" xml:space="preserve">
+    <value>Көрсетілетін деректер жоқ</value>
+  </data>
+  <data name="NotAgree" xml:space="preserve">
+    <value>Келісіміңізді растамадыңыз</value>
+  </data>
+  <data name="NotConfirmation" xml:space="preserve">
+    <value>Деректерді жинауға келісімді растамадыңыз</value>
+  </data>
+  <data name="NotContains" xml:space="preserve">
+    <value>Құрамында жоқ</value>
+  </data>
+  <data name="NotEmpty" xml:space="preserve">
+    <value>Бос емес</value>
+  </data>
+  <data name="NotEqual" xml:space="preserve">
+    <value>Тең емес</value>
+  </data>
+  <data name="Notified" xml:space="preserve">
+    <value>Хабарлама жіберілді</value>
+  </data>
+  <data name="NotSelectedDigitalSignature" xml:space="preserve">
+    <value>ЭСҚ таңдалынбады</value>
+  </data>
+  <data name="OfficeHousing" xml:space="preserve">
+    <value>Тұрғын үй басқармасы</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>АШУ</value>
+  </data>
+  <data name="PageOf" xml:space="preserve">
+    <value>{1} беттің {0} беті. Барлығы элементтер:{2}</value>
+  </data>
+  <data name="OrderNumber" xml:space="preserve">
+    <value>Үкім №</value>
+  </data>
+  <data name="PartialDirectInstruction" xml:space="preserve">
+    <value>Жеке балабақшаға жолдама алу нұсқаулығы</value>
+  </data>
+  <data name="PopularService" xml:space="preserve">
+    <value>ТАНЫМАЛ ҚЫЗМЕТТЕР</value>
+  </data>
+  <data name="eServicePortalLong" xml:space="preserve">
+    <value>АСТАНА ҚАЛАСЫ ӘКІМДІГІНІҢ ЭЛЕКТРОНДЫҚ ҚЫЗМЕТТЕР ПОРТАЛЫ</value>
+  </data>
+  <data name="PriceMonitoring" xml:space="preserve">
+    <value>02.11.2016 Ж. БАҒАЛАР МОНИТОРИНГІ</value>
+  </data>
+  <data name="PrivilegeInformation" xml:space="preserve">
+    <value>Жеңілдік туралы ақпарат</value>
+  </data>
+  <data name="ProviderServices" xml:space="preserve">
+    <value>КӨРСЕТІЛЕТІН ҚЫЗМЕТТЕР</value>
+  </data>
+  <data name="PublicService" xml:space="preserve">
+    <value>Мемлекеттік қызмет</value>
+  </data>
+  <data name="QueueInstruction" xml:space="preserve">
+    <value>Кезекке қою туралы нұсқаулық</value>
+  </data>
+  <data name="QueuingLog" xml:space="preserve">
+    <value>БМҰ кезектерінің журналы</value>
+  </data>
+  <data name="RailwayBoard" xml:space="preserve">
+    <value>АСТАНА Қ. ТЕМІРЖОЛ ТАБЛОСЫ</value>
+  </data>
+  <data name="ReasonForWithdrawal" xml:space="preserve">
+    <value>Алу себебі</value>
+  </data>
+  <data name="Receive" xml:space="preserve">
+    <value>АЛУ</value>
+  </data>
+  <data name="Receivers" xml:space="preserve">
+    <value>Алушылар</value>
+  </data>
+  <data name="RepairInformation" xml:space="preserve">
+    <value>Тұрғын үйді бұзу мен жөндеу туралы ақпаратты алу</value>
+  </data>
+  <data name="RequiredDocuments" xml:space="preserve">
+    <value>Қажетті құжаттар</value>
+  </data>
+  <data name="ServiceResult" xml:space="preserve">
+    <value>Қызметті көрсету нәтижесі</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Іздеу</value>
+  </data>
+  <data name="SearchForMedicines" xml:space="preserve">
+    <value>Медициналық препараттарды іздеу</value>
+  </data>
+  <data name="SearchGround" xml:space="preserve">
+    <value>Жерге кезек нөмірін іздеу</value>
+  </data>
+  <data name="SearchHome" xml:space="preserve">
+    <value>Тұрғын үй кезек нөмірін іздеу</value>
+  </data>
+  <data name="SearchByIin" xml:space="preserve">
+    <value>ЖСН бойынша іздеу</value>
+  </data>
+  <data name="SearchKindergarten" xml:space="preserve">
+    <value>Балабақшаға кезекке қою нөмірін іздеу</value>
+  </data>
+  <data name="SearchReceipts" xml:space="preserve">
+    <value>Астана-Ерц түбіртегі нөмірін іздеу</value>
+  </data>
+  <data name="SelectDigitalSignature" xml:space="preserve">
+    <value>ЭСҚ-ны таңдау</value>
+  </data>
+  <data name="SelectValue" xml:space="preserve">
+    <value>Мәнді таңдаңыз</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Жіберу</value>
+  </data>
+  <data name="ServicePlace" xml:space="preserve">
+    <value>Қызмет үшін қайда жүгіну</value>
+  </data>
+  <data name="SocialManagement" xml:space="preserve">
+    <value>Жұмыспен қамту және әлеуметтік бағдарламалар басқармасы</value>
+  </data>
+  <data name="StartsOn" xml:space="preserve">
+    <value>... басталады</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>Қалпы</value>
+  </data>
+  <data name="StateDirectInstruction" xml:space="preserve">
+    <value>Мемлекеттік балабақшаға жолдаманы алу нұсқаулығы</value>
+  </data>
+  <data name="Statements" xml:space="preserve">
+    <value>Өтініштер</value>
+  </data>
+  <data name="StateServiceInvolved" xml:space="preserve">
+    <value>Қызметті қандай мемлекеттік орган көрсетеді</value>
+  </data>
+  <data name="Step" xml:space="preserve">
+    <value>ҚАДАМ</value>
+  </data>
+  <data name="SubmitApplicant" xml:space="preserve">
+    <value>ӨТІНІШ БЕРУШІНІҢ {0} АТЫНАН БЕРУ</value>
+  </data>
+  <data name="SuburbanKindergartens" xml:space="preserve">
+    <value>Ауылдық үлгідегі балабақшалар</value>
+  </data>
+  <data name="ServiceDeadline" xml:space="preserve">
+    <value>Қызметті көрсету мерзімдері</value>
+  </data>
+  <data name="TextForSearch" xml:space="preserve">
+    <value>Іздеуге арналған мәтінді енгізіңіз...</value>
+  </data>
+  <data name="TimeRegistration" xml:space="preserve">
+    <value>Тіркеу күні мен уақыты</value>
+  </data>
+  <data name="ToIndex" xml:space="preserve">
+    <value>БАСТЫ БЕТКЕ</value>
+  </data>
+  <data name="TotalElements" xml:space="preserve">
+    <value>Барлығы элементтер:</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>Пайдаланушы</value>
+  </data>
+  <data name="ViewList" xml:space="preserve">
+    <value>БАРЛЫҚ ТІЗІМДІ ҚАРАУ</value>
+  </data>
+  <data name="WardInformation" xml:space="preserve">
+    <value>Қамқордағы бала туралы ақпарат</value>
+  </data>
+  <data name="WithdrawalInformation" xml:space="preserve">
+    <value>Қамқоршы немесе қорғаншы статусын алу туралы ақпарат</value>
+  </data>
+  <data name="WorkRoom" xml:space="preserve">
+    <value>БМҰ қызметкерінің жұмыс кабинеті</value>
+  </data>
+  <data name="HeaderGrouping" xml:space="preserve">
+    <value>Топтастыру үшін бағанның атауын тартыңыз</value>
+  </data>
+  <data name="InstructionUpperCase" xml:space="preserve">
+    <value>НҰСҚАУЛЫҚТАР</value>
+  </data>
+  <data name="_10WorkingDays" xml:space="preserve">
+    <value>10 жұмыс күні</value>
+  </data>
+  <data name="_15CalendDays" xml:space="preserve">
+    <value>күнтізбелік 15 күн</value>
+  </data>
+  <data name="Absent" xml:space="preserve">
+    <value>жоқ</value>
+  </data>
+  <data name="AcceptanceOfDocuments" xml:space="preserve">
+    <value>«Қазақстанның тұрғын үй құрылыс жинақ банкі» акционерлік қоғамы «Тұрғын үй» бағыты бойынша 2020 жылға дейін өңірлерді дамыту бағдарламасы шеңберінде құжаттарды қабылдау жабық деп жарияланады. Құжаттарды қабылдау 2016 жылғы 21-25 қараша аралығында жүзеге асырылды.</value>
+  </data>
+  <data name="Actions" xml:space="preserve">
+    <value>Әрекеттер</value>
+  </data>
+  <data name="AdditionalInfo" xml:space="preserve">
+    <value>Қосымша ақпарат</value>
+  </data>
+  <data name="AdditionalInfoApplicant" xml:space="preserve">
+    <value>Өтініш беруші туралы қосымша ақпарат</value>
+  </data>
+  <data name="AdditionalInfoHousing" xml:space="preserve">
+    <value>«Қазақстанның тұрғын үй құрылыс жинақ банкі» акционерлік қоғамы «Тұрғын үй» бағыты туралы толығырақ ақпаратты «Астана қаласының тұрғын үй басқармасы» ММ-ның ресми сайтынан білуге болады.</value>
+  </data>
+  <data name="AddUser" xml:space="preserve">
+    <value>Пайдаланушыны қосу</value>
+  </data>
+  <data name="AdmissionDocument" xml:space="preserve">
+    <value>"Тұрғын үй 2020" бағдарлама бойынша құжаттарды қабылдау</value>
+  </data>
+  <data name="AkimatTotalCheck" xml:space="preserve">
+    <value>Әкімдік астаналық балабақшалардың жұмысын жаппай тексеруді жүргізеді</value>
+  </data>
+  <data name="AllowanceInfo" xml:space="preserve">
+    <value>Жәрдемақының болуы туралы ақпарат{0}</value>
+  </data>
+  <data name="AlphabeticalSearch" xml:space="preserve">
+    <value>Әліпби бойынша іздеу</value>
+  </data>
+  <data name="AlreadyRegisterName" xml:space="preserve">
+    <value>Құрметті {Model.Fio}, {Model.RequestDate} № {Model.RequestNumber}  өтініш тіркелген.</value>
+  </data>
+  <data name="ApplicationCannotSubmit" xml:space="preserve">
+    <value>Өтінімді беру мүмкін емес</value>
+  </data>
+  <data name="AstanaDayOpenDoors" xml:space="preserve">
+    <value>Астанада «Белсенді азамат – 2017» ашық есіктері күні өтеді</value>
+  </data>
+  <data name="BankAccount" xml:space="preserve">
+    <value>Банктік шот</value>
+  </data>
+  <data name="BeneficiaryDataBase" xml:space="preserve">
+    <value>Жеңілдік берілген тұлғалардың деректер базасы</value>
+  </data>
+  <data name="BirthCertificateChild" xml:space="preserve">
+    <value>Баланың туу туралы куәлік</value>
+  </data>
+  <data name="CertificateCustody" xml:space="preserve">
+    <value>Қорғаншылық немесе қамқоршылық туралы анықтама немесе дәлелді бас тарту</value>
+  </data>
+  <data name="ChildFullName" xml:space="preserve">
+    <value>Қамқорлыққа алынған тұлғаның аты-жөні</value>
+  </data>
+  <data name="ChildInfo" xml:space="preserve">
+    <value>Баланың деректері</value>
+  </data>
+  <data name="ChildInformation" xml:space="preserve">
+    <value>Кәмелетке толмаған балалар туралы деректер</value>
+  </data>
+  <data name="ChildXin" xml:space="preserve">
+    <value>Қамқорлыққа алынған тұлғаның ЖСН</value>
+  </data>
+  <data name="ChooseObject" xml:space="preserve">
+    <value>Нысанды таңдаңыз</value>
+  </data>
+  <data name="CivilServants" xml:space="preserve">
+    <value>мемлекеттік қызметшілер, әскери қызметшілер, мамандандырылған мемлекеттік органдардың қызметкерлері, бюджеттік ұйымдардың қызметкерлері</value>
+  </data>
+  <data name="ConContacts" xml:space="preserve">
+    <value>ХҚО НӨМІРЛЕРІ</value>
+  </data>
+  <data name="CostServices" xml:space="preserve">
+    <value>Қызметтің құны мен төлем тәртібі</value>
+  </data>
+  <data name="CreationDate" xml:space="preserve">
+    <value>Құрастыру күні</value>
+  </data>
+  <data name="DataChildForGuardianship" xml:space="preserve">
+    <value>Қорғаншылық немесе қамқоршылыққа ресімделетін кәмелетке толмаған балалардың деректері</value>
+  </data>
+  <data name="DataGet" xml:space="preserve">
+    <value>Деректерді алу</value>
+  </data>
+  <data name="DataProcess" xml:space="preserve">
+    <value>Деректерді өңдеу</value>
+  </data>
+  <data name="DdoDirectory" xml:space="preserve">
+    <value>БМҰ анықтамасы</value>
+  </data>
+  <data name="DeadInformation" xml:space="preserve">
+    <value>Қайтыс болған тұлға туралы деректері</value>
+  </data>
+  <data name="DesiredWork" xml:space="preserve">
+    <value>Қалаулы жұмыс</value>
+  </data>
+  <data name="EditApplication" xml:space="preserve">
+    <value>Өтінішке өзгертулер енгізу</value>
+  </data>
+  <data name="ElectronicCopy2007" xml:space="preserve">
+    <value>Бала 2007 жылғы 13 тамызға дейін не Қазақстан Республикасынан тыс жерде туылған жағдайда баланың (балалардың) туу туралы куәлігінің (куәліктерінің) электрондық көшірмесі</value>
+  </data>
+  <data name="ElectronicCopy2008" xml:space="preserve">
+    <value>2008 жылға дейін не Қазақстан Республикасынан тыс жерде некеге тұрған немесе бұзған жағдайда некеге тұру немесе бұзу туралы куәліктің электрондық көшірмесі</value>
+  </data>
+  <data name="ElectronicCopyBirthDay" xml:space="preserve">
+    <value>Балалардың туу туралы куәліктің электрондық көшірмесі (2007 жылғы 13 тамызға дейін)</value>
+  </data>
+  <data name="ElectronicCopyBroAndSister" xml:space="preserve">
+    <value>Қорғаншылық және қамқоршылық бойынша функцияны жүзеге асыратын орган берген баланың (балалардың) ағалары/інілері мен әпкелері және олардың орналасқан жерлері туралы анықтамаларды электрондық көшірмесі</value>
+  </data>
+  <data name="ElectronicCopyDeath" xml:space="preserve">
+    <value>Қайтыс болу туралы куәліктің электрондық көшірмесі (2007 жылғы 13 тамызға дейін)</value>
+  </data>
+  <data name="ElectronicCopyDoc" xml:space="preserve">
+    <value>Балаға жалғыз ата-анасының немесе екеуiнiң де қамқорлығының жоқтығын растайтын құжаттардың (қайтыс болуы туралы куәлік, ата-ананы ата-ана құқықтарынан айыру, олардың ата-ана құқықтарын шектеу, ата-анасын хабарсыз кетті, әрекетке қабiлетсiз (әрекет қабiлетi шектелген) деп тану, оларды қайтыс болды деп жариялау туралы сот шешімі, ата-анасының бас бостандығынан айыру орындарында жазасын өтеуi туралы сот үкімі, ата-аналардың іздестірілуін, баланың (балалардың) ата-анасынан айырып алынғанын, ата-анасының денсаулық сақтау ұйымдарында ұзақ мерзімді емделуін растайтын құжаттар, баланың (балалардың) әдейі тасталғаны туралы акті, баладан (балалардан) бас тарту туралы өтініш) электрондық көшірмесі</value>
+  </data>
+  <data name="ElectronicCopyFromJob" xml:space="preserve">
+    <value>Жұмыс орнынан анықтаманың электрондық көшірмесі</value>
+  </data>
+  <data name="ElectronicCopyHealthCurrent" xml:space="preserve">
+    <value>Егер некеде тұрса, көрсетілетін қызметті алушының және жұбайының (зайыбының) Кодекстің 91-бабы 1-бөлімінің 6)тармақшасына сәйкес ауруының жоқтығын растайтын денсаулық жағдайы туралы анықтамалардың, сондай-ақ №90 бұйрыққа сәйкес бекітілген нысан бойынша наркологиялық және психиатриялық диспансерлерде тіркеуде тұрғандығы туралы мәліметтің жоқтығы туралы анықтаманың электрондық көшірмелері</value>
+  </data>
+  <data name="ElectronicCopyJob" xml:space="preserve">
+    <value>Жұмыс орнынан сипаттаманың электрондық көшірмесі</value>
+  </data>
+  <data name="ElectronicCopyLearn" xml:space="preserve">
+    <value>Баланың (балалардың) оқу орнынан анықтаманың электрондық көшірмесі</value>
+  </data>
+  <data name="ElectronicCopyNotarAgree" xml:space="preserve">
+    <value>Егер некеде тұрса, жұбайының (зайыбының) нотариалды расталған келісімінің электрондық көшірмесі</value>
+  </data>
+  <data name="ElectronicCopyOfCertificate" xml:space="preserve">
+    <value>Өтініш берушінің табысы алатындығын растайтын анықтаманың электрондық көшірмесі</value>
+  </data>
+  <data name="ElectronicCopyOfCertificateOfMariage" xml:space="preserve">
+    <value>Неке қию (бұзу) туралы куәліктің электрондық көшірмесі (2008 жылғы 1 маусымға дейін)</value>
+  </data>
+  <data name="ElectronicCopyWithoutMarriage" xml:space="preserve">
+    <value>Егер қызмет алушы некеде болмаса, қызмет алушының нотариалды куәландырылған өтінішінің электрондық көшірмесі</value>
+  </data>
+  <data name="ElectronocCopyApp" xml:space="preserve">
+    <value>өтініштің электрондық көшірмесі</value>
+  </data>
+  <data name="ElectronocCopyUd" xml:space="preserve">
+    <value>жеке басын куәландыратын құжаттың электрондық көшірмесі</value>
+  </data>
+  <data name="EService" xml:space="preserve">
+    <value>Е-қамқорлық</value>
+  </data>
+  <data name="EServiceAddEditData" xml:space="preserve">
+    <value>Е-қамқорлық деректерді қосу/өзгерістер енгізу</value>
+  </data>
+  <data name="eServicePortalLongUpperSace" xml:space="preserve">
+    <value>Астана қаласының әкімдігінің "Электрондық қызметтердің" порталы</value>
+  </data>
+  <data name="EServiceRemoveCustody" xml:space="preserve">
+    <value>Е-қамқорлық Қамқорлықтан алу</value>
+  </data>
+  <data name="EstablishmentCustody" xml:space="preserve">
+    <value>Жетім балаға (балаларға) және ата-анасының қамқорлығынсыз қалған балаға (балаларға) қорғаншылықты немесе қамқорлықты орнату</value>
+  </data>
+  <data name="FamiliesWithDisabilities" xml:space="preserve">
+    <value>мүгедек балалары бар немесе тәрбиелейтін отбасылар</value>
+  </data>
+  <data name="FamilyData" xml:space="preserve">
+    <value>Отбасы мүшелері туралы деректер</value>
+  </data>
+  <data name="FamilyMembers" xml:space="preserve">
+    <value>Өтініш беруші отбасының мүшелері</value>
+  </data>
+  <data name="ForgetXin" xml:space="preserve">
+    <value>ЖСН есімде жоқ</value>
+  </data>
+  <data name="FreePlaceForDdo" xml:space="preserve">
+    <value>БМҰ-да бос орындар базасы</value>
+  </data>
+  <data name="FreeService" xml:space="preserve">
+    <value>Уәкілетті орган қызметті тегін көрсетеді</value>
+  </data>
+  <data name="From21novTo25nov" xml:space="preserve">
+    <value>2016 жылғы 21-25 қараша аралығында</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>Толық аты</value>
+  </data>
+  <data name="FullNameApplicant" xml:space="preserve">
+    <value>Өтініш берушінің аты-жөні</value>
+  </data>
+  <data name="GetEcp" xml:space="preserve">
+    <value>ЭСҚ АЛУ</value>
+  </data>
+  <data name="GroupChildInfo" xml:space="preserve">
+    <value>Қамқорлыққа алынған тұлға туралы ақпарат</value>
+  </data>
+  <data name="GroupGuardianInformation" xml:space="preserve">
+    <value>Қамқорлыққа алушы туралы ақпарат</value>
+  </data>
+  <data name="GuardianXin" xml:space="preserve">
+    <value>Қамқорлыққа алушының ЖСН</value>
+  </data>
+  <data name="GuardianFullName" xml:space="preserve">
+    <value>Қамқорлыққа алушының аты-жөні</value>
+  </data>
+  <data name="GroupWithdrawalStatus" xml:space="preserve">
+    <value>Қамқорлыққа алушы немесе қамқоршы статусын алу</value>
+  </data>
+  <data name="HeadingMedicaments" xml:space="preserve">
+    <value>Бұл рубрикада сізге қызықты медициналық препарат, оның құны мен сату орны туралы ақпаратты біле аласыз</value>
+  </data>
+  <data name="HippocratesInfo" xml:space="preserve">
+    <value>Ақпарат "Гиппократ" МФК" ЖШС ұсынған</value>
+  </data>
+  <data name="HousingCharacteristics" xml:space="preserve">
+    <value>Тұрғын үй сипаттамасы</value>
+  </data>
+  <data name="IdentityInfoApplications" xml:space="preserve">
+    <value>Өтініш беруші мен оның отбасы мүшелерін куәландыратын мәліметтер</value>
+  </data>
+  <data name="IncompleteFamilies" xml:space="preserve">
+    <value>толық емес отбасылар</value>
+  </data>
+  <data name="InformationConfirmingThePresence" xml:space="preserve">
+    <value>Отбасы мүшелерінде мүгедектіктің немесе кейбір созылмалы аурулардың ауыр формаларының болуын растайтын мәліметтер</value>
+  </data>
+  <data name="InformationOnRegistration" xml:space="preserve">
+    <value>Астана қаласында тұруды растайтын өтініш беруші мен онымен тұрақты негізде тұратын отбасы мүшелерін тіркеу туралы мәліметтер</value>
+  </data>
+  <data name="InformationOnThePresence" xml:space="preserve">
+    <value>Өтініш берушіде және онымен бірге тұрақты тұратын отбасы мүшелерінде Қазақстан Республикасының аумағында олардың жеке меншік құқығына тиесілі тұрғын үйдің бар немесе жоқ болуы туралы мәліметтер</value>
+  </data>
+  <data name="InformationRegistration" xml:space="preserve">
+    <value>Бағдарламаға қатысуға өтінішті беру сәтінде кезектілік нөмірін көрсете отырып, тұрғын үйге мұқтажды есепке қою туралы мәліметтер</value>
+  </data>
+  <data name="IssuanceNotification" xml:space="preserve">
+    <value>Өтінішті тіркеу туралы хабарламаны беру</value>
+  </data>
+  <data name="IssueOfRefusal" xml:space="preserve">
+    <value>Бас тартуды беру</value>
+  </data>
+  <data name="KabanbayBatyr" xml:space="preserve">
+    <value>Қабанбай батыр даңғылында реттелмейтін жаяу өтпе жолы демонтаж жасалынатын болады</value>
+  </data>
+  <data name="LandWasProvided" xml:space="preserve">
+    <value>Жер телімі бұрын берілген</value>
+  </data>
+  <data name="Languages" xml:space="preserve">
+    <value>Тілдер</value>
+  </data>
+  <data name="LargeFamily" xml:space="preserve">
+    <value>көпбалалы отбасылар</value>
+  </data>
+  <data name="LinkDownloadKz" xml:space="preserve">
+    <value>Нұсқаулықты жүктеуге арналған қазақ тіліндегі сілтеме</value>
+  </data>
+  <data name="LinkDownloadRu" xml:space="preserve">
+    <value>Нұсқаулықты жүктеуге арналған орыс тіліндегі сілтеме</value>
+  </data>
+  <data name="MedicationName" xml:space="preserve">
+    <value>Мединицалық препараттың атауы</value>
+  </data>
+  <data name="MessageOfPrezident" xml:space="preserve">
+    <value>Қазақстан Республикасы Президенті Н.Назарбаевтың жолдауы</value>
+  </data>
+  <data name="NameService" xml:space="preserve">
+    <value>Қызметтің атауы</value>
+  </data>
+  <data name="NeedtoReadtheInstructions" xml:space="preserve">
+    <value>Өтініш беру алдында Сізге нұсқаулықпен танысу қажет. Нұсқаулықты төменде көрсетілген сілтеме бойынша жүктеуге болады</value>
+  </data>
+  <data name="NotariusInfo" xml:space="preserve">
+    <value>Нотариус туралы деректер</value>
+  </data>
+  <data name="NotDataQuery" xml:space="preserve">
+    <value>Сіздің сұрауыңыз бойынша ештеңе табылмады</value>
+  </data>
+  <data name="NumberApplication" xml:space="preserve">
+    <value>Өтінім №</value>
+  </data>
+  <data name="OnKzUpperCase" xml:space="preserve">
+    <value>ҚАЗАҚ ТІЛІНДЕ</value>
+  </data>
+  <data name="OnRuUpperCase" xml:space="preserve">
+    <value>ОРЫС ТІЛІНДЕ</value>
+  </data>
+  <data name="Oralmans" xml:space="preserve">
+    <value>оралмандар</value>
+  </data>
+  <data name="Orphans" xml:space="preserve">
+    <value>ата-ананың қамқорлығынсыз қалған балалар, жетім балалар</value>
+  </data>
+  <data name="OutgoingDocument" xml:space="preserve">
+    <value>Шығыс құжат</value>
+  </data>
+  <data name="PartiallyAuthorized" xml:space="preserve">
+    <value>Ішінара автоматтандырылған</value>
+  </data>
+  <data name="ParticipantsWOW" xml:space="preserve">
+    <value>ҰОС қатысушылары мен оларға теңестірілген азаматтар категориялары</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Құпиясөз</value>
+  </data>
+  <data name="Pharmacy" xml:space="preserve">
+    <value>Дәріхана</value>
+  </data>
+  <data name="Phones" xml:space="preserve">
+    <value>Телефондар</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Бағасы</value>
+  </data>
+  <data name="PrintNotification" xml:space="preserve">
+    <value>Хабарламаны басып шығару</value>
+  </data>
+  <data name="PrintPage" xml:space="preserve">
+    <value>Басып шығару</value>
+  </data>
+  <data name="PriorityInfo" xml:space="preserve">
+    <value>Кезектілік туралы ақпарат</value>
+  </data>
+  <data name="ProductAstanaNotExist" xml:space="preserve">
+    <value>Тауар Астана қаласында жоқ</value>
+  </data>
+  <data name="QueueForGetPlace" xml:space="preserve">
+    <value>Жеке тұрғын үй құрылысына жер телімін алу үшін кезекке қою</value>
+  </data>
+  <data name="QueueNumber" xml:space="preserve">
+    <value>Кезек нөмірі</value>
+  </data>
+  <data name="QueuingInfo" xml:space="preserve">
+    <value>Кезекте тұрған тұлға туралы ақпарат</value>
+  </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>Ары қарай оқу</value>
+  </data>
+  <data name="ReasonsForTheFailureOfTheService" xml:space="preserve">
+    <value>Уәкілетті орган қызмет коммуналдық тұрғын үй қорынан тұрғын үйге мұқтаж өтініш берушінің есепте болмаған, Астана қаласындағы өтініш берушінің және отбасы мүшесінің тұрғылықты орнын тіркеу болмаған, Бағдарлама бағытына қатысатын категорияларға сәйкес болмаған жағдайда көрсетілмейді </value>
+  </data>
+  <data name="ReceivingDocumentsForProgram" xml:space="preserve">
+    <value>«Қазақстанның тұрғын үй құрылыс жинақ банкі» акционерлік қоғамы «Тұрғын үй» бағыты бойынша 2020 жылға дейін өңірлерді дамыту бағдарламасы шеңберінде құжаттарды қабылдау жабық деп жарияланады. Құжаттарды қабылдау 2016 жылғы 21-25 қараша аралығында жүзеге асырылды.</value>
+  </data>
+  <data name="ReceptionDocuments" xml:space="preserve">
+    <value>«Қазақстанның тұрғын үй құрылыс жинақ банкі» акционерлік қоғамы «Тұрғын үй» бағыты бойынша 2020 жылға дейін өңірлерді дамыту бағдарламасы шеңберінде құжаттарды қабылдау</value>
+  </data>
+  <data name="ReceptionsForCitizens" xml:space="preserve">
+    <value>Азаматтарды қабылдау</value>
+  </data>
+  <data name="RedirectToAstana" xml:space="preserve">
+    <value>"Астана қаласының тұрғын үй басқармасы" сайтында өту</value>
+  </data>
+  <data name="RefeetIsNotPossible" xml:space="preserve">
+    <value>Қайтадан беру мүмкін емес</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Жаңарту</value>
+  </data>
+  <data name="RefreshDataGbd" xml:space="preserve">
+    <value>ЖТ МДБ деректерін жаңарту</value>
+  </data>
+  <data name="RegisteredCitizens" xml:space="preserve">
+    <value>Келесі категориялар бойынша Астана қаласында коммуналдық тұрғын үй қорынан (кезектегі) тұрғын үйге мұқтаждар есебінен тұратын азаматтар</value>
+  </data>
+  <data name="RequestDetail" xml:space="preserve">
+    <value>Толығырақ ақпарат</value>
+  </data>
+  <data name="ResidenceAddress" xml:space="preserve">
+    <value>Тұрғылықты мекенжай</value>
+  </data>
+  <data name="ResolutionEstablishment" xml:space="preserve">
+    <value>Ата-ананың қамқорлығынсыз қалған кәмелетке толмаған балаларға қорғаншылық және қамқоршылықты тағайындау туралы қаулы</value>
+  </data>
+  <data name="ReturnIndex" xml:space="preserve">
+    <value>Басты бетке қайта өту</value>
+  </data>
+  <data name="Rezume" xml:space="preserve">
+    <value>Резюме</value>
+  </data>
+  <data name="RoomCount" xml:space="preserve">
+    <value>Бөлмелер саны</value>
+  </data>
+  <data name="RoomlinessChoose" xml:space="preserve">
+    <value>Бөлмелер санын таңдаңыз</value>
+  </data>
+  <data name="SearchNotData" xml:space="preserve">
+    <value>Іздеу критерийін қанағаттандыратын деректер жоқ</value>
+  </data>
+  <data name="SearchNumberQueue" xml:space="preserve">
+    <value>Кезек нөмірін іздеу</value>
+  </data>
+  <data name="SearchResult" xml:space="preserve">
+    <value>Іздеу нәтижелері</value>
+  </data>
+  <data name="SelectDiscount" xml:space="preserve">
+    <value>Жеңілдікті таңдаңыз</value>
+  </data>
+  <data name="SelectedObject" xml:space="preserve">
+    <value>Таңдалынған нысан</value>
+  </data>
+  <data name="SelectList" xml:space="preserve">
+    <value>Тізімнен таңдаңыз</value>
+  </data>
+  <data name="ServiceDay" xml:space="preserve">
+    <value>Қызметтер көрсету регламенті бойынша (күнтізбелік 30 күн)</value>
+  </data>
+  <data name="ServiceQueueChild" xml:space="preserve">
+    <value>Қызмет: Мектепке дейінгі жастағы балаларды кезекке қою</value>
+  </data>
+  <data name="ShortInfo" xml:space="preserve">
+    <value>Қысқаша ақпарат</value>
+  </data>
+  <data name="ShowInfo" xml:space="preserve">
+    <value>Ақпаратты көрсету</value>
+  </data>
+  <data name="StagingQueueChild" xml:space="preserve">
+    <value>Мектепке дейінгі жастағы балаларды кезекке қою</value>
+  </data>
+  <data name="TakeOff" xml:space="preserve">
+    <value>Алу</value>
+  </data>
+  <data name="TermsServiceRendering" xml:space="preserve">
+    <value>Қызмет көрсету мерзімі</value>
+  </data>
+  <data name="TheSearchIs" xml:space="preserve">
+    <value>Іздеу жүруде</value>
+  </data>
+  <data name="TransportInfo" xml:space="preserve">
+    <value>Көлік құралы туралы деректер</value>
+  </data>
+  <data name="UpdateDate" xml:space="preserve">
+    <value>Жаңарту күні</value>
+  </data>
+  <data name="Automated" xml:space="preserve">
+    <value>Автоматтандырылған</value>
+  </data>
+  <data name="MotivatedFailure" xml:space="preserve">
+    <value>Мұрағаттық анықтама немесе бас тарту туралы дәлелді жауап</value>
+  </data>
+  <data name="ServiceDeadlineAdditionalTime" xml:space="preserve">
+    <value>Мемлекеттік қызметті пайдалану үшін екі немесе одан көп ұйымдардың құжаттарын, сонымен бірге 5 (бес) жылдан асатын кезеңді зерделеу қажет болған жағдайда, қызмет көрсетуші мемлекеттік қызмет көрсету мерзімі мемлекеттік қызметті көрсету мерзімі аяқталғаннан кейін күнтізбелік 30 (отыз) күнге дейін ұзартылады.</value>
+  </data>
+  <data name="InputIinNullText" xml:space="preserve">
+    <value>ЖСН енгізіңіз...</value>
+  </data>
+  <data name="EntarPasswordForDigiSign" xml:space="preserve">
+    <value>ЭСҚ-ҒА ҚҰПИЯСӨЗДІ ЕНГІЗУ</value>
+  </data>
+  <data name="ChooseKeyForDigiSign" xml:space="preserve">
+    <value>ЭСҚ КІЛТІН ТАҢДАУ</value>
+  </data>
+  <data name="LinkChildToParentCaution" xml:space="preserve">
+    <value>Назар аударыңыз: Баланы кезекке қою туралы өтінішті көрсету үшін баланың ата-анасының біреуінің ЖСН көрсету қажет.</value>
+  </data>
+  <data name="Military" xml:space="preserve">
+    <value>Әскери қызметшілер</value>
+  </data>
+  <data name="EnterCabinet" xml:space="preserve">
+    <value>ЖЕКЕ КАБИНЕТКЕ КІРУ</value>
+  </data>
+  <data name="ChooseFromListNulltext" xml:space="preserve">
+    <value>Тізімнен таңдаңыз...</value>
+  </data>
+  <data name="ChooseRolesNulltext" xml:space="preserve">
+    <value>Рөлдерді таңдаңыз ...</value>
+  </data>
+  <data name="IssuanceOfCertificates" xml:space="preserve">
+    <value>Мұрағаттық анықтамаларды беру</value>
+  </data>
+  <data name="IssuanceCertificatesCustody" xml:space="preserve">
+    <value>Қорғаншылық және қамқоршылық туралы анықтамаларды беру</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Ары қарай</value>
+  </data>
+  <data name="GroupChildrenInfo" xml:space="preserve">
+    <value>Кәмелетке толмаған балалар туралы деректер</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Күні</value>
+  </data>
+  <data name="IssueDate" xml:space="preserve">
+    <value>Берілген күні</value>
+  </data>
+  <data name="Document" xml:space="preserve">
+    <value>Құжат</value>
+  </data>
+  <data name="Change" xml:space="preserve">
+    <value>Өзгерту</value>
+  </data>
+  <data name="MsgInvalidIin" xml:space="preserve">
+    <value>Сіз енгізген ЖСН дұрыс емес</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>Пайдаланушының аты</value>
+  </data>
+  <data name="GroupApplicantInfo" xml:space="preserve">
+    <value>Өтініш беруші туралы ақпарат</value>
+  </data>
+  <data name="GroupRequestInfo" xml:space="preserve">
+    <value>Өтініш туралы ақпарат</value>
+  </data>
+  <data name="GroupIdInfo" xml:space="preserve">
+    <value>жеке басын куәландыратын құжат туралы ақпарат</value>
+  </data>
+  <data name="InformationSystem" xml:space="preserve">
+    <value>Ақпараттық жүйелерден алынатын ақпарат</value>
+  </data>
+  <data name="IssuedBy" xml:space="preserve">
+    <value>Кім берген</value>
+  </data>
+  <data name="FreePlaceQty" xml:space="preserve">
+    <value>Бос орындардың саны</value>
+  </data>
+  <data name="GroupContactsInfo" xml:space="preserve">
+    <value>Байланыс деректері</value>
+  </data>
+  <data name="MiniCenters" xml:space="preserve">
+    <value>Миниорталықтар</value>
+  </data>
+  <data name="ManyChildFamily" xml:space="preserve">
+    <value>Көпбалалы отбасы</value>
+  </data>
+  <data name="MinistryOfEducation" xml:space="preserve">
+    <value>Білім министрлігі</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Артқа қарай</value>
+  </data>
+  <data name="MsgCannotLinkChildProfile" xml:space="preserve">
+    <value>Профильді өтінімге қосу мүмкін емес</value>
+  </data>
+  <data name="HasNoRightsTitle" xml:space="preserve">
+    <value>Құқықтар жеткіліксіз</value>
+  </data>
+  <data name="DenialReasonFakeData" xml:space="preserve">
+    <value>ұсынылған мәліметтердің дерексіздігі</value>
+  </data>
+  <data name="Service" xml:space="preserve">
+    <value>Қызмет</value>
+  </data>
+  <data name="AuthorizedBodyOfAstana" xml:space="preserve">
+    <value>Астана қаласының әкімдігінің уәкілетті органы «Астана қаласының тұрғын үй басқармасы»</value>
+  </data>
+  <data name="HasNoRights" xml:space="preserve">
+    <value>Сіздің аталған функционалға қол жеткізу құқығыңыз жоқ</value>
+  </data>
+  <data name="UserType" xml:space="preserve">
+    <value>Пайдаланушының түрі</value>
+  </data>
+  <data name="LinkToDownload" xml:space="preserve">
+    <value>Жүктеуге арналған сілтеме</value>
+  </data>
+  <data name="RolesList" xml:space="preserve">
+    <value>Рөлдердің тізімі</value>
+  </data>
+  <data name="UsersList" xml:space="preserve">
+    <value>Пайдаланушылардың тізімі</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Сақтау</value>
+  </data>
+  <data name="GroupFamily" xml:space="preserve">
+    <value>Отбасы құрамы</value>
+  </data>
+  <data name="CreateAccount" xml:space="preserve">
+    <value>Аккаунтты құрастыру</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Құрастыру</value>
+  </data>
+  <data name="CreateUser" xml:space="preserve">
+    <value>Пайдаланушыны құрастыру</value>
+  </data>
+  <data name="CreateNewAccount" xml:space="preserve">
+    <value>Жаңа есептік жазбаны құрастыру</value>
+  </data>
+  <data name="GroupDecisionApproval" xml:space="preserve">
+    <value>Шешімді келісу</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Жүктеу</value>
+  </data>
+  <data name="Russian" xml:space="preserve">
+    <value>Орысша</value>
+  </data>
+  <data name="Roles" xml:space="preserve">
+    <value>Рөлдер</value>
+  </data>
+  <data name="MsgFamRelationConfirmed" xml:space="preserve">
+    <value>Туыстық расталды, сәтті жаңартылды</value>
+  </data>
+  <data name="MsgFamRelationNotConfirmedButUpdated" xml:space="preserve">
+    <value>Туыстық расталмады, бірақ деректер сәтті жаңартылды</value>
+  </data>
+  <data name="MsgFamRelationNotConfirmed" xml:space="preserve">
+    <value>Туыстық расталмады</value>
+  </data>
+  <data name="EditAccount" xml:space="preserve">
+    <value>Есептік жазбаға өзгертулер енгізу</value>
+  </data>
+  <data name="EditData" xml:space="preserve">
+    <value>Деректерге өзгерістер енгізу</value>
+  </data>
+  <data name="DevelopedBy" xml:space="preserve">
+    <value>№ ЖШС ӘЗІРЛЕГЕН</value>
+  </data>
+  <data name="SizeInKB" xml:space="preserve">
+    <value>Мөлшері, КБ</value>
+  </data>
+  <data name="AttachedDocuments" xml:space="preserve">
+    <value>Қоса берілетін құжаттар</value>
+  </data>
+  <data name="CustodialOrdinance" xml:space="preserve">
+    <value>Қамқорлықты тағайындау туралы қаулы</value>
+  </data>
+  <data name="eServicePortalShort" xml:space="preserve">
+    <value>Астана қ. әкімдігінің порталы</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>Пайдаланушылар</value>
+  </data>
+  <data name="SearchProfile" xml:space="preserve">
+    <value>Профильді іздеу</value>
+  </data>
+  <data name="SignAndRegister" xml:space="preserve">
+    <value>Қол қою мен тіркеу</value>
+  </data>
+  <data name="AsPerRegulations" xml:space="preserve">
+    <value>Қызметтер көрсету регламенті бойынша</value>
+  </data>
+  <data name="ProcessUnprocessedRequests" xml:space="preserve">
+    <value>Өңделмеген жүйедегі өтінімдерді өңдеуді қайта іске қосу</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Жою</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Сипаттамасы</value>
+  </data>
+  <data name="UpdateAccount" xml:space="preserve">
+    <value>Аккаунтты жаңарту</value>
+  </data>
+  <data name="GroupSougthInfo" xml:space="preserve">
+    <value>Кім туралы мәлімет сұралынуда</value>
+  </data>
+  <data name="ApplicationNumber" xml:space="preserve">
+    <value>Өтінім нөмірі</value>
+  </data>
+  <data name="NoKinship" xml:space="preserve">
+    <value>Туыстығы жоқ</value>
+  </data>
+  <data name="UnprocessedRequests" xml:space="preserve">
+    <value>Өңделмеген өтінімдер</value>
+  </data>
+  <data name="DenialReasonUncompetence" xml:space="preserve">
+    <value>сұралған мұрағаттық анықтаманы ұсынудағы құзыретсіздік</value>
+  </data>
+  <data name="DayCareFreePlaceController_Save_KinderBlocked" xml:space="preserve">
+    <value>Балабақша бұғатталды</value>
+  </data>
+  <data name="DayCareQueueServiceController_DayCareOwnerWorkplace_GettingFail" xml:space="preserve">
+    <value>Жолдаманы алу кезіндегі қате</value>
+  </data>
+  <data name="DayCareQueueServiceController_SearchInQueue_NotFindRecord" xml:space="preserve">
+    <value>Көрсетілген параметрлер бойынша база жазбалар табылмады</value>
+  </data>
+  <data name="ReportController_GetEtrusteeshipReportById_notice" xml:space="preserve">
+    <value>Қорғаншылықты немесе қамқоршылықты тоқтату туралы хабарлама </value>
+  </data>
+  <data name="AdminController_RoleDelete_RequiredField" xml:space="preserve">
+    <value>Барлық міндетті жолақтарды дұрыс толтырыңыз</value>
+  </data>
+  <data name="AdminController_AddUserRole_Renouncement" xml:space="preserve">
+    <value>Рөлді қосу мақұлданбады. {0} атауы бар рөл {1} пайдаланушыға қосылған.</value>
+  </data>
+  <data name="AdminController_EditEmployee_UserNotFind" xml:space="preserve">
+    <value>Пайдаланушы табылмады</value>
+  </data>
+  <data name="AccountController_Edit_RefreshData" xml:space="preserve">
+    <value>Есептік деректер жаңартылды. Өзекті email:</value>
+  </data>
+  <data name="AccountController_EmployeeLogin_ErrorPasswordLogin" xml:space="preserve">
+    <value>Логин немесе құпиясөз дұрыс емес.</value>
+  </data>
+  <data name="BaseServiceController_NotFindXin" xml:space="preserve">
+    <value>Көрсетілген ЖСН бойынша ЖТ МДБ-да ештеңе табылмады</value>
+  </data>
+  <data name="Link" xml:space="preserve">
+    <value>сілтеме</value>
+  </data>
+  <data name="AdditionalInformationMed" xml:space="preserve">
+    <value>Медициналық препарат және online режимде сатып алу туралы толығырақ ақпаратты білу үшін келесі сілтеме арқылы өтіңіз...</value>
+  </data>
+  <data name="KazToken" xml:space="preserve">
+    <value>Казтокен</value>
+  </data>
+  <data name="Identifications" xml:space="preserve">
+    <value>Жеке куәлік</value>
+  </data>
+  <data name="YourComputer" xml:space="preserve">
+    <value>Сіздің компьютеріңіз</value>
+  </data>
+  <data name="StepFromTo" xml:space="preserve">
+    <value>Қадам {0}: {1}</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>Экспорттау:</value>
+  </data>
+  <data name="ToExport" xml:space="preserve">
+    <value>Экспорттау</value>
+  </data>
+  <data name="SignAndSend" xml:space="preserve">
+    <value>Қол қою және жіберу</value>
+  </data>
+  <data name="ErrorsOnForm" xml:space="preserve">
+    <value>Нысанда қателер бар</value>
+  </data>
+  <data name="ResponseError" xml:space="preserve">
+    <value>Сұрауды өңдеу барысында қате пайда болады. Қызметті кейінірек пайдаланып көріңіз. Келтірілген қолайсыздықтар үшін кешірім сұраймыз.</value>
+  </data>
+  <data name="Fail" xml:space="preserve">
+    <value>Қате</value>
+  </data>
+  <data name="Handle" xml:space="preserve">
+    <value>Өңдеу</value>
+  </data>
+  <data name="DevelopedByITFACTORY" xml:space="preserve">
+    <value>"IT FACTORY" ЖШС ӘЗІРЛЕГЕН</value>
+  </data>
+  <data name="AvailableAction" xml:space="preserve">
+    <value>Қызмет бойынша қол жетімді әрекеттер</value>
+  </data>
+  <data name="StepLowerCase" xml:space="preserve">
+    <value>Қадам</value>
+  </data>
+  <data name="MaxSizeFile" xml:space="preserve">
+    <value>Файлдың максималды көлемі: {0} MB.</value>
+  </data>
+  <data name="AllowableExtensions" xml:space="preserve">
+    <value>Рұқсат етілген кеңейтулер: {0}</value>
+  </data>
+  <data name="ChooseFile" xml:space="preserve">
+    <value>Файлды таңдаңыз...</value>
+  </data>
+  <data name="takeToWork" xml:space="preserve">
+    <value>Жұмысқа қабылдау</value>
+  </data>
+  <data name="Treatment" xml:space="preserve">
+    <value>Өңдеу</value>
+  </data>
+  <data name="RefuseAcceptance" xml:space="preserve">
+    <value>Қабылдаудан бас тарту</value>
+  </data>
+  <data name="Statistics" xml:space="preserve">
+    <value>Статистика</value>
+  </data>
+  <data name="ApplyBut" xml:space="preserve">
+    <value>Өтінімді беру</value>
+  </data>
+  <data name="DirectionStatistic" xml:space="preserve">
+    <value>Жолдамалар бойынша статистика</value>
+  </data>
+  <data name="FreePlaceStatistic" xml:space="preserve">
+    <value>Бос орындар бойынша статистика</value>
+  </data>
+  <data name="RequestStatistic" xml:space="preserve">
+    <value>Өтініштер бойынша статистика</value>
+  </data>
+  <data name="ShowQueueNumber" xml:space="preserve">
+    <value>Кезек нөмірін қарау</value>
+  </data>
+  <data name="Year" xml:space="preserve">
+    <value>ЖЫЛ</value>
+  </data>
+  <data name="cou_nt" xml:space="preserve">
+    <value>Саны</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Өшіру</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>Жаңа</value>
+  </data>
+  <data name="Con" xml:space="preserve">
+    <value>ХҚКО</value>
+  </data>
+  <data name="DDODirectionStatistics" xml:space="preserve">
+    <value>МДҰ жолдамалары бойынша статистика</value>
+  </data>
+  <data name="DDOStatisticApplicant" xml:space="preserve">
+    <value>МДҰ өтінімдері бойынша статистика</value>
+  </data>
+  <data name="DDOstat" xml:space="preserve">
+    <value>МДҰ статистикасы</value>
+  </data>
+  <data name="eServiceSystem" xml:space="preserve">
+    <value>Е-қызмет жүйе тармағы</value>
+  </data>
+  <data name="TechnicalInstruments" xml:space="preserve">
+    <value>Жүйе тармағында жұмыс істеуге қажетті техникалық құралдардың тізімі</value>
+  </data>
+  <data name="Pep" xml:space="preserve">
+    <value>ЭҮП</value>
+  </data>
+  <data name="KindergartenName" xml:space="preserve">
+    <value>Балабақшаның атауы</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Қорытынды</value>
+  </data>
+  <data name="InstructionIINParents" xml:space="preserve">
+    <value>Өтінімді ата-ананың ЖСН-не бекіту бойынша нұсқаулық</value>
+  </data>
+  <data name="AllTime" xml:space="preserve">
+    <value>Барлық уақыт аралығында </value>
+  </data>
+  <data name="BackToStatistic" xml:space="preserve">
+    <value>&lt;&lt;Статистика бөліміне артқа қайту</value>
+  </data>
+  <data name="SettlementDirectInstruction" xml:space="preserve">
+    <value>Ауылдық үлгідегі балабақшаға жолдама алу нұсқаулығы </value>
+  </data>
+</root>

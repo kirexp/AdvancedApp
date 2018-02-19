@@ -1,0 +1,440 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="DdoPrevGosOrgan" xml:space="preserve">
+    <value>Дети сотрудников специальных государственных органов</value>
+    <comment>ддо</comment>
+  </data>
+  <data name="DdoPrevInvalid" xml:space="preserve">
+    <value>Инвалиды</value>
+    <comment>ддо</comment>
+  </data>
+  <data name="DdoPrevLargeFam" xml:space="preserve">
+    <value>Многодетная семья</value>
+    <comment>ддо</comment>
+  </data>
+  <data name="DdoPrevMilitary" xml:space="preserve">
+    <value>Военнослужащие</value>
+    <comment>ддо</comment>
+  </data>
+  <data name="DdoPrevNotPrivilaged" xml:space="preserve">
+    <value>Без льготы</value>
+    <comment>ддо</comment>
+  </data>
+  <data name="DdoPrevOrphans" xml:space="preserve">
+    <value>Дети-сироты</value>
+    <comment>ддо</comment>
+  </data>
+  <data name="DdoPrevPrivilaged" xml:space="preserve">
+    <value>Льготник</value>
+    <comment>ддо</comment>
+  </data>
+  <data name="DdoStateBlocked" xml:space="preserve">
+    <value>Заблокировано</value>
+    <comment>ддо</comment>
+  </data>
+  <data name="DdoStateDirected" xml:space="preserve">
+    <value>Выдано направление</value>
+    <comment>ддо</comment>
+  </data>
+  <data name="DdoStateInQueue" xml:space="preserve">
+    <value>В очереди</value>
+    <comment>ддо</comment>
+  </data>
+  <data name="DdoStateNoticed" xml:space="preserve">
+    <value>Направлено уведомление</value>
+    <comment>ддо</comment>
+  </data>
+  <data name="DdoStateRemoved" xml:space="preserve">
+    <value>Снят с очереди</value>
+    <comment>ддо</comment>
+  </data>
+  <data name="DdoTypeGovernment" xml:space="preserve">
+    <value>Государственные детские сады</value>
+    <comment>ддо</comment>
+  </data>
+  <data name="DdoTypeMiniCenters" xml:space="preserve">
+    <value>Мини-центры</value>
+    <comment>ддо</comment>
+  </data>
+  <data name="DdoTypePrivacy" xml:space="preserve">
+    <value>Частные детские сады по гос.дотации</value>
+    <comment>ддо</comment>
+  </data>
+  <data name="DdoTypeVillaged" xml:space="preserve">
+    <value>Детские сады поселкового типа</value>
+    <comment>ддо</comment>
+  </data>
+  <data name="MsgInvalidChildAge" xml:space="preserve">
+    <value>Ребенок старше 6 лет не может встать в очередь.</value>
+  </data>
+  <data name="DDOOwnerIIn" xml:space="preserve">
+    <value>ИИН владельца ДДО</value>
+  </data>
+  <data name="DDOType" xml:space="preserve">
+    <value>Тип детского сада</value>
+  </data>
+  <data name="DDOWebSite" xml:space="preserve">
+    <value>Веб-сайт детского сада</value>
+  </data>
+  <data name="DayCareInfo" xml:space="preserve">
+    <value>Куда выдано направление</value>
+  </data>
+  <data name="InQueueSince" xml:space="preserve">
+    <value>{0} (в очереди с {1})</value>
+    <comment>new</comment>
+  </data>
+  <data name="MsgCannotSaveDdo" xml:space="preserve">
+    <value>Не удалось сохранить выбранный ДДО. Попробуйте еще раз! {0}</value>
+    <comment>new</comment>
+  </data>
+  <data name="ChooseGovDdo" xml:space="preserve">
+    <value>Выбор государственного ДДО</value>
+    <comment>new</comment>
+  </data>
+  <data name="ChooseMiniCenter" xml:space="preserve">
+    <value>Выбор мини-центра</value>
+    <comment>new</comment>
+  </data>
+  <data name="ChoosePrivateDdo" xml:space="preserve">
+    <value>Выбор частной детской дошкольной организации</value>
+    <comment>new</comment>
+  </data>
+  <data name="ChooseVillagedDdo" xml:space="preserve">
+    <value>Выбор дошкольной организации поселкового типа</value>
+    <comment>new</comment>
+  </data>
+  <data name="MsgQueueIsLocked" xml:space="preserve">
+    <value>Ваша очередь была временно заблокирована, так как Вы не выбрали ДДО в течение 5 дней с момента получения уведомления. Для восстановления номера очереди, нажмите кнопку "Подписать и отправить"</value>
+    <comment>new</comment>
+  </data>
+  <data name="Unlocking" xml:space="preserve">
+    <value>Разблокировка</value>
+    <comment>new</comment>
+  </data>
+  <data name="SetIntoDdoQueue" xml:space="preserve">
+    <value>Постановка ребенка в очередь в ДДО</value>
+    <comment>new</comment>
+  </data>
+  <data name="DeleteFromDdoQueue" xml:space="preserve">
+    <value>Снятие c очереди в детскую дошкольную организацию</value>
+    <comment>new</comment>
+  </data>
+  <data name="PrevilageCheck" xml:space="preserve">
+    <value>Проверка категории льготности</value>
+    <comment>new</comment>
+  </data>
+  <data name="MsgPrevilageNotConfirmed" xml:space="preserve">
+    <value>Ваша льгота не подтвердилась. Обратитесь в Управление образования для выяснения причины, либо встаньте в обычную очередь.</value>
+    <comment>new</comment>
+  </data>
+  <data name="MsgXinAlreadyInQueue" xml:space="preserve">
+    <value>Данный ИИН уже находится в очереди</value>
+  </data>
+  <data name="FreeCount" xml:space="preserve">
+    <value>Количество свободных мест</value>
+  </data>
+  <data name="TotalNumberCount" xml:space="preserve">
+    <value>Общее количество мест</value>
+  </data>
+  <data name="YearGroup" xml:space="preserve">
+    <value>Год группы</value>
+  </data>
+  <data name="DecisionReport" xml:space="preserve">
+    <value>Направление</value>
+  </data>
+  <data name="LanguageLearning" xml:space="preserve">
+    <value>Язык обучения</value>
+  </data>
+  <data name="Kindergarten" xml:space="preserve">
+    <value>Детский сад</value>
+  </data>
+  <data name="MsgDDOMustHaveOwner" xml:space="preserve">
+    <value>Детский сад должен иметь владельца</value>
+  </data>
+  <data name="StatisticsForDdo" xml:space="preserve">
+    <value>Статистика по услуге "Постановка на очередь в детские дошкольные организации"</value>
+    <comment>new</comment>
+  </data>
+  <data name="DatabaseFreePlace" xml:space="preserve">
+    <value>База свободных мест в ДДО</value>
+  </data>
+  <data name="DayCareOwnerIin" xml:space="preserve">
+    <value>ИИН владельца ДДО</value>
+  </data>
+  <data name="DayCareList" xml:space="preserve">
+    <value>Список детских дошкольных организации</value>
+  </data>
+  <data name="GroupYear" xml:space="preserve">
+    <value>Год группы</value>
+  </data>
+  <data name="AddFreePlaces" xml:space="preserve">
+    <value>Добавить свободные места</value>
+  </data>
+  <data name="PrivateKindergartens" xml:space="preserve">
+    <value>Частные детские сады по гос.дотации</value>
+  </data>
+  <data name="PrivilegedDatabase" xml:space="preserve">
+    <value>База данных льготников</value>
+  </data>
+  <data name="StagingChildren" xml:space="preserve">
+    <value>Постановка на очередь детей дошкольного возраста</value>
+  </data>
+  <data name="StateKindergartens" xml:space="preserve">
+    <value>Государственные детские сады</value>
+  </data>
+  <data name="DayCareQueueResources_AreYouSure" xml:space="preserve">
+    <value>Вы уверены в корректности введенных данных?</value>
+  </data>
+  <data name="DayCareQueueResources_AfterAgree" xml:space="preserve">
+    <value>После подтверждения, сохраненные данные редактированию не подлежат</value>
+  </data>
+  <data name="ListSchoolOrganizations" xml:space="preserve">
+    <value>Список доступных дошкольных организаций</value>
+  </data>
+  <data name="InfoChildSchoolOrganizations" xml:space="preserve">
+    <value>Информация о детской дошкольной организации</value>
+  </data>
+  <data name="TitleSchoolOrganizations" xml:space="preserve">
+    <value>Название детской дошкольной организации</value>
+  </data>
+  <data name="TypeofChildSchoolOrganizatons" xml:space="preserve">
+    <value>Тип десткой дошкольной организации</value>
+  </data>
+  <data name="PhoneChildSchoolOrganizations" xml:space="preserve">
+    <value>Телефон детской дошкольной организации</value>
+  </data>
+  <data name="AddressChildSchoolOrganizations" xml:space="preserve">
+    <value>Адрес детской дошкольной организации</value>
+  </data>
+  <data name="WebsiteSchoolOrganizations" xml:space="preserve">
+    <value>Веб-сайт детской дошкольной организации</value>
+  </data>
+  <data name="CartChildFromEService" xml:space="preserve">
+    <value>КАРТОЧКА ДЕТСКОГО САДА ПРЕДОСТАВЛЕННАЯ ПОРТАЛОМ ЭЛЕКТРОННЫХ УСЛУГ АКИМАТА ГОРОДА АСТАНА</value>
+  </data>
+  <data name="Attention" xml:space="preserve">
+    <value>ВНИМАНИЕ</value>
+  </data>
+  <data name="MustSelectList" xml:space="preserve">
+    <value>Вам необходимо в течении 5-ти рабочих дней выбрать из предложенного списка дошкольную организацию</value>
+  </data>
+  <data name="ToSelect" xml:space="preserve">
+    <value>Выбрать</value>
+  </data>
+  <data name="Privilege" xml:space="preserve">
+    <value>Льготность</value>
+  </data>
+  <data name="AgeLessSeven" xml:space="preserve">
+    <value>Возраст ребенка не должен превышать 7 лет</value>
+  </data>
+  <data name="ChildInQueue" xml:space="preserve">
+    <value>Данный ребенок уже стоит в очереди</value>
+  </data>
+  <data name="SelectKindergarten" xml:space="preserve">
+    <value>Выбор детского сада</value>
+  </data>
+  <data name="VariantOfChoiceDDO" xml:space="preserve">
+    <value>Варианты выбора ДДО</value>
+  </data>
+  <data name="SelectGovermentKindergarten" xml:space="preserve">
+    <value>Выбрать частный детский сад по государственному образовательному заказу</value>
+  </data>
+  <data name="ChoosePreSchoolOrganizations" xml:space="preserve">
+    <value>Выбрать поселковую дошкольную организацию</value>
+  </data>
+  <data name="ChoosePreSchoolMiniCentr" xml:space="preserve">
+    <value>Выбрать дошкольный обучающий мини-центр</value>
+  </data>
+  <data name="ChoosePublicKind" xml:space="preserve">
+    <value>Выбрать государственный детский сад</value>
+  </data>
+  <data name="TakeOfQueue" xml:space="preserve">
+    <value>Снять с очереди</value>
+  </data>
+  <data name="UnBlock" xml:space="preserve">
+    <value>Разблокировать</value>
+  </data>
+  <data name="AutoExitFromQueue" xml:space="preserve">
+    <value>При получении направления в поселковый детский сад, Вы автоматически снимаетесь с очереди</value>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>Продолжить</value>
+  </data>
+  <data name="EnterNumberDirection" xml:space="preserve">
+    <value>Введите номер направления...</value>
+  </data>
+  <data name="Find" xml:space="preserve">
+    <value>Найти</value>
+  </data>
+  <data name="DayOfQueue" xml:space="preserve">
+    <value>Дата постановки на очередь</value>
+  </data>
+  <data name="DownloadChildCard" xml:space="preserve">
+    <value>Скачать карточку ребенка</value>
+  </data>
+  <data name="GotoFreePlaceDDO" xml:space="preserve">
+    <value>&gt;&gt; Перейти к базе свободных мест ДДО</value>
+  </data>
+  <data name="DepartmentOfEducation" xml:space="preserve">
+    <value>ГУ «Управление образования города Астаны»</value>
+  </data>
+  <data name="Automated" xml:space="preserve">
+    <value>Автоматическая</value>
+  </data>
+  <data name="ElectronicSignatureOfApplicant" xml:space="preserve">
+    <value>Электронно-цифровая подпись (ЭЦП) заявителя</value>
+  </data>
+  <data name="HappeningRenouncement" xml:space="preserve">
+    <value>В каком случае может быть отказано в предоставлении государственной услуги либо она приостановлена</value>
+  </data>
+  <data name="FoundationRenouncement" xml:space="preserve">
+    <value> В предоставлении государственной услуги отказывается по следующим основаниям</value>
+  </data>
+  <data name="ChildNowInQueue" xml:space="preserve">
+    <value>Ребенок уже стоит в очереди</value>
+  </data>
+  <data name="FiveMinuts" xml:space="preserve">
+    <value>5 минут</value>
+  </data>
+  <data name="ServiceResult" xml:space="preserve">
+    <value>Результаты оказания услуг</value>
+  </data>
+  <data name="NoticeAboutNotice" xml:space="preserve">
+    <value>Извещение о постановке на очередь для получения направления в детские дошкольные организации</value>
+  </data>
+  <data name="ManualNotice" xml:space="preserve">
+    <value>Ручная рассылка уведомлений</value>
+  </data>
+  <data name="ForgotIINChild" xml:space="preserve">
+    <value>Я не помню ИИН ребенка</value>
+  </data>
+  <data name="DayCareOwnerWorkplaceTitle" xml:space="preserve">
+    <value>Рабочий кабинет сотрудника ДДО</value>
+  </data>
+  <data name="EnterDirectionNumberNulltext" xml:space="preserve">
+    <value>Введите номер направления...</value>
+  </data>
+  <data name="DayCareOwnerWorkplaceLinkToDdoBase" xml:space="preserve">
+    <value>&gt;&gt; Перейти к базе свободных мест ДДО</value>
+  </data>
+  <data name="MoreSevenAge" xml:space="preserve">
+    <value>Возраст ребенка: старше 7-ми лет</value>
+  </data>
+</root>

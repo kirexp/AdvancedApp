@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Required" xml:space="preserve">
+    <value>Заполните поле</value>
+  </data>
+  <data name="WriteCorrectDate" xml:space="preserve">
+    <value>Введите корректную дату</value>
+  </data>
+  <data name="IinShouldConsistOf12Digits" xml:space="preserve">
+    <value>ИИН должен состоять из 12 цифр</value>
+  </data>
+  <data name="FirstNameContainsInvalidCharacters" xml:space="preserve">
+    <value>Имя содержит не допустимые символы</value>
+  </data>
+  <data name="LastNameContainsInvalidCharacters" xml:space="preserve">
+    <value>Фамилия содержит не допустимые символы</value>
+  </data>
+  <data name="MiddleNameContainsInvalidCharacters" xml:space="preserve">
+    <value>Отчество содержит не допустимые символы</value>
+  </data>
+  <data name="FillFeildCorrect" xml:space="preserve">
+    <value>Заполните поля корректно</value>
+  </data>
+  <data name="GovermenrtOrganizationName" xml:space="preserve">
+    <value>Наименование ГУ</value>
+  </data>
+  <data name="IncorrectFieldFormat" xml:space="preserve">
+    <value>Неверно  заполнено поле</value>
+    <comment>new</comment>
+  </data>
+  <data name="ChildOlderThan6" xml:space="preserve">
+    <value>Ребенок старше 6 лет не может встать в очередь.</value>
+  </data>
+  <data name="Completion" xml:space="preserve">
+    <value>     Уважаемый(ая) {ApplicantName}, сообщаем Вам о завершении оказания государственной услуги по заявлению от</value>
+  </data>
+  <data name="CompulsoryFilling" xml:space="preserve">
+    <value>раздел: {0} - обязательный для заполнения</value>
+    <comment>ArchiveTranscriptProcessViewModel.cs</comment>
+  </data>
+  <data name="SignatureOwnerMismatch" xml:space="preserve">
+    <value>Данные ЭЦП, отличаются от данных заявителя. Просим подписать заявление с помощью следующей ЭЦП: {0}</value>
+    <comment>ProcessViewModel.cs</comment>
+  </data>
+  <data name="SignWithApplicantEcp" xml:space="preserve">
+    <value>Данные ЭЦП, отличаются от данных заявителя. Просим подписать заявление с помощью ЭЦП заявителя: {0}</value>
+    <comment>Название полностью отсутствовало</comment>
+  </data>
+  <data name="EmailIsNotSpecified" xml:space="preserve">
+    <value>Электронный адрес не указан.</value>
+  </data>
+  <data name="ErrorAddingBirthSertificate" xml:space="preserve">
+    <value>Ошибка при добавлении свидетельства о рождении</value>
+    <comment>CertOfBirthReportModel.cs</comment>
+  </data>
+  <data name="FieldRequired" xml:space="preserve">
+    <value>Обязательное поле</value>
+    <comment>RequiredField(старое название)</comment>
+  </data>
+  <data name="FileFailedValidation" xml:space="preserve">
+    <value>раздел: {0}. файл: {1} - не прошел проверку</value>
+    <comment>ArchiveTranscriptProcessViewModel.cs</comment>
+  </data>
+  <data name="ItIsTakenIntoOperation" xml:space="preserve">
+    <value>     Уважаемый(ая) {ApplicantName}, сообщаем, что Ваше заявление от " +
+            $"{RegistrationDateTime.ToString("dd.MM.yyyy")} [{RegistrationDateTime.ToString("HH:mm")}] №{RequestNumber} " +
+            $"на услугу \"{Service.GetDisplayName()}\" принято в работу со следующим списком приложенных документов:</value>
+  </data>
+  <data name="MessageToApplicant" xml:space="preserve">
+    <value>     Уважаемый(ая),    Уведомляем Вас о том, что подошла очередь на получение направления в детскую дошкольную организацию по заявлению № Необходимо в течение 3-х дней выбрать один из доступных детских дошкольных организации(ДДО) в личном кабинете (http://ises.astana.kz/), либо обратиться в Управление образования акимата города Астана.  Очередь в детский сад</value>
+  </data>
+  <data name="MessageToDirector" xml:space="preserve">
+    <value>     Уважаемый(-ая),    в Вашу детскую дошкольную организацию получил(а) направление Оповещение о выдаче направляения в ваше ДДО</value>
+  </data>
+  <data name="Necessarily" xml:space="preserve">
+    <value>Обязательно</value>
+    <comment>Required(старое название)</comment>
+  </data>
+  <data name="NeedToChooseLang" xml:space="preserve">
+    <value>Вы должны выбрать язык</value>
+  </data>
+  <data name="NoDocuments" xml:space="preserve">
+    <value>нет приложенных документов</value>
+    <comment>ReceptionNotification.cs</comment>
+  </data>
+  <data name="NotSent" xml:space="preserve">
+    <value>Не удалось отправить сообщение</value>
+  </data>
+  <data name="PhoneNumberIsNotSpecified" xml:space="preserve">
+    <value>Номер телефона не указан.</value>
+  </data>
+  <data name="RefusedACertificateOfGuardianship" xml:space="preserve">
+    <value>     Уважаемый(ая) {0} уведомляем Вас о том, что Вам отказано в выдаче справки по опеке и попечительству над {1} {2} года рождения и над его (ее) имуществом</value>
+  </data>
+  <data name="Registered" xml:space="preserve">
+    <value>     Уважаемый(ая) {ApplicantName}, уведомляем Вас о том, что ваше заявление на услугу \"{Service.GetDisplayName()}\" " +
+                $"зарегистрировано от {RegistrationDateTime.ToString("dd.MM.yyyy")} [{RegistrationDateTime.ToString("HH:mm")}] № {RequestNumber}"+ 
+                $" ({RequestedObject.GetDisplayName()}, {Rooms.GetDisplayName()}, площадь: {Area})</value>
+  </data>
+  <data name="Renouncement" xml:space="preserve">
+    <value>     Уважаемый(ая) {0} сообщаем, что Вам отказано в оказании услуги «Назначение выплаты пособия опекунам или попечителям на содержание ребенка-сироты (детей-сирот) и ребенка (детей), оставшегося без попечения родителей» по заявлению от</value>
+  </data>
+  <data name="RenouncementCustody" xml:space="preserve">
+    <value>     Уважаемый(ая) {0} сообщаем, что Вам отказано в оказании государственной услуги «Установление опеки или попечительства над ребенком-сиротой (детьми-сиротами) и ребенком (детьми), оставшимися без попечения родителей» от {1} под № {2}</value>
+    <comment>Renouncement (старое название)</comment>
+  </data>
+  <data name="RenouncementReferences" xml:space="preserve">
+    <value>     Уважаемый(ая) {0} сообщаем, что Вам отказано в оказании услуги «Выдача архивных справок» по заявлению от</value>
+    <comment>Renouncement(старое название)</comment>
+  </data>
+  <data name="RequiredField" xml:space="preserve">
+    <value>Поле обязательно для заполнения</value>
+  </data>
+  <data name="SignedValidationFailed" xml:space="preserve">
+    <value>Подписанные данные не прошли валидацию</value>
+    <comment>ProcessViewModel.cs</comment>
+  </data>
+  <data name="SignRequired" xml:space="preserve">
+    <value>Необходимо подписать данные перед регистрацией</value>
+    <comment>ProcessViewModel.cs</comment>
+  </data>
+  <data name="TheDatabaseGuardiansInHheCityOfAstanaYouDoNotMean" xml:space="preserve">
+    <value>В Базе данных опекунов (попечителей)  по городу Астана Вы не значитесь</value>
+    <comment>TheDatabaseGuardians(trustees)InHheCityOfAstanaYouDoNotMean</comment>
+  </data>
+  <data name="ThePasswordAndConfirmationPasswordDoNotMatch" xml:space="preserve">
+    <value>Пароли не совпадают</value>
+  </data>
+  <data name="ThisCertificateWillBeIssued" xml:space="preserve">
+    <value>Настоящая справка выдана гр.(ке): {0} проживающему(ей) в " +
+                                     "{1} в том, что он(она) " +
+                                     "согласно решению акима (город, район) №{2} от {3} действительно назначен(а) опекуном над</value>
+  </data>
+  <data name="TraceAdvancement" xml:space="preserve">
+    <value>Потребители, стоящие в очереди могут прослеживать продвижение очереди через порталы электронных услуг (http://e.astana.kz,http://e.gov.kz), а так же позвонить в Контакт-центр акимата города Астаны по номеру телефону 55-66-55" 
+//                        + " В случае несогласия с полученым решением, Вам предоставляется возможность обжаловать данное решение до "</value>
+    <comment>Название полностью отсутствовало</comment>
+  </data>
+  <data name="PasswordLength" xml:space="preserve">
+    <value>Пароль {0} должен содержать не менее {1} символов.</value>
+    <comment>The {0} must be at least {2} characters long.</comment>
+  </data>
+  <data name="PasswordConfirmationNotMatch" xml:space="preserve">
+    <value>Введенные пароли не совпадают</value>
+    <comment>The password and confirmation password do not match.</comment>
+  </data>
+  <data name="CannotRetrieveInfoFromGBD" xml:space="preserve">
+    <value>Не удалось получить данные из ГБД ФЛ по ИИН: {0}</value>
+    <comment>new</comment>
+  </data>
+  <data name="WriteCorrectNumber" xml:space="preserve">
+    <value>Введите корректный номер</value>
+    <comment>new</comment>
+  </data>
+  <data name="StringTooLong" xml:space="preserve">
+    <value>Превышено допустимое число символов</value>
+    <comment>new</comment>
+  </data>
+  <data name="ApplicantStepIncomplete" xml:space="preserve">
+    <value>не заполнен шаг заявителя</value>
+    <comment>new</comment>
+  </data>
+  <data name="RequestAlreadyExists" xml:space="preserve">
+    <value>     Уважаемый(ая) заявитель, на Ваше имя в системе уже зарегистрировано заявление</value>
+    <comment>new</comment>
+  </data>
+  <data name="IncorrectMarriageStatus" xml:space="preserve">
+    <value>По данным ГБД ЗАГС у вас зарегистрирован брак, не указанный при заполнении заявки</value>
+  </data>
+  <data name="MarriageCertRequired" xml:space="preserve">
+    <value>Для браков зарегистрированных до 1 июня 2008 года необходимо прикрепить свидетельство о браке</value>
+  </data>
+  <data name="BirthCertRequired" xml:space="preserve">
+    <value>Для членов семьи, родившихся до 13 августа 2007 года необходимо прикрепить свидетельство о рождении</value>
+  </data>
+  <data name="SelectValue" xml:space="preserve">
+    <value>Выберите значение</value>
+    <comment>new</comment>
+  </data>
+  <data name="ChildAgeDoesnMatch" xml:space="preserve">
+    <value>Возраст ребенка не соответствует требованиям услуги</value>
+    <comment>new</comment>
+  </data>
+  <data name="IinNotFilled" xml:space="preserve">
+    <value>ИИН не заполнен!</value>
+    <comment>new</comment>
+  </data>
+  <data name="IinRequired" xml:space="preserve">
+    <value>Требуется поле ИИН заявителя.</value>
+  </data>
+  <data name="PermanentRegistration" xml:space="preserve">
+    <value>В данном направлении могут принять участие граждане, имеющие постоянную регистрацию по месту жительства в г.Астана.</value>
+  </data>
+  <data name="ByXin" xml:space="preserve">
+    <value>По ИИН:</value>
+  </data>
+  <data name="NotFind" xml:space="preserve">
+    <value> ничего не найдено!</value>
+  </data>
+  <data name="DeleteDublicate" xml:space="preserve">
+    <value>Удалите все дублирующиеся элементы из списка.</value>
+  </data>
+  <data name="DoesntMatch" xml:space="preserve">
+    <value>Введенный уникальный номер не соответствует данным заявителя. Пожалуйста, убедитесь в правильности введенной информации</value>
+  </data>
+  <data name="NotMoreSixAge" xml:space="preserve">
+    <value>Возраст ребенка не должен превышать 6 лет</value>
+  </data>
+  <data name="AdminController_CreateNewRole_WithoutSpace" xml:space="preserve">
+    <value>Наименование роли не может содержать пробелы</value>
+  </data>
+  <data name="AdminController_CreateNewRole_ExistedRole" xml:space="preserve">
+    <value>Отказано в регистрации роли. Роль с наименованием: {0} уже существует</value>
+  </data>
+  <data name="AdminController_ReWorkApplication_ExistedNumber" xml:space="preserve">
+    <value>Заявка с номером: {0}, была ранее зарегистрирована в системе</value>
+  </data>
+  <data name="AdminController_AddRolePermission_RenouncementRight" xml:space="preserve">
+    <value>Отказано в привязке права. Право с наименованием: {0} уже привязано к роли {1}</value>
+  </data>
+  <data name="AdminController_RoleUpdate_ExistedRole" xml:space="preserve">
+    <value>Отказано в обновлении роли. Роль с наименованием: {0} не существует</value>
+  </data>
+  <data name="AreYouSureDequeue" xml:space="preserve">
+    <value>Действительно ли вы хотите снять ребенка с очереди? В случае снятия с очереди ребенка, восстановление текущей очереди невозможна</value>
+  </data>
+  <data name="NotDataSignature" xml:space="preserve">
+    <value>Нет данных для подписи</value>
+  </data>
+</root>
