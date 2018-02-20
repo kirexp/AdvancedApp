@@ -1,10 +1,18 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-
-const routes: Routes = [];
-
+import { CommonModule } from '@angular/common';
+import { EmployeeRoutingModule } from './employee.routing.module';
+import { MainPageComponent } from './main-page/main-page.component';
+import { HttpClient } from '@angular/common/http';
+import { Remote } from '../../services/http-client';
+import { AuthManager } from '../../services/auth-manager';
+import { Router } from '@angular/router';
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  imports: [
+    CommonModule,
+    EmployeeRoutingModule,
+  ],
+  declarations: [MainPageComponent],
+  bootstrap:[MainPageComponent],
+  providers:[HttpClient,Remote,AuthManager]
 })
-export class EmployeeRoutingModule { }
+export class EmployeeModule{ }

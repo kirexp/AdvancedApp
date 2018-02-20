@@ -12,6 +12,7 @@ using Microsoft.Extensions.Primitives;
 using Microsoft.IdentityModel.Tokens;
 using WebApi.Auth;
 using WebApi.Auth.Models;
+using WebApi.Controllers;
 using WebApi.Hub;
 
 namespace WebApi
@@ -34,6 +35,7 @@ namespace WebApi
             policy.Headers.Add("*");
             policy.Methods.Add("*");
             policy.Origins.Add("*");
+            
             policy.SupportsCredentials = true;
 
             services.AddCors(x => x.AddPolicy("corsGlobalPolicy", policy));
@@ -70,7 +72,6 @@ namespace WebApi
                     }
                 };
             });
-
             services.AddIdentityCore<User>(options => { })
                 .AddUserManager<ApplicationUserManager<User>>().AddUserStore<ApplicationUserStore>().AddSignInManager<ApplicationSignInManger<User>>()
                 .AddDefaultTokenProviders();

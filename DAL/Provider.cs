@@ -43,10 +43,7 @@ namespace DAL {
                                     .Conventions.Add<EnumConvention>()))
                             .ExposeConfiguration(x => new SchemaUpdate(x).Execute(false, true))
                             .BuildConfiguration();
-                        if (ConfigurationManager.AppSettings["SchemaUpdate"] == "true") {
-                            _factory = cfg.BuildSessionFactory();
-                        }
-
+                            _factory = cfg.BuildSessionFactory();                 
                     }
                 }
             }
