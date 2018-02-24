@@ -1,6 +1,4 @@
 import { Injectable } from "@angular/core";
-
-
 export class UserDto{
     unique_name:string;
     UserName:string;
@@ -22,6 +20,7 @@ export class User{
 export class AuthintithicationResult{
     IsSuccess:boolean;
     Identity:User;
+    AuthintithicationError:string;
     /**
      *
      */

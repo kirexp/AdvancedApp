@@ -6,18 +6,22 @@ import { AppRoutingModule } from './app.routing.module';
 import { AuthManager } from './services/auth-manager';
 import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { AuthenticationInterceptor } from './services/intercepter';
-import { AuthPageComponent } from './shared-components/auth-page.component';
+
 import { AuthGuard } from './services/auth-guard';
 import { LocalStorageSession } from './models/local-storage.credential';
 import { AuthVariables } from './models/User';
 import { Remote } from './services/http-client';
 import { Router, RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { UnAuthGuard } from './services/unauthorized-guard';
+import { AuthPageComponent } from './shared-components/auth.page.component/auth-page.component';
+import { RegistrationPageComponent } from './shared-components/registration-page/registration-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuthPageComponent
+    AuthPageComponent,
+    RegistrationPageComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +35,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     provide: HTTP_INTERCEPTORS,
     useClass: AuthenticationInterceptor,
     multi: true,
-  },AuthGuard,LocalStorageSession,AuthManager,AuthVariables,Remote,HttpClientModule],
+  },AuthGuard,UnAuthGuard,LocalStorageSession,AuthManager,AuthVariables,Remote,HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

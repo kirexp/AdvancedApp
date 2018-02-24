@@ -12,11 +12,14 @@
   *ngIf="myForm.controls['password'].invalid && myForm.controls['password'].touched">
   Incorrect pasword
 </div>
-  <input type="submit" name="login" class="login login-submit" value="login">
+  <div *ngIf="authError!=null && authError.length>0" class="alert alert-danger">
+      {{authError}}
+  </div>
+  <input type="submit"  [disabled]="myForm.valid==false" name="login" class="btn btn-primary" value="login"> <!--login login-submit-->
 </form>
   
 <div class="login-help">
-  <a href="#">Register</a> • <a href="#">Forgot Password</a>
+  <a [routerLink]="['/register']" >Register</a> • <a href="#">Forgot Password</a>
 </div>
 </div>
 

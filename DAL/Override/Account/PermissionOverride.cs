@@ -6,7 +6,7 @@ namespace DAL.Override.Account {
     public class PermissionOverride : IAutoMappingOverride<Permission> {
         public void Override(AutoMapping<Permission> mapping) {
             mapping.Table("_Permission");
-            mapping.HasManyToMany(x => x.Roles).Cascade.All();
+            mapping.HasManyToMany(x => x.Roles).Cascade.SaveUpdate();
         }
     }
 }

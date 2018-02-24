@@ -8,8 +8,7 @@ namespace WebApi.Controllers
     {
         // GET api/values
         [HttpGet]
-        public IEnumerable<string> Get()
-        {
+        public IEnumerable<string> Get() {
             return new string[] { "value1", "value2" };
         }
 

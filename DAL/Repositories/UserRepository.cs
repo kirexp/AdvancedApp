@@ -58,20 +58,20 @@ namespace DAL.Repositories {
             }
         }
 
-        public User CreateNewUser(UserTypeEnum userType, Profile profile) {
-            var user = this.Get(x => x.UserName == profile.IIN).SingleOrDefault();
-            if (user != null) {
-                return user;
-            }
-            user = new User() {
-                UserType = userType,
-                Profile = profile,
-                UserName = profile.IIN,
-                LastPasswordChangedDate = DateTime.Now,
-                Password = new PasswordHasher().HashPassword(Constants.Applicant.ClientDefaultPassword),
-            };
-            this.Insert(user);
-            return user;
-        }
+        //public User CreateNewUser(UserTypeEnum userType, Profile profile) {
+        //    var user = this.Get(x => x.UserName == profile.IIN).SingleOrDefault();
+        //    if (user != null) {
+        //        return user;
+        //    }
+        //    user = new User() {
+        //        UserType = userType,
+        //        Profile = profile,
+        //        UserName = profile.IIN,
+        //        LastPasswordChangedDate = DateTime.Now,
+        //        Password = new PasswordHasher().HashPassword(Constants.Applicant.ClientDefaultPassword),
+        //    };
+        //    this.Insert(user);
+        //    return user;
+        //}
     }
 }

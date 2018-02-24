@@ -92,12 +92,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigHelperOld.cs" />
     <Compile Include="ConfigHelper.cs" />
     <Compile Include="DateTimeHelper.cs" />
     <Compile Include="DigitToWordConverter.cs" />
     <Compile Include="EmailSender.cs" />
     <Compile Include="EnumExtensions.cs" />
     <Compile Include="GenLogger.cs" />
+    <Compile Include="Logger.cs" />
     <Compile Include="ParallelEmailSender.cs" />
     <Compile Include="ParallelHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

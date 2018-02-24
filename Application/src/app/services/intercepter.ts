@@ -15,7 +15,7 @@ export class AuthenticationInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     debugger;
     if(this.authManager.JwtToken!=null){
-      req.headers.append('Authorization', this.authManager.JwtToken)
+      req.headers.append('Authorization', 'Bearer '+this.authManager.JwtToken)
     }
     return next.handle(req);
   }
