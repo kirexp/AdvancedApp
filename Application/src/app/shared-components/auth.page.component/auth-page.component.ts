@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators,FormArray,FormBuilder} from '@angular/forms';
-import { AuthManager } from '../services/auth-manager';
 import {Router} from '@angular/router';
 import { debug } from 'util';
+import { AuthManager } from '../../services/auth-manager';
 
 @Component({
   selector: 'app-auth-page',
@@ -11,7 +11,8 @@ import { debug } from 'util';
 })
 export class AuthPageComponent implements OnInit {
  public myForm:FormGroup;
-  constructor(private authManager:AuthManager,private router:Router,) {
+ public authError:string="";
+  constructor(private authManager:AuthManager,private router:Router) {
     this.myForm=new FormGroup({
       name:new FormControl('',[
         Validators.required, 
@@ -26,9 +27,19 @@ export class AuthPageComponent implements OnInit {
   }
   submit(form:FormGroup){
     debugger;
+    form.valid
     if(form.value.name!=''&&form.value.password!=''){
-      this.authManager.Authintithicate(form.value.name,form.value.password);
-      this.router.navigateByUrl('/employee')
+      let result =this.authManager.Authintithicate(form.value.name,form.value.password);
+      result.subscribe(result=>{
+        if(!result.IsSuccess){
+          this.authError=result.AuthintithicationError;
+        }else{
+          this.router.navigateByUrl('/employee')
+        }
+      },error=>{
+        this.authError=error.AuthintithicationError;
+      });
+
     }
   }
 }

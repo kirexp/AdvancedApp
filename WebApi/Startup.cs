@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Threading.Tasks;
 using DAL.Entities.Account;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -29,7 +30,6 @@ namespace WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
             services.AddMvc();
             var policy = new Microsoft.AspNetCore.Cors.Infrastructure.CorsPolicy();
             policy.Headers.Add("*");
@@ -72,7 +72,9 @@ namespace WebApi
                     }
                 };
             });
-            services.AddIdentityCore<User>(options => { })
+            services.AddIdentityCore<User>(options => {
+
+            })
                 .AddUserManager<ApplicationUserManager<User>>().AddUserStore<ApplicationUserStore>().AddSignInManager<ApplicationSignInManger<User>>()
                 .AddDefaultTokenProviders();
             services.AddTransient<SignInManager<User>, ApplicationSignInManger<User>>();

@@ -24,7 +24,9 @@ export class LocalStorageSession implements ISignInManager{
              this.SetCredentials(authResult.accessToken);
              return new AuthintithicationResult(true,new User(userName));
             }else{
-                return new AuthintithicationResult(false,new User(''));
+                let authRes=new AuthintithicationResult(false,new User(''));
+                authRes.AuthintithicationError=response.errorText;
+                return authRes;
             }
         })
     }
@@ -32,8 +34,10 @@ export class LocalStorageSession implements ISignInManager{
         try{
             // var shim = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6IkpvaG4gRG9lIiwiQ2xhaW1zIjpbIkFkbWluIiwiU3VwZXJVc2VyIiwiRGVtaUdvZCJdfQ.I6zcYKvimTWl-xnUjUN_WjJyFbM5NbDEr0bp7sZaaZE";
             // jwt=shim;
-            let jwtPayload=JSON.parse(atob(jwt.split('.')[1])) as UserDto;
-           jwtPayload.role.map(x=>localStorage.setItem(x,'true'));
+            let jwtPayload=JSON.parse(atob(jwt.split('.')[1])) as UserDto; //
+            if(jwtPayload.Type!="Client"){
+                jwtPayload.role.map(x=>localStorage.setItem(x,'true'));
+            }
            localStorage.setItem(this.constants.JWT,jwt);
            localStorage.setItem(this.constants.UserName,jwtPayload.unique_name);
            localStorage.setItem(this.constants.ExpirationDateTime,jwtPayload.exp.toString());

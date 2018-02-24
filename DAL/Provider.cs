@@ -1,5 +1,6 @@
 ﻿using System.Configuration;
 using System.Linq;
+using Common;
 using DAL.Conventions;
 using DAL.Entities.Account;
 using DAL.Override.Account;
@@ -31,9 +32,10 @@ namespace DAL {
             if (_factory == null) {
                 lock (SyncObject) {
                     if (_factory == null) {
+                        var connectionString = ConfigHelper.GetConnectionString("DefaultConnection");
                         var cfg = Fluently.Configure()
                             .Database(
-                                MsSqlConfiguration.MsSql2008.ConnectionString("Data Source=10.202.19.111;Initial Catalog=AlmatyDDO_DB;User ID=sa;Password=ASD123qwe")) //x => x.FromConnectionStringWithKey("ESADB")).FormatSql().ShowSql())
+                                MsSqlConfiguration.MsSql2008.ConnectionString(connectionString).FormatSql().ShowSql())
                             .Mappings(c =>
                                 c.AutoMappings.Add(AutoMap.AssemblyOf<User>()
                                     .Where(x => x.GetInterfaces().Contains(typeof(IEntity)))

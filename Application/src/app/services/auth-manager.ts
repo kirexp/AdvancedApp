@@ -1,15 +1,16 @@
-import { User, AuthResult } from "../models/User";
-import { debug } from "util";
+import { User, AuthResult, AuthintithicationResult } from "../models/User";
+import { debug, error } from "util";
 import { Inject } from "@angular/core";
 import { LocalStorageSession } from "../models/local-storage.credential";
 import { Remote } from "./http-client";
 import { Router } from "@angular/router";
+import 'rxjs/add/operator/map'
+import { Observable } from "rxjs/Observable";
 export class AuthManager{
     Identity:User;
     IsAuthenticated:boolean=false;
     JwtToken:string;
-    constructor(@Inject(LocalStorageSession) private auth:LocalStorageSession, 
-   @Inject(Router) private router:Router) {
+    constructor(@Inject(LocalStorageSession) private auth:LocalStorageSession) {
         let result = auth.Verify();
         if(result.IsSuccess){
             this.Identity=result.Identity;
@@ -18,15 +19,15 @@ export class AuthManager{
             this.Identity=new User("");
         }
     }
-    Authintithicate(userName:string,password:string){
+    Authintithicate(userName:string,password:string):Observable<AuthintithicationResult>{
         let result = this.auth.Authintithicate(userName,password);
-        result.subscribe((result)=>{
+        return result.map((result)=>{
             if(result.IsSuccess){
                 this.IsAuthenticated=true;
                 this.Identity=result.Identity;
-                this.router.navigateByUrl('/employee')
             }
-        })
+            return result;
+        });
     }
     Verify():boolean{
         let result = this.auth.Verify();

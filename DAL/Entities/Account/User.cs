@@ -15,7 +15,6 @@ namespace DAL.Entities.Account
         public virtual DateTimeOffset? LockoutEndDateUtc { get; set; }
         public virtual int AccessFailedCount { get; set; }
         public virtual bool LockoutEnabled { get; set; }
-        public virtual Profile Profile { get; set; }
         public virtual UserTypeEnum UserType { get; set; }
         public virtual ISet<Role> Roles { get; set; }
 
