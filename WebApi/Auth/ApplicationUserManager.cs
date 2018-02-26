@@ -6,6 +6,10 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
 namespace WebApi.Auth {
+    /// <summary>
+    /// adsasd
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class ApplicationUserManager<T>:Microsoft.AspNetCore.Identity.UserManager<User>
     {
         public ApplicationUserManager(Microsoft.AspNetCore.Identity.IUserStore<User> store,
