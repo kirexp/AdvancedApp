@@ -6,7 +6,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
 namespace WebApi.Auth {
-    public class ApplicationUserManager<T>:Microsoft.AspNetCore.Identity.UserManager<DAL.Entities.Account.User>
+    public class ApplicationUserManager<T>:Microsoft.AspNetCore.Identity.UserManager<User>
     {
         public ApplicationUserManager(Microsoft.AspNetCore.Identity.IUserStore<User> store,
             IOptions<IdentityOptions> optionsAccessor, IPasswordHasher<User> passwordHasher,

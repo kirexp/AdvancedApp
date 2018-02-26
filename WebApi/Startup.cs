@@ -2,6 +2,7 @@
 using System.IO;
 using System.Threading.Tasks;
 using DAL.Entities.Account;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -79,8 +80,9 @@ namespace WebApi
                 .AddDefaultTokenProviders();
             services.AddTransient<SignInManager<User>, ApplicationSignInManger<User>>();
             services.AddTransient<ApplicationSignInManger<User>, ApplicationSignInManger<User>>();
-            services.AddTransient<UserManager<User>, ApplicationUserManager<User>>();
+            services.AddTransient<Microsoft.AspNetCore.Identity.UserManager<User>, ApplicationUserManager<User>>();
             services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddTransient<IUser<long>,User>();
             services.AddScoped<SignInRepository, SignInRepository>();
             services.AddSignalR();
         }
