@@ -5,12 +5,15 @@ import { AppComponent } from './app.component';
 import { UnAuthGuard } from './services/unauthorized-guard';
 import { AuthPageComponent } from './shared-components/auth.page.component/auth-page.component';
 import { RegistrationPageComponent } from './shared-components/registration-page/registration-page.component';
+import { HomePageComponent } from './shared-components/home-page/home-page.component';
 
 
 const routes: Routes = [
   {path:'auth-page',component:AuthPageComponent,canActivate:[UnAuthGuard]},
   {path:'employee',loadChildren: './modules/employee-module/employee.module#EmployeeModule',canActivate:[AuthGuard]},
-  {path:'register',component:RegistrationPageComponent,canActivate:[UnAuthGuard]}
+  {path:'client',loadChildren: './modules/client-module/client.module#ClientModule',canActivate:[AuthGuard]},
+  {path:'register',component:RegistrationPageComponent,canActivate:[UnAuthGuard]},
+  {path:'**',component:HomePageComponent,canActivate:[UnAuthGuard]}
 ];
 
 @NgModule({

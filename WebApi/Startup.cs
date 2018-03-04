@@ -82,7 +82,6 @@ namespace WebApi
             services.AddTransient<ApplicationSignInManger<User>, ApplicationSignInManger<User>>();
             services.AddTransient<Microsoft.AspNetCore.Identity.UserManager<User>, ApplicationUserManager<User>>();
             services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddTransient<IUser<long>,User>();
             services.AddScoped<SignInRepository, SignInRepository>();
             services.AddSignalR();
         }

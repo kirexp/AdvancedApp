@@ -5,6 +5,7 @@ import { Inject } from '@angular/core';
 import { debug } from 'util';
 
 export class Remote{
+    baseUri:string="http://localhost:49432";
     /**
      *
      */

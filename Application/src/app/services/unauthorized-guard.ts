@@ -10,10 +10,11 @@ export class UnAuthGuard implements CanActivate{
     }
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
       var allow= this.authService.Verify();
+      var routeParam = this.authService.Identity.Type=="Employee"?"employee":"client";
       if(!allow){
           return true;
       }else{
-        this.router.navigateByUrl('/')
+        this.router.navigateByUrl(routeParam)
       }
     }
     

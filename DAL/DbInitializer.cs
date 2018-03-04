@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using DAL.Entities;
 using DAL.Entities.Account;
 using DAL.Repositories;
 using Enums;
@@ -23,37 +24,25 @@ namespace DAL {
                 var administrationPanelView = new Permission {
                     Name = Constants.Permission.AdministrationPanelView,
                     NameRu = "Панели администрирования. Просмотр",
-                    NameKz = "Панели администрирования. Просмотр",
                 };
                 permissionsRepository.Insert(administrationPanelView);
                 var editEmployeePermission = new Permission {
                     Name = Constants.Permission.AdministrationPanelEmployeeEdit,
                     NameRu = "Пользователи. Создание/редактирование",
-                    NameKz = "Пользователи. Создание/редактирование",
                 };
                 permissionsRepository.Insert(editEmployeePermission);
                 var roleViewPermission = new Permission {
                     Name = Constants.Permission.AdministrationRoleView,
                     NameRu = "Роли. Просмотр",
-                    NameKz = "Роли. Просмотр",
                 };
                 permissionsRepository.Insert(roleViewPermission);
                 var roleEditPerm = new Permission {
                     Name = Constants.Permission.AdministrationRoleEdit,
                     NameRu = "Роли. Создание/редактирование",
-                    NameKz = "Роли. Создание/редактирование",
                 };
-                permissionsRepository.Insert(roleEditPerm);
-                var privilegedView = new Permission {
-                    Name = Constants.Permission.PrivilegedView,
-                    NameRu = "База данных льготников. Просмотр",
-                    NameKz = "База данных льготников. Просмотр",
-                };
-                permissionsRepository.Insert(privilegedView);
                 var statisticsView = new Permission {
                     Name = Constants.Permission.StatisticsView,
                     NameRu = "Просмотр статистики",
-                    NameKz = "Просмотр статистики",
                 };
                 permissionsRepository.Insert(statisticsView);
                 var adminRole = new Role {
@@ -64,7 +53,6 @@ namespace DAL {
                         editEmployeePermission,
                         roleViewPermission,
                         roleEditPerm,
-                        privilegedView,
                         statisticsView,
                     }
                 };
@@ -80,6 +68,60 @@ namespace DAL {
                 userRep.Insert(admin);
             }
 
+        }
+
+        private void InitCars(Repository rep) {
+            var carRepository = new Repository<Vehicle>(rep);
+            if (!carRepository.Any()) {
+                carRepository.Insert(new Vehicle {
+                    Brand = "BMW m5",
+                    Class = "Seedan",
+                    CostPerMile = 2000,
+                    Number = "z2101ka"
+                });
+                carRepository.Insert(new Vehicle {
+                    Brand = "Mercedess v2",
+                    Class = "Seedan",
+                    CostPerMile = 2000,
+                    Number = "z2102ka"
+                });
+                carRepository.Insert(new Vehicle {
+                    Brand = "Toyota",
+                    Class = "Seedan",
+                    CostPerMile = 1000,
+                    Number = "z2103ka"
+                });
+                carRepository.Insert(new Vehicle {
+                    Brand = "Mazda rx9",
+                    Class = "Seedan",
+                    CostPerMile = 1300,
+                    Number = "z2104ka"
+                });
+                carRepository.Insert(new Vehicle {
+                    Brand = "Skoda l11",
+                    Class = "Seedan",
+                    CostPerMile = 2000,
+                    Number = "z2105ka"
+                });
+                carRepository.Insert(new Vehicle {
+                    Brand = "Derways f21",
+                    Class = "Seedan",
+                    CostPerMile = 2000,
+                    Number = "z2106ka"
+                });
+                carRepository.Insert(new Vehicle {
+                    Brand = "Chrysler m22",
+                    Class = "Seedan",
+                    CostPerMile = 3000,
+                    Number = "z2107ka"
+                });
+                carRepository.Insert(new Vehicle {
+                    Brand = "Chevrolet aura25",
+                    Class = "Seedan",
+                    CostPerMile = 2000,
+                    Number = "z2108ka"
+                });
+            }
         }
     }
 }

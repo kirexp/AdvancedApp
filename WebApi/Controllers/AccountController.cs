@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using DAL.Entities.Account;
 using DAL.Repositories;
 using Enums;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -62,13 +63,14 @@ namespace WebApi.Controllers
         public async Task<IActionResult> Register([FromBody]RegisterViewModel model){
             using (var repository = new Repository<User>()) {
                 var user = repository.Get(x => x.UserName == model.UserName).SingleOrDefault();
+                var hasher = new PasswordHasher();
                 if (user == null) {
                     user = new User {
                         UserName = model.UserName,
                         LastPasswordChangedDate = DateTime.Now,
                         UserType = UserTypeEnum.Client,
                         Email = model.Email,
-                        Password = model.Password
+                        Password = hasher.HashPassword(model.Password)
                     };
                     var result = await this.UserManager.CreateAsync(user);
                     if (result.Succeeded) {

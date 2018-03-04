@@ -26,7 +26,6 @@ export class AuthPageComponent implements OnInit {
   ngOnInit() {
   }
   submit(form:FormGroup){
-    debugger;
     form.valid
     if(form.value.name!=''&&form.value.password!=''){
       let result =this.authManager.Authintithicate(form.value.name,form.value.password);
@@ -34,7 +33,7 @@ export class AuthPageComponent implements OnInit {
         if(!result.IsSuccess){
           this.authError=result.AuthintithicationError;
         }else{
-          this.router.navigateByUrl('/employee')
+          this.router.navigateByUrl('/client')
         }
       },error=>{
         this.authError=error.AuthintithicationError;

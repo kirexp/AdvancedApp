@@ -16,12 +16,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UnAuthGuard } from './services/unauthorized-guard';
 import { AuthPageComponent } from './shared-components/auth.page.component/auth-page.component';
 import { RegistrationPageComponent } from './shared-components/registration-page/registration-page.component';
+import { HomePageComponent } from './shared-components/home-page/home-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthPageComponent,
-    RegistrationPageComponent
+    RegistrationPageComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
