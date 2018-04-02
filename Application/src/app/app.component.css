@@ -1,6 +1,8 @@
 #mainNav.navbar-shrink {
     border-color: rgba(34,34,34,.1);
     background-color: #fff;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 .sidebarity{
     margin-left: 15%;

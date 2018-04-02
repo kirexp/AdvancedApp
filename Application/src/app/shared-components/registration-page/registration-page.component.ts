@@ -38,7 +38,7 @@ export class RegistrationPageComponent implements OnInit {
       password:this.myForm.value.password,
       email:this.myForm.value.email,
     }
-    this.remote.post('http://localhost:49432/Account/Register',model).subscribe(res=>{
+    this.remote.post(this.remote.baseUri+'/Account/Register',model).subscribe(res=>{
       if(res.IsSuccess){
         let data =res.Data as AuthResult;
         debugger;

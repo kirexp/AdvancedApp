@@ -10,14 +10,16 @@ import { CabinetService } from '../../../../services/cabinet-service';
 export class CabinetComponent implements OnInit {
   rent:Rent;
   rentSummary:RentSummary;
-  constructor(@Inject(CabinetService)private cabinetService :CabinetService) { }
+  constructor(@Inject(CabinetService)private cabinetService :CabinetService) {
+    this.rent=new Rent(); //hack
+    this.rentSummary=new RentSummary();//hack
+   }
 
   ngOnInit() {
     this.cabinetService.GetLastRent().subscribe(x=>{
       this.rent=x.data as Rent;
     })
     this.cabinetService.GetSummary().subscribe(x=>{
-      debugger;
       this.rentSummary=x.data as RentSummary;
     })
   }

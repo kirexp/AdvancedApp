@@ -108,6 +108,9 @@
     <Compile Include="Override\Account\PermissionOverride.cs" />
     <Compile Include="Override\Account\ProfileOverride.cs" />
     <Compile Include="Override\Account\UserOverride.cs" />
+    <Compile Include="Override\CoordinatesOverride.cs" />
+    <Compile Include="Override\VehicleOverride.cs" />
+    <Compile Include="Override\VehicleStateOverride.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Provider.cs" />
     <Compile Include="Repositories\PermissionRepository.cs" />

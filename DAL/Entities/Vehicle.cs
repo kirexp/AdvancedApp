@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using DAL.Entities.Account;
 using Enums;
 
@@ -24,18 +25,21 @@ namespace DAL.Entities
         public virtual string Class { get; set; }
         public virtual string Brand { get; set; }
         public virtual int CostPerMile { get; set; }
+        public virtual VehicleState State { get; set; }
 
     }
     public class VehicleState:IEntity {
         public virtual long Id { get; set; }
         public virtual VehicleRentStatus Status { get; set; }
         public virtual Coordinates CurrentPosition { get; set; }
+        public virtual Vehicle Car { get; set; }
     }
     public class Coordinates:IEntity {
         public virtual long Id { get; set; }
-        public virtual int Longitude { get; set; }
-        public virtual int Latitude { get; set; }
+        public virtual decimal Longitude { get; set; }
+        public virtual decimal Latitude { get; set; }
         public virtual string Address { get; set; }
+        public virtual VehicleState State { get; set; }
     }
     public class VehicleHistory:IEntity {
         public virtual long Id { get; set; }

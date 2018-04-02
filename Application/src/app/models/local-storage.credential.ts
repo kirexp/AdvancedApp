@@ -17,7 +17,7 @@ export class LocalStorageSession implements ISignInManager{
             UserName:userName,
             Password:password
         }
-        return this.remote.post('http://localhost:49432/Account/Authenticate',model)
+        return this.remote.post(this.remote.baseUri+'/Account/Authenticate',model)
         .map((response)=>{
           if(response.state==1){
             let authResult = response.data as AuthResult;

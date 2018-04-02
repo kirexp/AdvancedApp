@@ -11,6 +11,7 @@ namespace DAL {
         public  void Seed() {
             using (var repository = new Repository<IEntity>()) {           
                 this.InitUsers(repository);
+                this.InitCars(repository);
                 repository.Commit();
             }
         }
@@ -73,54 +74,88 @@ namespace DAL {
         private void InitCars(Repository rep) {
             var carRepository = new Repository<Vehicle>(rep);
             if (!carRepository.Any()) {
-                carRepository.Insert(new Vehicle {
-                    Brand = "BMW m5",
-                    Class = "Seedan",
-                    CostPerMile = 2000,
-                    Number = "z2101ka"
-                });
-                carRepository.Insert(new Vehicle {
-                    Brand = "Mercedess v2",
-                    Class = "Seedan",
-                    CostPerMile = 2000,
-                    Number = "z2102ka"
-                });
-                carRepository.Insert(new Vehicle {
-                    Brand = "Toyota",
-                    Class = "Seedan",
-                    CostPerMile = 1000,
-                    Number = "z2103ka"
-                });
-                carRepository.Insert(new Vehicle {
-                    Brand = "Mazda rx9",
-                    Class = "Seedan",
-                    CostPerMile = 1300,
-                    Number = "z2104ka"
-                });
-                carRepository.Insert(new Vehicle {
-                    Brand = "Skoda l11",
-                    Class = "Seedan",
-                    CostPerMile = 2000,
-                    Number = "z2105ka"
-                });
-                carRepository.Insert(new Vehicle {
-                    Brand = "Derways f21",
-                    Class = "Seedan",
-                    CostPerMile = 2000,
-                    Number = "z2106ka"
-                });
-                carRepository.Insert(new Vehicle {
-                    Brand = "Chrysler m22",
-                    Class = "Seedan",
-                    CostPerMile = 3000,
-                    Number = "z2107ka"
-                });
-                carRepository.Insert(new Vehicle {
-                    Brand = "Chevrolet aura25",
-                    Class = "Seedan",
-                    CostPerMile = 2000,
-                    Number = "z2108ka"
-                });
+                for (int i = 0; i < 10; i++) {
+                    var car = new Vehicle {
+                        Brand = "BMW m" + i,
+                        Class = "Seedan",
+                        CostPerMile = 2000 + i + 200,
+                        Number = "z210" + i + "ka"
+                    };
+                    var state = new VehicleState {
+                        //Car = car,
+                        Status = VehicleRentStatus.Free
+                    };
+                    var coords = new Coordinates {
+                        Address = "",
+                        State = state,
+                        Latitude = Convert.ToDecimal("50," + i),
+                        Longitude = Convert.ToDecimal("30," + i)
+                    };
+                    state.CurrentPosition = coords;
+                    car.State = state;
+                    carRepository.Insert(car);
+                }
+
+                //carRepository.Insert(new Vehicle {
+                //    Brand = "BMW m5",
+                //    Class = "Seedan",
+                //    CostPerMile = 2000,
+                //    Number = "z2101ka"
+                //});
+                //var car1 = new Vehicle {
+                //    Brand = "Mercedess v2",
+                //    Class = "Seedan",
+                //    CostPerMile = 2000,
+                //    Number = "z2102ka",
+                //};
+                //var state1 = new VehicleState {
+                //    Car = car1,
+                //    CurrentPosition = new Coordinates {
+                //        Address = "asdasd",
+                //        Latitude = 75,
+                //        Longitude = 70
+                //    },
+                //    Status = VehicleRentStatus.Free
+                //};
+                //car1.State = state1;
+                //carRepository.Insert(car1);
+
+                //carRepository.Insert(new Vehicle {
+                //    Brand = "Toyota",
+                //    Class = "Seedan",
+                //    CostPerMile = 1000,
+                //    Number = "z2103ka"
+                //});
+                //carRepository.Insert(new Vehicle {
+                //    Brand = "Mazda rx9",
+                //    Class = "Seedan",
+                //    CostPerMile = 1300,
+                //    Number = "z2104ka"
+                //});
+                //carRepository.Insert(new Vehicle {
+                //    Brand = "Skoda l11",
+                //    Class = "Seedan",
+                //    CostPerMile = 2000,
+                //    Number = "z2105ka"
+                //});
+                //carRepository.Insert(new Vehicle {
+                //    Brand = "Derways f21",
+                //    Class = "Seedan",
+                //    CostPerMile = 2000,
+                //    Number = "z2106ka"
+                //});
+                //carRepository.Insert(new Vehicle {
+                //    Brand = "Chrysler m22",
+                //    Class = "Seedan",
+                //    CostPerMile = 3000,
+                //    Number = "z2107ka"
+                //});
+                //carRepository.Insert(new Vehicle {
+                //    Brand = "Chevrolet aura25",
+                //    Class = "Seedan",
+                //    CostPerMile = 2000,
+                //    Number = "z2108ka"
+                //});
             }
         }
     }

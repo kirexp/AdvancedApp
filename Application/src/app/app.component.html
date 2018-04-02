@@ -51,7 +51,7 @@
         </div>
       </div>
     </nav>
-    <div class="marginate-50">
+    <div [ngClass]="{'marginate-50':authManager.IsAuthenticated}">
         <router-outlet></router-outlet>
     </div>
 

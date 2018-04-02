@@ -7,7 +7,7 @@
                 <div class="row">
                   <div class="col-md-6">
                       <label class="label-text" for="">Всего проехано(км)</label>
-                      <span>{{rentSummary.summaryLength}}</span>
+                      <span>{{rentSummary.summaryLength|async}}</span>
                     </div>
                     <div class="col-md-6">
                         <label class="label-text" for="">Время в пути</label>
@@ -17,11 +17,11 @@
                 <div class="row">
                     <div class="col-md-6">
                         <label class="label-text" for="">На балансе(тг)</label>
-                        <span>{{rentSummary.summaryLength}}</span>
+                        <span>{{rentSummary.summaryLength|async}}</span>
                       </div>
                       <div class="col-md-6">
                           <label class="label-text" for="">Заморожено(тг)</label>
-                          <span>{{rentSummary.summaryLength}}</span>
+                          <span>{{rentSummary.summaryLength|async}}</span>
                       </div>
                   </div>
                   <div class="row">

@@ -3,9 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from '../../services/auth-guard';
 import { RentHistoryComponent } from './cabinet/rent-history/rent-history.component';
 import { CabinetComponent } from './cabinet/cabinet/cabinet.component';
+import { CarMapComponent } from './car-map/car-map.component';
 
 const routes: Routes = [
-  {path:'**',component:CabinetComponent}
+  {path:'map',component:CarMapComponent},
+  {path:'**',component:CabinetComponent},
+
 ];
 
 @NgModule({

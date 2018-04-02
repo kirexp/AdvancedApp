@@ -8,7 +8,7 @@ export class Rent{
 export class RentSummary{
       longestRentWay:number;
       longestRentTime:string;
-      lummaryLength:number
+      summaryLength:number
       summaryTime :string;
       freezed :number
 }

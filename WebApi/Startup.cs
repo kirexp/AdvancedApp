@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Threading.Tasks;
+using DAL;
 using DAL.Entities.Account;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -24,6 +25,7 @@ namespace WebApi
         public Startup(IConfiguration configuration)
         {
             this.Configuration = configuration;
+            new DbInitializer().Seed();
         }
 
         public IConfiguration Configuration { get; }
