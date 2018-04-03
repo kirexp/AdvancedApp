@@ -1,8 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import '../../../js/ymaps.js'
-import { ReserveManger } from '../../../services/reserve-manager';
-import { Car } from '../../../models/car';
-import { Remote } from '../../../services/http-client';
+import '../../js/ymaps.js'
+import { ReserveManger } from '../../services/reserve-manager';
+import { Car } from '../../models/car';
+import { Remote } from '../../services/http-client';
 declare var ymaps:any
 @Component({
   selector: 'app-car-map',

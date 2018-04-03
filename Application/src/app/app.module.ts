@@ -17,13 +17,16 @@ import { UnAuthGuard } from './services/unauthorized-guard';
 import { AuthPageComponent } from './shared-components/auth.page.component/auth-page.component';
 import { RegistrationPageComponent } from './shared-components/registration-page/registration-page.component';
 import { HomePageComponent } from './shared-components/home-page/home-page.component';
+import { CarMapComponent } from './shared-components/car-map/car-map.component';
+import { ReserveManger } from './services/reserve-manager';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthPageComponent,
     RegistrationPageComponent,
-    HomePageComponent
+    HomePageComponent,
+    CarMapComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,7 @@ import { HomePageComponent } from './shared-components/home-page/home-page.compo
     provide: HTTP_INTERCEPTORS,
     useClass: AuthenticationInterceptor,
     multi: true,
-  },AuthGuard,UnAuthGuard,LocalStorageSession,AuthManager,AuthVariables,Remote,HttpClientModule],
+  },AuthGuard,UnAuthGuard,LocalStorageSession,AuthManager,AuthVariables,Remote,HttpClientModule,ReserveManger],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

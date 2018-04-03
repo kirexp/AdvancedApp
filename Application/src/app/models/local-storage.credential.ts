@@ -19,7 +19,8 @@ export class LocalStorageSession implements ISignInManager{
         }
         return this.remote.post(this.remote.baseUri+'/Account/Authenticate',model)
         .map((response)=>{
-          if(response.state==1){
+            debugger;
+          if(response.isSuccess){
             let authResult = response.data as AuthResult;
              this.SetCredentials(authResult.accessToken);
              return new AuthintithicationResult(true,this.CreateUser(),authResult.accessToken);

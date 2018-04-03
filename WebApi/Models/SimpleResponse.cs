@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
 
 namespace WebApi.Models {
     public class SimpleResponse
@@ -27,7 +28,6 @@ namespace WebApi.Models {
             return new SimpleResponse<T> { ErrorText = errorText, Data = data };
         }
     }
-
     public class SimpleResponse<T> : SimpleResponse
     {
         public T Data { get; set; }

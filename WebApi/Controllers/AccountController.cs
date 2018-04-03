@@ -33,34 +33,35 @@ namespace WebApi.Controllers
             this._signInRepository = rep.Repository;
         }
         [HttpPost]
-        public async Task<IActionResult> Authenticate([FromBody]UserViewModel model){
+        public async Task<SimpleResponse> Authenticate([FromBody]UserViewModel model){
             using (var repository = new Repository<User>(this._signInRepository)) {
                 var user = repository.Get(x => x.UserName == model.UserName).SingleOrDefault();
                 if (user == null) {
-                    return Json(SimpleResponse.Error(HttpStatusCode.Forbidden,"Данный пользователь не зарегистрирован"));
+                    return SimpleResponse.Error(HttpStatusCode.Forbidden,"Данный пользователь не зарегистрирован");
                 }
                 var result = await this.SignInManager.PasswordSignInAsync(user, model.Password, false, false);
                 if (!result.Succeeded) {
-                    return Json(SimpleResponse.Error(HttpStatusCode.Forbidden, "Не верный пароль"));
+                    return SimpleResponse.Error(HttpStatusCode.Forbidden, "Не верный пароль");
                 }
                 else {
                     var requestAt = DateTime.Now;
                     var expiresIn = requestAt + TokenAuthOption.ExpiresSpan;
                     var token = await this.GenerateToken(user, expiresIn);
-                    return this.Json(new RequestResult {
-                        State = RequestState.Success,
-                        Data = new {
+                    return new AuthorizationResponse
+                    {
+                        IsSuccess = true,
+                        Data = new JwtResult {
                             createdAt = requestAt,
                             expiresIn = TokenAuthOption.ExpiresSpan.TotalSeconds,
                             tokenType = TokenAuthOption.TokenType,
                             accessToken = token
                         }
-                    });
+                    };
                 }
             }
         }
         [HttpPost]
-        public async Task<IActionResult> Register([FromBody]RegisterViewModel model){
+        public async Task<SimpleResponse> Register([FromBody]RegisterViewModel model){
             using (var repository = new Repository<User>()) {
                 var user = repository.Get(x => x.UserName == model.UserName).SingleOrDefault();
                 var hasher = new PasswordHasher();
@@ -77,20 +78,21 @@ namespace WebApi.Controllers
                         var requestAt = DateTime.Now;
                         var expiresIn = requestAt + TokenAuthOption.ExpiresSpan;
                         var token = await this.GenerateToken(user, expiresIn);
-                        return this.Json(new RequestResult {
-                            State = RequestState.Success,
-                            Data = new {
+                        return new SimpleResponse<JwtResult>
+                        {
+                            IsSuccess = true,
+                            Data = new JwtResult {
                                 createdAt = requestAt,
                                 expiresIn = TokenAuthOption.ExpiresSpan.TotalSeconds,
                                 tokenType = TokenAuthOption.TokenType,
                                 accessToken = token
                             }
-                        });
+                        };
                     } else {
-                        return Json(SimpleResponse.Error(HttpStatusCode.BadRequest, "Не удалось зарегистрироваться"));
+                        return SimpleResponse.Error(HttpStatusCode.BadRequest, "Не удалось зарегистрироваться");
                     }
                 } else {
-                    return Json(SimpleResponse.Error(HttpStatusCode.BadRequest, "Не удалось зарегистрироваться"));
+                    return SimpleResponse.Error(HttpStatusCode.BadRequest, "Не удалось зарегистрироваться");
                 }
             }
         }

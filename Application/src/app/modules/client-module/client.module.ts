@@ -6,7 +6,6 @@ import { CurrentRentComponent } from './cabinet/current-rent/current-rent.compon
 import { RentHistoryComponent } from './cabinet/rent-history/rent-history.component';
 import { CabinetComponent } from './cabinet/cabinet/cabinet.component';
 import { CabinetService } from '../../services/cabinet-service';
-import { CarMapComponent } from './car-map/car-map.component';
 import { BaloonContentComponent } from '../../shared-components/baloon-content/baloon-content.component';
 import { ReserveManger } from '../../services/reserve-manager';
 @NgModule({
@@ -16,7 +15,7 @@ import { ReserveManger } from '../../services/reserve-manager';
     DxDataGridModule,
   ],
   bootstrap:[CurrentRentComponent],
-  declarations: [CurrentRentComponent,RentHistoryComponent,CabinetComponent,CarMapComponent,BaloonContentComponent],
+  declarations: [CurrentRentComponent,RentHistoryComponent,CabinetComponent,BaloonContentComponent],
   providers:[CabinetService,ReserveManger]
 })
 export class ClientModule { }
