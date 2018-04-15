@@ -4,6 +4,7 @@ using System.Net;
 namespace WebApi.Models {
     public class SimpleResponse
     {
+        public Object Data { get; set; }
         public bool IsSuccess { get; set; }
         public string ErrorText { get; set; }
         public HttpStatusCode Code { get; set; }

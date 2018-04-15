@@ -1,43 +1,78 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using DAL.Entities;
-using DAL.Repositories;
-using Enums;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using WebApi.Hub;
 using WebApi.Models;
+using WebApi.Signletone;
 
 namespace WebApi.Controllers
 {
-    public class ReserveController : Controller
-    {
-        public IActionResult GetUnReservedVehicles() {
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    public class ReserveController : Controller {
+        private VehicleManager _manager;
+        public ReserveController() {
+            this._manager = new VehicleManager();
+        }
+        public SimpleResponse GetUnReservedVehicles() {
             try {
-                using (var repository = new Repository<Vehicle>()) {
-                    var freeCars = repository.Get(x => x.State.Status == VehicleRentStatus.Free).Select(x => new {
-                        Number = x.Number,
-                        Brand = x.Brand,
-                        Class = x.Class,
-                        Cost = x.CostPerMile,
-                        X = x.State.CurrentPosition.Latitude,
-                        Y = x.State.CurrentPosition.Longitude
-                    }).ToList();
-                    return Json(SimpleResponse.Success(freeCars));
-                }
+                var freeCars= _manager.GetVehicles();
+                    return SimpleResponse.Success(freeCars);
             }
             catch (Exception ex) {
                 var z = 0;
-                return Json(SimpleResponse.Error("2"));
+                return SimpleResponse.Error("2");
             }
         }
         [HttpGet]
-        public IActionResult GetVehicle(long id) {
-            var model = new VehicleModel();
-            var vehicle = model.Get(id);
+        public SimpleResponse GetVehicle(long id) {
+             var vehicle = _manager.Find(id);
             if (vehicle != null)
-                return Json(SimpleResponse.Success(vehicle));
-                return Json(SimpleResponse.Error("Не удалось найти данный автомобиль"));
+                return SimpleResponse.Success(vehicle);
+                return SimpleResponse.Error("Не удалось найти данный автомобиль");
+        }
+        [HttpPost]
+        public SimpleResponse CreateRent([FromBody]RentRequest model) {
+            long rentId;
+            var result = this._manager.CreateRent(model,out rentId);
+            if (result) {
+                var vehicleToRent = VehicleHub.ActiveVehicles.Single(x => x.Id == model.CarId);
+                VehicleHub.ActiveVehicles.Remove(vehicleToRent);
+                return SimpleResponse.Success(rentId);
+            }
+                return SimpleResponse.Error("Не удалось арендовать");
+        }
+        [HttpPost]
+        public SimpleResponse UnReserve([FromBody] RentUndoRequest model) {
+            VehicleDto vehicle;
+            var result = this._manager.UndoRent(model, out vehicle);
+            if (result) {
+                VehicleHub.ActiveVehicles.Add(vehicle);
+                return SimpleResponse.Success();
+            }
+            return SimpleResponse.Error("Не удалось отменить аренду");
         }
     }
+
+    public class RentRequest {
+        public long CarId { get; set; }
+        public string DestinationPoint { get; set; }
+        public Coordinates CurrentPosition { get; set; }
+        public int Payment { get; set; }
+
+    }
+    public class RentUndoRequest
+    {
+        public long RendId { get; set; }
+        public Coordinates CurrentPosition { get; set; }
+
+    }
+    public class Coordinates
+    {
+        public virtual decimal Longitude { get; set; }
+        public virtual decimal Latitude { get; set; }
+        public virtual string Address { get; set; }
+    }
+
 }

@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using WebApi.Hub;
+using WebApi.Signletone;
 
 namespace WebApi.Controllers
 {
@@ -9,6 +11,7 @@ namespace WebApi.Controllers
         // GET api/values
         [HttpGet]
         public IEnumerable<string> Get() {
+
             return new string[] { "value1", "value2" };
         }
 
@@ -16,6 +19,9 @@ namespace WebApi.Controllers
         [HttpGet("{id}")]
         public string Get(int id)
         {
+            var vehicleManager = new VehicleManager();
+            var toDelete = VehicleHub.ActiveVehicles[id];
+            VehicleHub.ActiveVehicles.Remove(toDelete);
             return "value";
         }
 

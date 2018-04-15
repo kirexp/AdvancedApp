@@ -61,7 +61,7 @@ namespace WebApi
                 };
                 cfg.Events = new JwtBearerEvents {
                     OnMessageReceived = context => {
-                        if (context.Request.Path.Value.StartsWith("/loo") &&
+                        if (context.Request.Path.Value.StartsWith("/vehicle") &&
                             context.Request.Query.TryGetValue("token", out StringValues token)
                         ) {
                             context.Token = token;
@@ -98,7 +98,7 @@ namespace WebApi
             app.UseCors("corsGlobalPolicy");
             app.UseAuthentication();
             app.UseSignalR(routes => {
-                routes.MapHub<LoopyHub>("loopy");
+                routes.MapHub<VehicleHub>("/vehicle"); 
             });
             app.UseMvc(routes => {
                 routes.MapRoute(
