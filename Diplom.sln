@@ -13,6 +13,26 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Constants", "Constants\Cons
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "WebApi\WebApi.csproj", "{963D3AE1-BF7F-423C-80AF-A81BAEAD6824}"
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Application", "Application\", "{DA7C8C61-12C0-4529-8C15-DEC4D91674B7}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_54237"
+		Debug.AspNetCompiler.PhysicalPath = "Application\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_54237\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_54237"
+		Release.AspNetCompiler.PhysicalPath = "Application\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_54237\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "54237"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +103,18 @@ Global
 		{963D3AE1-BF7F-423C-80AF-A81BAEAD6824}.Release|Any CPU.Build.0 = Release|Any CPU
 		{963D3AE1-BF7F-423C-80AF-A81BAEAD6824}.Release|x86.ActiveCfg = Release|Any CPU
 		{963D3AE1-BF7F-423C-80AF-A81BAEAD6824}.Release|x86.Build.0 = Release|Any CPU
+		{DA7C8C61-12C0-4529-8C15-DEC4D91674B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA7C8C61-12C0-4529-8C15-DEC4D91674B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA7C8C61-12C0-4529-8C15-DEC4D91674B7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DA7C8C61-12C0-4529-8C15-DEC4D91674B7}.Debug|x86.Build.0 = Debug|Any CPU
+		{DA7C8C61-12C0-4529-8C15-DEC4D91674B7}.Protected_Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA7C8C61-12C0-4529-8C15-DEC4D91674B7}.Protected_Release|Any CPU.Build.0 = Debug|Any CPU
+		{DA7C8C61-12C0-4529-8C15-DEC4D91674B7}.Protected_Release|x86.ActiveCfg = Debug|Any CPU
+		{DA7C8C61-12C0-4529-8C15-DEC4D91674B7}.Protected_Release|x86.Build.0 = Debug|Any CPU
+		{DA7C8C61-12C0-4529-8C15-DEC4D91674B7}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA7C8C61-12C0-4529-8C15-DEC4D91674B7}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{DA7C8C61-12C0-4529-8C15-DEC4D91674B7}.Release|x86.ActiveCfg = Debug|Any CPU
+		{DA7C8C61-12C0-4529-8C15-DEC4D91674B7}.Release|x86.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

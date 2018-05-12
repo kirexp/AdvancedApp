@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Common;
 using DAL.Entities;
 using DAL.Repositories;
 using Enums;
@@ -26,6 +27,7 @@ namespace WebApi.Controllers
             }
         }
         public IActionResult GetMyRentHistory() {
+            EventLogger.Info($"Запрос на GetMyRentHistory - {this.User.Identity.Name}");
             using (var repository = new Repository<Rent>()) {
                 var myRents = repository.Get(x => x.Tenant.UserName == this.User.Identity.Name);
                 return Json(myRents);
@@ -33,6 +35,7 @@ namespace WebApi.Controllers
         }
         [HttpGet]
         public IActionResult GetLastRent() {
+            EventLogger.Info($"Запрос на GetLastRent - {this.User.Identity.Name}");
             using (var repository = new Repository<Rent>()) {
                 var lastRent = repository.Get(x => x.Tenant.UserName == this.User.Identity.Name)
                     .OrderByDescending(x => x.Id).Select(x=>new RentViewModel {

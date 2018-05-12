@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Threading.Tasks;
+using Common;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.SignalR;
@@ -19,11 +20,13 @@ namespace WebApi.Hub
         public VehicleHub(IHubContext<VehicleHub> context) {
             this.context = context;
             this._vehicleManager=new VehicleManager();
-            if (ActiveVehicles == null) ActiveVehicles = new ObservableList<VehicleDto>(_vehicleManager.GetVehicles());
-           ActiveVehicles.OnAdd+=ActiveVehiclesOnOnAdd;
-            ActiveVehicles.OnRemove+=ActiveVehiclesOnOnRemove;
-        }
+            if (ActiveVehicles == null) {
+                ActiveVehicles = new ObservableList<VehicleDto>(_vehicleManager.GetVehicles());
+                ActiveVehicles.OnAdd += ActiveVehiclesOnOnAdd;
+                ActiveVehicles.OnRemove += ActiveVehiclesOnOnRemove;
+            }
 
+        }
         private void ActiveVehiclesOnOnRemove(object sender, VehicleDto e) {
             this.ReserveCar(e);
         }
@@ -34,9 +37,12 @@ namespace WebApi.Hub
             return this.Clients.All.SendAsync("onUnlocked", vehicle);
         }
         public Task ReserveCar(VehicleDto vehicle) {
+
+
             return this.context.Clients.All.SendAsync("onReserved", vehicle.Id);
         }
         public override Task OnConnectedAsync() {
+            EventLogger.Info("UserConnected"+DateTime.Now.ToString());
             Clients.Caller.SendAsync("onInitialize", ActiveVehicles);
             return base.OnConnectedAsync();
         }

@@ -1,14 +1,14 @@
 
  <div class="masthead">
     <div class="login-card">
-        <h1>Log-in</h1><br>
+        <h1>Авторизация</h1><br>
       <form [formGroup]="myForm" (ngSubmit)="submit(myForm)">
-        <input type="text"  formControlName="name" name="user" placeholder="Username">
+        <input type="text"  formControlName="name" name="user" placeholder="Логин(ИИН)">
         <div class="alert alert-danger"
         *ngIf="myForm.controls['name'].invalid && myForm.controls['name'].touched">
         Username is required
       </div>
-        <input type="password"  formControlName="password" name="pass" placeholder="Password">
+        <input type="password"  formControlName="password" name="pass" placeholder="Пароль">
         <div class="alert alert-danger"
         *ngIf="myForm.controls['password'].invalid && myForm.controls['password'].touched">
         Incorrect pasword
@@ -16,7 +16,7 @@
         <div *ngIf="authError!=null && authError.length>0" class="alert alert-danger">
             {{authError}}
         </div>
-        <input type="submit"  [disabled]="myForm.valid==false" name="login" class="btn btn-primary" value="login"> <!--login login-submit-->
+        <input type="submit"  [disabled]="myForm.valid==false" name="login" class="btn btn-primary" value="Войти"> <!--login login-submit-->
       </form>
         
       <div class="login-help">

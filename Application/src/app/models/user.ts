@@ -5,7 +5,7 @@ export class UserDto{
     role:string[];
     Type:string;
     Email:string;
-    exp:Date;
+    ExpirationDateTime:Date;
 }
 export class User{
     UserName:string;

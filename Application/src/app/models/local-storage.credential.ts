@@ -21,6 +21,8 @@ export class LocalStorageSession implements ISignInManager{
         .map((response)=>{
             debugger;
           if(response.isSuccess){
+
+            debugger;
             let authResult = response.data as AuthResult;
              this.SetCredentials(authResult.accessToken);
              return new AuthintithicationResult(true,this.CreateUser(),authResult.accessToken);
@@ -43,12 +45,13 @@ export class LocalStorageSession implements ISignInManager{
            localStorage.setItem(this.constants.Email,jwtPayload.Email);
            localStorage.setItem(this.constants.Type,jwtPayload.Type);
            localStorage.setItem(this.constants.UserName,jwtPayload.unique_name);
-           localStorage.setItem(this.constants.ExpirationDateTime,jwtPayload.exp.toString());
+           localStorage.setItem(this.constants.ExpirationDateTime,jwtPayload.ExpirationDateTime.toString());
         }catch(ex){
             console.log('Error on setting credentials');
         }
     }
     Verify(): AuthintithicationResult {
+        debugger
         if(localStorage.getItem(this.constants.UserName)!=null&&!this.IsExpired()){
             let jwt=localStorage.getItem(this.constants.JWT)
             return new AuthintithicationResult(true,this.CreateUser(),jwt);

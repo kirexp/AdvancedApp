@@ -1,4 +1,5 @@
-<nav *ngIf="authManager.IsAuthenticated==false" id="mainNav" class="navbar navbar-expand-lg navbar-light fixed-top navbar-shrink ola-navbar" >
+<nav *ngIf="authManager.IsAuthenticated==false" id="mainNav" class="navbar navbar-expand-lg 
+ fixed-top navbar-shrink navbar-dark bg-primary ola-navbar" >
     <a class="navbar-brand" [routerLink]="['/']" >ForeCast</a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav md-auto">
@@ -20,17 +21,7 @@
   <nav *ngIf="authManager.IsAuthenticated" id="mainNav" class="navbar navbar-expand-lg navbar-light fixed-top navbar-shrink ola-navbar" >
       <a class="navbar-brand" [routerLink]="['/']" >CarSharing</a>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav md-auto">
-          <li class="nav-item">
-            <a class="nav-link"  [routerLink]="['/client']">Главная</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['client/history']" >История</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" [routerLink]="['client/history']" >Карта</a>
-            </li>
-        </ul>
+        <app-navbar-client-header></app-navbar-client-header>
         <ul class="navbar-nav ml-auto">
         </ul>
         <div class="form-inline ">

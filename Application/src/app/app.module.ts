@@ -19,6 +19,7 @@ import { RegistrationPageComponent } from './shared-components/registration-page
 import { HomePageComponent } from './shared-components/home-page/home-page.component';
 import { CarMapComponent } from './shared-components/car-map/car-map.component';
 import { ReserveManger } from './services/reserve-manager';
+import { NavbarClientHeaderComponent } from './shared-components/navbar-client-header/navbar-client-header.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ReserveManger } from './services/reserve-manager';
     AuthPageComponent,
     RegistrationPageComponent,
     HomePageComponent,
-    CarMapComponent
+    CarMapComponent,
+    NavbarClientHeaderComponent
   ],
   imports: [
     BrowserModule,

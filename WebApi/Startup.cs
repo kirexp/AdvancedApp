@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Primitives;
 using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json;
 using WebApi.Auth;
 using WebApi.Auth.Models;
 using WebApi.Controllers;
@@ -33,7 +34,10 @@ namespace WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddMvc().AddJsonOptions(options =>
+            {
+                options.SerializerSettings.DateFormatHandling =DateFormatHandling.IsoDateFormat;
+            });
             var policy = new Microsoft.AspNetCore.Cors.Infrastructure.CorsPolicy();
             policy.Headers.Add("*");
             policy.Methods.Add("*");
@@ -57,7 +61,8 @@ namespace WebApi
                     // This defines the maximum allowable clock skew - i.e. provides a tolerance on the token expiry time 
                     // when validating the lifetime. As we're creating the tokens locally and validating them on the same 
                     // machines which should have synchronised time, this can be set to zero. and default value will be 5minutes
-                    ClockSkew = TimeSpan.FromMinutes(0)
+                    ClockSkew = TimeSpan.FromMinutes(0),
+                   
                 };
                 cfg.Events = new JwtBearerEvents {
                     OnMessageReceived = context => {
@@ -76,7 +81,6 @@ namespace WebApi
                 };
             });
             services.AddIdentityCore<User>(options => {
-
             })
                 .AddUserManager<ApplicationUserManager<User>>().AddUserStore<ApplicationUserStore>().AddSignInManager<ApplicationSignInManger<User>>()
                 .AddDefaultTokenProviders();
@@ -100,6 +104,7 @@ namespace WebApi
             app.UseSignalR(routes => {
                 routes.MapHub<VehicleHub>("/vehicle"); 
             });
+
             app.UseMvc(routes => {
                 routes.MapRoute(
                     name: "default",

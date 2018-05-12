@@ -16,7 +16,7 @@ namespace DAL.Entities
         public virtual RentStatus Status { get; set; }
         public virtual int  WayLength { get; set; }
         public virtual DateTime RentStartTime { get; set; }
-        public virtual DateTime RentEndTime{ get; set; }
+        public virtual DateTime? RentEndTime{ get; set; }
     }
     public class Vehicle:IEntity
     {

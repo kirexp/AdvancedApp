@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Net;
@@ -65,7 +66,7 @@ namespace WebApi.Controllers
             using (var repository = new Repository<User>()) {
                 var user = repository.Get(x => x.UserName == model.UserName).SingleOrDefault();
                 var hasher = new PasswordHasher();
-                if (user == null) {
+                if (user == null)  {
                     user = new User {
                         UserName = model.UserName,
                         LastPasswordChangedDate = DateTime.Now,
@@ -81,7 +82,8 @@ namespace WebApi.Controllers
                         return new SimpleResponse<JwtResult>
                         {
                             IsSuccess = true,
-                            Data = new JwtResult {
+                            Data = new JwtResult
+                            {
                                 createdAt = requestAt,
                                 expiresIn = TokenAuthOption.ExpiresSpan.TotalSeconds,
                                 tokenType = TokenAuthOption.TokenType,
@@ -103,7 +105,9 @@ namespace WebApi.Controllers
             var сlaims = new List<Claim>(new[] {
                 new Claim("Id", user.Id.ToString()),
                 new Claim("Email", user.Email),
-                new Claim("Type", user.UserType.ToString())
+                new Claim("Type", user.UserType.ToString()),
+                new Claim("ExpirationDateTime",expires.ToString("o", CultureInfo.InvariantCulture)) //HACK JwtSecurityTokenHandler cant use custom json serializer and
+                                                                                                    //default prop 'Expires' set unreadable value in javascript.
             });
             var roles = await this.UserManager.GetRolesAsync(user);
             foreach (var role in roles) {
@@ -119,8 +123,9 @@ namespace WebApi.Controllers
                 Audience = TokenAuthOption.Audience,
                 SigningCredentials = TokenAuthOption.SigningCredentials,
                 Subject = identity,
-                Expires = expires,
+                Expires = expires.ToUniversalTime(),
             });
+           
             return handler.WriteToken(securityToken);
         }
         //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "KindergartenListEdit")]

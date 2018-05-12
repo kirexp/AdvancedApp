@@ -25,7 +25,7 @@ namespace WebApi.Models
         public void GetSummary(string userName) {
             using (var repository = new Repository<Rent>()) {
                 var summary = repository.Get(x => x.Tenant.UserName == userName);
-                var z = summary.Select(x => new My {Start = x.RentStartTime, End = x.RentEndTime,}).ToList();
+                var z = summary.Select(x => new My {Start = x.RentStartTime, End = x.RentEndTime.Value,}).ToList();
                 this.LongestRentTime = this.Longest(z);
                 if (z.Count > 0) {
                     this.SummaryLength = summary.Sum(x => x.WayLength);

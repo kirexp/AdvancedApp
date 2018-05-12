@@ -20,6 +20,7 @@ export class RegistrationPageComponent implements OnInit {
       Validators.required,
       Validators.email
     ]),
+    docNumber:new FormControl('',[Validators.required]),
       password: new FormControl('',[
         Validators.required
       ]),

@@ -6,7 +6,7 @@ import { debug } from 'util';
 
 export class Remote{
     baseUri:string="http://localhost:49432";
-    //baseUri:string="http://95.59.125.132:1133";
+    // baseUri:string="http://95.59.125.132:1133";
     /**
      *
      */
