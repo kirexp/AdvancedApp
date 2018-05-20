@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.ReservePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image BackgroundColor="Blue" HeightRequest="200"></Image>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Label TextColor="Black" Text="Откуда (полный адрес)" FontAttributes="Bold"  Grid.Column="0" Grid.Row="0"></Label>
+                <Label TextColor="Black" Text="-"  Grid.Column="1" FontAttributes="Bold" FontSize="Large" Grid.Row="0" ></Label>
+                <Label TextColor="Black" Text="Куда (полнй адрес)"   FontAttributes="Bold" Grid.Column="0" Grid.Row="1"></Label>
+                <Label TextColor="Black" Text="-"  Grid.Column="1" FontAttributes="Bold" FontSize="Large" Grid.Row="1" ></Label>
+                <Label TextColor="Black" Text="Полный путь(км)"  FontAttributes="Bold"  Grid.Column="0" Grid.Row="2"></Label>
+                <Label TextColor="Black" Text="-"  FontAttributes="Bold" FontSize="Large" Grid.Column="1" Grid.Row="2" ></Label>
+                <Label TextColor="Black" Text="Затраченое время"  FontAttributes="Bold"  Grid.Column="0" Grid.Row="3"></Label>
+                <Label TextColor="Black" Text="-"  FontAttributes="Bold" FontSize="Large" Grid.Column="1" Grid.Row="3" ></Label>
+                <Label TextColor="Black" Text="К оплате (тг)"  FontAttributes="Bold"  Grid.Column="0" Grid.Row="4"></Label>
+                <Label TextColor="Black" Text="-"  FontAttributes="Bold" FontSize="Large" Grid.Column="1" Grid.Row="4" ></Label>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

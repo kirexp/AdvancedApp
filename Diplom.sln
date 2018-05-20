@@ -31,9 +31,20 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Application", "Application\
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "54237"
+		SlnRelativePath = "Application\"
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mobile", "Mobile", "{CD3AA2F5-526D-4FF1-88DA-54AEF311A312}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "App1", "Mobile\App1\App1\App1.shproj", "{C244D557-8855-4752-A5EF-8934B8D8446F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App1.Android", "Mobile\App1\App1.Android\App1.Android.csproj", "{8C92FF87-DBF6-4F86-B1FC-93F02161D8F9}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Mobile\App1\App1\App1.projitems*{8c92ff87-dbf6-4f86-b1fc-93f02161d8f9}*SharedItemsImports = 4
+		Mobile\App1\App1\App1.projitems*{c244d557-8855-4752-a5ef-8934b8d8446f}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|x86 = Debug|x86
@@ -115,9 +126,31 @@ Global
 		{DA7C8C61-12C0-4529-8C15-DEC4D91674B7}.Release|Any CPU.Build.0 = Debug|Any CPU
 		{DA7C8C61-12C0-4529-8C15-DEC4D91674B7}.Release|x86.ActiveCfg = Debug|Any CPU
 		{DA7C8C61-12C0-4529-8C15-DEC4D91674B7}.Release|x86.Build.0 = Debug|Any CPU
+		{8C92FF87-DBF6-4F86-B1FC-93F02161D8F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C92FF87-DBF6-4F86-B1FC-93F02161D8F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C92FF87-DBF6-4F86-B1FC-93F02161D8F9}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{8C92FF87-DBF6-4F86-B1FC-93F02161D8F9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8C92FF87-DBF6-4F86-B1FC-93F02161D8F9}.Debug|x86.Build.0 = Debug|Any CPU
+		{8C92FF87-DBF6-4F86-B1FC-93F02161D8F9}.Debug|x86.Deploy.0 = Debug|Any CPU
+		{8C92FF87-DBF6-4F86-B1FC-93F02161D8F9}.Protected_Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C92FF87-DBF6-4F86-B1FC-93F02161D8F9}.Protected_Release|Any CPU.Build.0 = Release|Any CPU
+		{8C92FF87-DBF6-4F86-B1FC-93F02161D8F9}.Protected_Release|Any CPU.Deploy.0 = Release|Any CPU
+		{8C92FF87-DBF6-4F86-B1FC-93F02161D8F9}.Protected_Release|x86.ActiveCfg = Release|Any CPU
+		{8C92FF87-DBF6-4F86-B1FC-93F02161D8F9}.Protected_Release|x86.Build.0 = Release|Any CPU
+		{8C92FF87-DBF6-4F86-B1FC-93F02161D8F9}.Protected_Release|x86.Deploy.0 = Release|Any CPU
+		{8C92FF87-DBF6-4F86-B1FC-93F02161D8F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C92FF87-DBF6-4F86-B1FC-93F02161D8F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C92FF87-DBF6-4F86-B1FC-93F02161D8F9}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{8C92FF87-DBF6-4F86-B1FC-93F02161D8F9}.Release|x86.ActiveCfg = Release|Any CPU
+		{8C92FF87-DBF6-4F86-B1FC-93F02161D8F9}.Release|x86.Build.0 = Release|Any CPU
+		{8C92FF87-DBF6-4F86-B1FC-93F02161D8F9}.Release|x86.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C244D557-8855-4752-A5EF-8934B8D8446F} = {CD3AA2F5-526D-4FF1-88DA-54AEF311A312}
+		{8C92FF87-DBF6-4F86-B1FC-93F02161D8F9} = {CD3AA2F5-526D-4FF1-88DA-54AEF311A312}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {82250DFB-AFAF-481F-822E-7D075344C6CA}

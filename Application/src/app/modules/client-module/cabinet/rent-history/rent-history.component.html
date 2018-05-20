@@ -1,26 +1,13 @@
 <dx-data-grid id="gridContainer"
-    [dataSource]="employees"
-    [masterDetail]="{ enabled: true, template: 'detail' }"
-    keyExpr="ID">
-
-    <dxi-column dataField="Prefix" [width]="70" caption="Title"></dxi-column>
-    <dxi-column dataField="FirstName"></dxi-column>
-    <dxi-column dataField="LastName"></dxi-column>
-    <dxi-column dataField="Position" [width]="170"></dxi-column>
-    <dxi-column dataField="State" [width]="125"></dxi-column>
-    <dxi-column dataField="BirthDate" dataType="date"></dxi-column>
-
-    <div *dxTemplate="let employee of 'detail'">
-        <div class="master-detail-caption">{{employee.data.FirstName + " " + employee.data.LastName + "'s Tasks:"}}</div>
-        <dx-data-grid
-            [dataSource]="employee.data.Tasks"
-            [showBorders]="true"
-            [columnAutoWidth]="true">
-                <dxi-column dataField="Subject"></dxi-column>
-                <dxi-column dataField="StartDate" dataType="date"></dxi-column>
-                <dxi-column dataField="DueDate" dataType="date"></dxi-column>
-                <dxi-column dataField="Priority"></dxi-column>
-                <dxi-column  dataType="boolean" caption="Completed" [calculateCellValue]="completedValue"></dxi-column>
-        </dx-data-grid>
+    [dataSource]="dataSource"
+    [masterDetail]="{ enabled: true ,template: 'detail'}"
+    [remoteOperations]="true"
+    keyExpr="id">
+    <dxi-column dataField="startingPoint" [width]="70" caption="Точка посадки"></dxi-column>
+    <dxi-column dataField="destinationPoint" caption="Точка высадки"></dxi-column>
+    <dxi-column dataField="wayLength" caption="Полный путь"></dxi-column>
+    <dxi-column dataField="payment" [width]="170" caption="Оплата"></dxi-column>
+    <div *dxTemplate="let rent of 'detail'">
+       <app-ymap-area [mapIdentifier]="'map'+rent.data.id" [startPoint]="rent.data.startCoordinates" [endPoint]="rent.data.endCoordinates"></app-ymap-area>
     </div>
 </dx-data-grid>

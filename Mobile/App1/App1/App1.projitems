@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{C244D557-8855-4752-A5EF-8934B8D8446F}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>App1</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)MainPageUnAuth.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)AboutPage.xaml.cs">
+      <DependentUpon>AboutPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ApiDTO\AuthorizationDTO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiDTO\RequestResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiDTO\VehicleDTO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Behaviors\BindableBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Behaviors\Class1.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Behaviors\EntryLengthValidatorBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Behaviors\EventToCommandBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Behaviors\LineColorBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converter\FirstValidationErrorConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Effects\EntryLineColorEffect.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extenssions\SettingsManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ObservableObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\DeviceHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)History.xaml.cs">
+      <DependentUpon>History.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)MainPageUnAuth.xaml.cs">
+      <DependentUpon>MainPageUnAuth.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)MainPageAuth.xaml.cs">
+      <DependentUpon>MainPageAuth.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\UserModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Vehicle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Notifiers\DisplayAlertNotifier.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Renderer\WhiteLinedEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Renderer\MyEntryRenderer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Renderer\ElipsEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RentCreationPage.xaml.cs">
+      <DependentUpon>RentCreationPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ReservePage.xaml.cs">
+      <DependentUpon>ReservePage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Services\AuthService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\CabinetService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Http.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Validation\IValidationRule.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Validation\IValidity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Validation\Rules\IsNotNullOrEmptyRule.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Validation\Rules\IsNotNullReferenceItemRule.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Validation\Rules\MinLengthRule.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Validation\Rules\PatternRule.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Validation\ValidatableObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)VehicleMap.xaml.cs">
+      <DependentUpon>VehicleMap.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Services\RentService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\AuthViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BaseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\RentCreationViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\UserViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Gorilla.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)MainPageAuth.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)History.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)VehicleMap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)AboutPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ReservePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)RentCreationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

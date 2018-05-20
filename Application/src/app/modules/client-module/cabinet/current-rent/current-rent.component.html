@@ -6,8 +6,8 @@
               <div class="container">
                 <div class="row">
                   <div class="col-md-6">
-                      <label class="label-text" for="">Всего проехано(км)</label>
-                      <span>{{rentSummary.summaryLength|async}}</span>
+                      <label class="label-text greyfull" for="">Всего проехано(км)</label>
+                      <span class="boldy">{{rentSummary.summaryLength|async}}</span>
                     </div>
                     <div class="col-md-6">
                         <label class="label-text" for="">Время в пути</label>
@@ -45,24 +45,24 @@
               <div class="container">
                   <div class="row">
                       <div class="col-md-12">
-                          <label class="label-text" for="">Откуда(полный адрес)</label>
+                          <label class="label-text greyfull" for="">Откуда(полный адрес)</label>
                           <span>-</span>
                         </div>
                         <div class="col-md-12">
                             <label class="label-text" for="">Куда(полный адрес)</label>
-                            <span>-</span>
+                            <span></span>
                         </div>
                         <div class="col-md-12">
                             <label class="label-text" for="">Полный путь(км)</label>
-                            <span>-</span>
+                            <span>{{lastRent.wayLength}}</span>
                         </div>
                         <div class="col-md-12">
                             <label class="label-text" for="">Затраченое время</label>
-                            <span>-</span>
+                            <span></span>
                         </div>
                         <div class="col-md-12">
                             <label class="label-text" for="">К оплате</label>
-                            <span>-</span>
+                            <span>{{lastRent.Payment}}</span>
                         </div>
                     </div>
               </div>

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.MainPageAuth"
+                  Title="CarSharingApp">
+    <MasterDetailPage.Master>
+        <ContentPage Title="Master" BackgroundColor="Transparent" BackgroundImage="detailBack.png">
+            <ContentPage.Content>
+                <StackLayout>
+                    <StackLayout Padding="0,5,0,0">
+                        <Image Source="userlogo.png" HeightRequest="100"></Image>
+                        <Label Text="Добро пожаловать" HorizontalTextAlignment="Center" TextColor="White"></Label>
+                        <Label Text="{Binding UserName}" HorizontalTextAlignment="Center" TextColor="White"></Label>
+                        <Label BackgroundColor="#bababa" Margin="30,0,30,0"  HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                    </StackLayout>
+                    <StackLayout Padding="5,20,5,5">
+
+                        <Button  Text="Личный кабинет"  FontSize="Small"
+                                 VerticalOptions="End"
+                                 BackgroundColor="Transparent" TextColor="White" Clicked="CabinetBtn_Clicked" >
+                        </Button>
+                        <Button Text="История брони" FontSize="Small"
+                                VerticalOptions="End"
+                                Clicked="HistoryRedirectBtn_Clicked"
+                                BackgroundColor="Transparent" TextColor="White"></Button>
+                        <Button Text="Забронировать авто" FontSize="Small"
+                                VerticalOptions="End"
+                                Clicked="RentACarRedirectBtn_Clicked"
+                                BackgroundColor="Transparent" TextColor="White"></Button>
+                        <Button Text="О программе" FontSize="Small"
+                                VerticalOptions="End"
+                                Clicked="AboutPageBtn_Clicked"
+                                BackgroundColor="Transparent" TextColor="White"></Button>
+                        <Button Text="Выход" FontSize="Small"
+                                VerticalOptions="End"
+                                Clicked="SignOutBtn_Clicked"
+                                BackgroundColor="Transparent" TextColor="White"></Button>
+                    </StackLayout>
+                </StackLayout>
+ 
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <ContentPage Title="Master">
+            <ContentPage.Content>
+                <Label Text="DetailPage" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

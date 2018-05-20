@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import * as AspNetData from "devextreme-aspnet-data-nojquery";
+import { Remote } from '../../../../services/http-client';
+import { AuthManager } from '../../../../services/auth-manager';
 
 @Component({
   selector: 'app-rent-history',
@@ -6,7 +9,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./rent-history.component.css']
 })
 export class RentHistoryComponent implements OnInit {
- employees: Employee[] = [{
+    customersData: any;
+    shippersData: any;
+    dataSource: any;
+    url: string;
+    masterDetailDataSource: any;
+/**
+ *
+ */
+
+ employees: Employee[] = [
+     {
     "ID": 1,
     "FirstName": "John",
     "LastName": "Heart",
@@ -61,7 +74,17 @@ export class RentHistoryComponent implements OnInit {
         "Completion": 100
     }]
 }]
-  constructor() { }
+  constructor(@Inject(Remote) private remote:Remote,private authManager:AuthManager) {
+    this.url = this.remote.baseUri+'/Cabinet';
+
+    this.dataSource = AspNetData.createStore({
+        key: "id",
+        loadUrl: this.url +"/GetMyRentHistory",
+        onBeforeSend:(method, ajaxOptions)=>{
+            ajaxOptions.headers = { 'Authorization': 'Bearer '+this.authManager.JwtToken };
+        },
+    });
+   }
 
   ngOnInit() {
   }

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:HelloApp;assembly:HelloApp"
+            xmlns:webview="clr-namespace:Xam.Plugin.WebView.Abstractions;assembly=Xam.Plugin.WebView.Abstractions"
+            x:Class="App1.VehicleMap" CurrentPageChanged="OnTabChanged">
+    <ContentPage BackgroundColor="White" x:Name="mapTab"    Icon="mapico.png" Title="Карта">
+
+        <StackLayout>
+            <!--<webview:FormsWebView x:Name="WebContent" Source="http://95.59.125.132:1122/map" />-->
+            <WebView x:Name="viewBrowser" HeightRequest="700" Source="http://95.59.125.132:1122/map"></WebView>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage BackgroundColor="White" x:Name="tableTab" Icon="listicon.png" Title="Список">
+        <StackLayout>
+            <Label Text="Список"></Label>
+            <ListView  RowHeight="100" x:Name="carList" ItemTapped="CarList_OnItemTapped">
+                <ListView.ItemTemplate >
+                    <DataTemplate >
+                        <ViewCell>
+                            <StackLayout Padding="5,8,5,8">
+                                <Frame HasShadow="True" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand">
+                                    <Grid Padding="1,1,1,1" RowSpacing="1" ColumnSpacing="1" VerticalOptions="FillAndExpand">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="90"></ColumnDefinition>
+                                            <ColumnDefinition Width="90"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Text="Номер" Grid.Row="0" Grid.Column="0"  FontSize="Micro"></Label>
+                                        <Label Text="Марка" Grid.Row="1" Grid.Column="0"  FontSize="Micro"></Label>
+                                        <Label Text="Стоймость" Grid.Row="2" Grid.Column="0"  FontSize="Micro"></Label>
+                                        <Label Text="{Binding Number}" Grid.Row="0" Grid.Column="1" FontSize="Micro"></Label>
+                                        <Label Text="{Binding Class}" Grid.Row="1" Grid.Column="1" FontSize="Micro"></Label>
+                                        <Label Text="{Binding Cost}" Grid.Row="2" Grid.Column="1" FontSize="Micro"></Label>
+                                        <Label Text="{Binding Id}" Grid.Row="2" IsVisible="False" Grid.Column="1" FontSize="Micro"></Label>
+                                        <Image  Grid.Row="0" Grid.Column="2" Source="https://l-userpic.livejournal.com/111628924/39184714" ></Image>
+                                    </Grid>
+                                </Frame>
+                            </StackLayout>
+
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage>
+</TabbedPage>

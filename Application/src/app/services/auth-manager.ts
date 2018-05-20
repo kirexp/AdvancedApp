@@ -21,12 +21,9 @@ export class AuthManager{
     }
     Authintithicate(userName:string,password:string):Observable<AuthintithicationResult>{
         let result = this.auth.Authintithicate(userName,password);
-        debugger;
         return result.map((result)=>{
             if(result.IsSuccess){
-                this.IsAuthenticated=true;
-                this.Identity=result.Identity;
-                this.JwtToken=result.Token;
+                this.SetResult(result.Identity,result.Token)
             }
             return result;
         });
@@ -48,6 +45,11 @@ export class AuthManager{
     }
     HasClaim(claimName:string):boolean{
         return this.Identity.role.indexOf(claimName)>-1;
+    }
+    private SetResult(identity:User,jwt:string){ //HACK
+        this.Identity=identity;
+        this.JwtToken=jwt;
+        this.IsAuthenticated=true;
     }
 
 }

@@ -27,6 +27,7 @@
     "core-js": "^2.4.1",
     "devextreme": "^17.2.6",
     "devextreme-angular": "^17.2.5",
+    "devextreme-aspnet-data-nojquery": "^1.4.5",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"
   },

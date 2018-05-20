@@ -13,6 +13,8 @@ namespace DAL.Override
     {
         public void Override(AutoMapping<Rent> mapping) {
             mapping.Map(x => x.RentEndTime).Nullable();
+            mapping.References(x => x.StartPoint).Cascade.SaveUpdate();
+            mapping.References(x => x.EndPoint).Cascade.SaveUpdate();
         }
     }
 }

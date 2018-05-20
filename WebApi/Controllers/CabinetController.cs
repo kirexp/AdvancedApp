@@ -2,10 +2,12 @@
 using Common;
 using DAL.Entities;
 using DAL.Repositories;
+using DevExtreme.AspNet.Data;
 using Enums;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using WebApi.ApiFolder;
 using WebApi.Models;
 
 namespace WebApi.Controllers
@@ -26,11 +28,17 @@ namespace WebApi.Controllers
                 }
             }
         }
-        public IActionResult GetMyRentHistory() {
+        public IActionResult GetMyRentHistory(AspNetDevextremeDataSourceLoader options) {
             EventLogger.Info($"Запрос на GetMyRentHistory - {this.User.Identity.Name}");
             using (var repository = new Repository<Rent>()) {
-                var myRents = repository.Get(x => x.Tenant.UserName == this.User.Identity.Name);
-                return Json(myRents);
+                var query = repository.Get(x => x.Tenant.UserName == this.User.Identity.Name).Select(x=>new RentViewModel {
+                    Id=x.Id,
+                    Payment = x.Payment,
+                    StartCoordinates = x.StartPoint,
+                    EndCoordinates = x.EndPoint,
+                    WayLength = x.WayLength
+                });
+                return Json(DataSourceLoader.Load(query, options));
             }
         }
         [HttpGet]
@@ -39,9 +47,7 @@ namespace WebApi.Controllers
             using (var repository = new Repository<Rent>()) {
                 var lastRent = repository.Get(x => x.Tenant.UserName == this.User.Identity.Name)
                     .OrderByDescending(x => x.Id).Select(x=>new RentViewModel {
-                        DestinationPoint = x.DestinationPoint,
                         Payment = x.Payment,
-                        StartingPoint = x.StartPoint,
                         WayLength = x.WayLength
                     }).FirstOrDefault();
                 return Json(SimpleResponse.Success(lastRent));

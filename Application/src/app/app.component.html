@@ -1,20 +1,20 @@
 <nav *ngIf="authManager.IsAuthenticated==false" id="mainNav" class="navbar navbar-expand-lg 
- fixed-top navbar-shrink navbar-dark bg-primary ola-navbar" >
-    <a class="navbar-brand" [routerLink]="['/']" >ForeCast</a>
+ fixed-top navbar-shrink  ola-navbar" >
+    <a class="navbar-brand" [routerLink]="['/']" >CARSHARING</a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav md-auto">
         <li class="nav-item">
-          <a class="nav-link"  [routerLink]="['/']">List</a>
+          <a class="nav-link"  [routerLink]="['/']">О НАС</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['employee']" >Other</a>
+          <a class="nav-link" [routerLink]="['employee']">ИНОЕ</a>
         </li>
       </ul>
       <ul class="navbar-nav ml-auto">
       </ul>
       <div class="form-inline my-2 my-lg-0">
-        <button *ngIf="authManager.IsAuthenticated==false" class="btn btn-outline-info my-2 my-sm-0" [routerLink]="['auth-page']">Sign In</button>
-        <button *ngIf="authManager.IsAuthenticated" class="btn btn-outline-info my-2 my-sm-0" [routerLink]="['auth-page']" (click)="SignOut()">Sign Out</button>
+        <button *ngIf="authManager.IsAuthenticated==false" class="btn btn-outline-info my-2 my-sm-0" [routerLink]="['auth-page']">Войти</button>
+        <button *ngIf="authManager.IsAuthenticated" class="btn btn-outline-info my-2 my-sm-0" [routerLink]="['auth-page']" (click)="SignOut()">Выйти</button>
       </div>
     </div>
   </nav>
@@ -27,7 +27,7 @@
         <div class="form-inline ">
             <div *ngIf="authManager.IsAuthenticated" style="margin-right:10px;">
                   <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
-                    <button class="btn btn-outline-warning" ngbDropdownToggle>Hello {{authManager.Identity.UserName}}
+                    <button class="btn btn-outline-warning" ngbDropdownToggle>Добрый день{{authManager.Identity.UserName}}
                         <span class="badge badge-light">9</span>
                     </button>
                     <div class="dropdown-menu" ngbDropdownMenu>
@@ -37,8 +37,8 @@
                     </div>
                   </div>
             </div>
-          <button *ngIf="authManager.IsAuthenticated==false" class="btn btn-outline-info " [routerLink]="['auth-page']">Sign In</button>
-          <button *ngIf="authManager.IsAuthenticated" class="btn btn-outline-info " [routerLink]="['auth-page']" (click)="SignOut()">Sign Out</button>
+          <button *ngIf="authManager.IsAuthenticated==false" class="btn btn-outline-info " [routerLink]="['auth-page']">Войти</button>
+          <button *ngIf="authManager.IsAuthenticated" class="btn btn-outline-info " [routerLink]="['auth-page']" (click)="SignOut()">Выйти</button>
         </div>
       </div>
     </nav>

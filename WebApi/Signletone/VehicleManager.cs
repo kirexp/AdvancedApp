@@ -39,11 +39,11 @@ namespace WebApi.Signletone
                 var rent = new Rent
                 {
                     Tenant = repository.Load<User>(1),
-                    DestinationPoint = requestData.DestinationPoint,
+                    EndPoint = requestData.DestinationPoint,
                     Payment = requestData.Payment,
                     RentDate = DateTime.Now,
                     RentStartTime = DateTime.Now,
-                    StartPoint = "",
+                    StartPoint = requestData.CurrentPosition,
                     Vehicle = vehicle,
                     Status = RentStatus.Active,
                 };

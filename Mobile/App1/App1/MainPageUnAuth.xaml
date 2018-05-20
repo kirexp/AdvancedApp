@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behaviors="clr-namespace:App1.Behaviors"
+             xmlns:local="clr-namespace:App1"
+             x:Class="App1.MainPageUnAuth"
+             BackgroundImage="back.png"
+             xmlns:converters="clr-namespace:App1.Converter"
+             xmlns:controls="clr-namespace:App1.Renderer"
+             xmlns:entry="clr-namespace:App1.Renderer.App1.Entry;">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:FirstValidationErrorConverter x:Key="FirstValidationErrorConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+            </Grid.RowDefinitions>
+        </Grid>
+    </ContentPage.Content>
+    
+    <Grid Grid.Row="1" Margin="20,0,20,0">
+
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="15"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+        <Image Source="Samir.png" HeightRequest="70" VerticalOptions="EndAndExpand"/>
+        <controls:WhiteLinedEntry Grid.Row="1" 
+                            
+                           FontSize="17"  
+                           HeightRequest="40"  
+                           Placeholder="Логин"  
+                           PlaceholderColor="White"  
+                           TextColor="White"  
+                           FontAttributes="Bold"  
+                           WidthRequest="100" 
+                           Text="{Binding UserName.Value, Mode=TwoWay}">
+            <Entry.Behaviors>
+                <behaviors:EventToCommandBehavior EventName="TextChanged" Command="{Binding ValidateUserNameCommand}"/>
+            </Entry.Behaviors>
+            <Entry.Triggers>
+                <DataTrigger 
+                    TargetType="Entry"
+                    Binding="{Binding UserName.IsValid}"
+                    Value="False">
+                    <Setter Property="behaviors:LineColorBehavior.LineColor" Value="White" />
+                </DataTrigger>
+            </Entry.Triggers>
+        </controls:WhiteLinedEntry>
+        <Label  Grid.Row="2"  TextColor="White" FontSize="10"
+                Text="{Binding UserName.Errors, Converter={ StaticResource FirstValidationErrorConverter}} "
+                IsVisible="{Binding UserName.IsNotValid}"/>
+        <controls:WhiteLinedEntry Grid.Row="3"
+                           FontSize="17"  
+                           HeightRequest="40"  
+                           Placeholder="Пароль"  
+                           PlaceholderColor="White"  
+                           TextColor="White" 
+                           FontAttributes="Bold"  
+                           WidthRequest="100" 
+                           Text="{Binding Password.Value, Mode=TwoWay}"></controls:WhiteLinedEntry>
+        <Button Grid.Row="4" x:Name="btnSignIn" IsEnabled="{Binding IsNotBusy}" Text="Войти" BorderWidth="1" Command="{Binding SignInCommand}"  TextColor="White" HeightRequest="50" VerticalOptions="Start" />
+        <Label Grid.Row="5" Text="Проблемы с авторизацией?" TextColor="White"  HorizontalOptions="Center"  Margin="0,10,0,0" FontSize="12"/>
+
+        <Grid Grid.Row="6">
+
+            <Grid.ColumnDefinitions>
+
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+
+
+
+            </Grid.ColumnDefinitions>
+            <Label BackgroundColor="White" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+            <Label Text="" Grid.Column="1" VerticalOptions="Center" Margin="10,0,10,0"/>
+            <Image Source="gf.png" Grid.Column="1" VerticalOptions="Center" Margin="10,0,10,0"/>
+
+
+            <Label BackgroundColor="White" Grid.Column="2" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+
+
+
+        </Grid>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Grid.Row="7">
+
+
+            <Label Text="Основная информация у нас на сайте" TextColor="White"  />
+
+
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand"  Grid.Row="8">
+            <Label Text="@kir_exp" TextColor="White"></Label>
+        </StackLayout>
+
+    </Grid>
+
+</ContentPage>
+
+
+
+
+
+
+

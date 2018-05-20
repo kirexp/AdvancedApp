@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using DAL.Entities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -57,7 +58,7 @@ namespace WebApi.Controllers
 
     public class RentRequest {
         public long CarId { get; set; }
-        public string DestinationPoint { get; set; }
+        public Coordinates DestinationPoint { get; set; }
         public Coordinates CurrentPosition { get; set; }
         public int Payment { get; set; }
 
@@ -68,7 +69,7 @@ namespace WebApi.Controllers
         public Coordinates CurrentPosition { get; set; }
 
     }
-    public class Coordinates
+    public class CoordinatesDTO
     {
         public virtual decimal Longitude { get; set; }
         public virtual decimal Latitude { get; set; }

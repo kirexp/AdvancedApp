@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.History"
+             Title="История">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="10,10,10,10">
+                <Frame >
+                    <Label TextColor="Black" FontAttributes="Bold" FontSize="Large" Text="Состояние на текущий день"></Label>
+                </Frame>
+                <Frame x:Name="allSummaryFrame" Focused="VisualElement_OnFocused">
+                    <StackLayout>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Label TextColor="Black" Text="Всего проехано (км)" FontAttributes="Bold"  Grid.Column="0" Grid.Row="0"></Label>
+                            <Label TextColor="Black" Text="-"  Grid.Column="1" FontAttributes="Bold" FontSize="Large" Grid.Row="0" ></Label>
+                            <Label TextColor="Black" Text="На балансе (тг)"   FontAttributes="Bold" Grid.Column="0" Grid.Row="1"></Label>
+                            <Label TextColor="Black" Text="-"  Grid.Column="1" FontAttributes="Bold" FontSize="Large" Grid.Row="1" ></Label>
+                            <Label TextColor="Black" Text="Самый длинный путь (км)"  FontAttributes="Bold"  Grid.Column="0" Grid.Row="2"></Label>
+                            <Label TextColor="Black" Text="-"  FontAttributes="Bold" FontSize="Large" Grid.Column="1" Grid.Row="2" ></Label>
+                            <Label TextColor="Black" Text="Общее время в пути"  FontAttributes="Bold"  Grid.Column="0" Grid.Row="3"></Label>
+                            <Label TextColor="Black" Text="-"  FontAttributes="Bold" FontSize="Large" Grid.Column="1" Grid.Row="3" ></Label>
+                            <Label TextColor="Black" Text="Заморожено (тг)"  FontAttributes="Bold"  Grid.Column="0" Grid.Row="4"></Label>
+                            <Label TextColor="Black" Text="-"  FontAttributes="Bold" FontSize="Large" Grid.Column="1" Grid.Row="4" ></Label>
+                            <Label TextColor="Black" Text="Самая длинная поездка"  FontAttributes="Bold"  Grid.Column="0" Grid.Row="5"></Label>
+                            <Label TextColor="Black" Text="-"  FontAttributes="Bold" FontSize="Large" Grid.Column="1" Grid.Row="5" ></Label>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <Label TextColor="Black" FontAttributes="Bold" FontSize="Large" Text="Последняя поездка"></Label>
+                </Frame>
+                <Frame x:Name="lastRentFrame" Focused="LastRentFrame_OnFocused">
+                    <StackLayout>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Label TextColor="Black" Text="Откуда (полный адрес)" FontAttributes="Bold"  Grid.Column="0" Grid.Row="0"></Label>
+                            <Label TextColor="Black" Text="-"  Grid.Column="1" FontAttributes="Bold" FontSize="Large" Grid.Row="0" ></Label>
+                            <Label TextColor="Black" Text="Куда (полнй адрес)"   FontAttributes="Bold" Grid.Column="0" Grid.Row="1"></Label>
+                            <Label TextColor="Black" Text="-"  Grid.Column="1" FontAttributes="Bold" FontSize="Large" Grid.Row="1" ></Label>
+                            <Label TextColor="Black" Text="Полный путь(км)"  FontAttributes="Bold"  Grid.Column="0" Grid.Row="2"></Label>
+                            <Label TextColor="Black" Text="-"  FontAttributes="Bold" FontSize="Large" Grid.Column="1" Grid.Row="2" ></Label>
+                            <Label TextColor="Black" Text="Затраченое время"  FontAttributes="Bold"  Grid.Column="0" Grid.Row="3"></Label>
+                            <Label TextColor="Black" Text="-"  FontAttributes="Bold" FontSize="Large" Grid.Column="1" Grid.Row="3" ></Label>
+                            <Label TextColor="Black" Text="К оплате (тг)"  FontAttributes="Bold"  Grid.Column="0" Grid.Row="4"></Label>
+                            <Label TextColor="Black" Text="-"  FontAttributes="Bold" FontSize="Large" Grid.Column="1" Grid.Row="4" ></Label>
+                        </Grid>
+                        </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

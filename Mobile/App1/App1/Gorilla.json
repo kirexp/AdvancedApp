@@ -1,0 +1,8 @@
+﻿{
+    "knownAssemblies": [
+        { "name" : "XLabs.Forms" }, { "name" : "XLabs.Forms.Charting" }
+    ],
+			"navigationPage" : {
+				"all" : "true"
+		}
+}

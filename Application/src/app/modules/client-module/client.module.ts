@@ -8,6 +8,7 @@ import { CabinetComponent } from './cabinet/cabinet/cabinet.component';
 import { CabinetService } from '../../services/cabinet-service';
 import { BaloonContentComponent } from '../../shared-components/baloon-content/baloon-content.component';
 import { ReserveManger } from '../../services/reserve-manager';
+import { YmapAreaComponent } from '../../shared-components/ymap-area/ymap-area.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -15,7 +16,7 @@ import { ReserveManger } from '../../services/reserve-manager';
     DxDataGridModule,
   ],
   bootstrap:[CurrentRentComponent],
-  declarations: [CurrentRentComponent,RentHistoryComponent,CabinetComponent,BaloonContentComponent],
+  declarations: [CurrentRentComponent,RentHistoryComponent,CabinetComponent,BaloonContentComponent,YmapAreaComponent],
   providers:[CabinetService,ReserveManger]
 })
 export class ClientModule { }

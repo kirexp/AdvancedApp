@@ -7,8 +7,6 @@ namespace DAL.Entities
 {
     public class Rent : IEntity {
         public virtual long Id { get; set; }
-        public virtual string StartPoint { get; set; }
-        public virtual string DestinationPoint { get; set; }
         public virtual DateTime RentDate{ get; set; }
         public virtual Vehicle Vehicle{ get; set; }
         public virtual int Payment{ get; set; }
@@ -17,6 +15,8 @@ namespace DAL.Entities
         public virtual int  WayLength { get; set; }
         public virtual DateTime RentStartTime { get; set; }
         public virtual DateTime? RentEndTime{ get; set; }
+        public virtual Coordinates StartPoint{ get; set; }
+        public virtual Coordinates EndPoint{ get; set; }
     }
     public class Vehicle:IEntity
     {

@@ -9,10 +9,26 @@ namespace WebApi.Models
 {
     public class RentViewModel
     {
-        public string StartingPoint { get; set; }
-        public string DestinationPoint { get; set; }
+        public long Id { get; set; }
+        public Coordinates StartCoordinates { get; set; }
+        public Coordinates EndCoordinates { get; set; }
+        public string StartingPoint {
+            get {
+                if (this.StartCoordinates != null)
+                    return this.StartCoordinates.Address;
+                return "EMPTY";
+            }
+        }
+        public string DestinationPoint {
+            get {
+                if (this.EndCoordinates != null)
+                    return this.EndCoordinates.Address;
+                return "EMPTY";
+            }
+        }
         public int WayLength { get; set; }
         public int Payment { get; set; }
+
     }
     public class SummaryViewModel
     {
@@ -25,7 +41,7 @@ namespace WebApi.Models
         public void GetSummary(string userName) {
             using (var repository = new Repository<Rent>()) {
                 var summary = repository.Get(x => x.Tenant.UserName == userName);
-                var z = summary.Select(x => new My {Start = x.RentStartTime, End = x.RentEndTime.Value,}).ToList();
+                var z = summary.Select(x => new My {Start = x.RentStartTime, End = x.RentEndTime}).ToList();
                 this.LongestRentTime = this.Longest(z);
                 if (z.Count > 0) {
                     this.SummaryLength = summary.Sum(x => x.WayLength);
@@ -41,8 +57,10 @@ namespace WebApi.Models
         private TimeSpan Longest(List<My> li) {
             TimeSpan longest = TimeSpan.Zero;
             foreach (var my in li) {
-                var substruction = my.Start.Subtract(my.End);
-                if (substruction > longest) longest = substruction;
+                if (my.End.HasValue) {
+                    var substruction = my.Start.Subtract(my.End.Value);
+                    if (substruction > longest) longest = substruction;
+                }
             }
             return longest;
         }
@@ -50,14 +68,16 @@ namespace WebApi.Models
         {
             TimeSpan longest = TimeSpan.Zero;
             foreach (var my in li) {
-                var substruction = my.Start.Subtract(my.End);
-                longest.Add(substruction);
+                if (my.End.HasValue) {
+                    var substruction = my.Start.Subtract(my.End.Value);
+                    longest.Add(substruction);
+                }
             }
             return longest;
         }
         public class My {
             public DateTime Start { get; set; }
-            public DateTime End { get; set; }
+            public DateTime? End { get; set; }
         }
     }
 }

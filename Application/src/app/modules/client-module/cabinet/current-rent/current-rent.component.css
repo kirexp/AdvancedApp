@@ -1,0 +1,13 @@
+.greyfull{
+    color:#666
+}
+.boldy{
+    font-weight: bold;
+}
+.card-header{
+    color:white;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEMAAABkCAMAAADqvX3PAAAAKlBMV…SzhMYcRPRZNYmgdjA1FyahcKQIqpKZs8N0TMd0TMd0/BvHF8n9f8tHo7HcAAAAAElFTkSuQmCC), linear-gradient(to left, #7b4397, #dc2430);    
+}
+.card{
+   border-color: #ffecea!important
+}
