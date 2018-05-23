@@ -45,7 +45,7 @@ export class RegistrationPageComponent implements OnInit {
       if(res.IsSuccess){
         let data =res.Data as AuthResult;
         this.authStorage.SetCredentials(data.accessToken)   
-          this.authManager.SetResult()
+          // this.authManager.SetResult()
       }else{
         
       }

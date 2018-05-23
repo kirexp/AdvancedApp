@@ -18,7 +18,7 @@ export class CarMapComponent implements OnInit {
   ngOnInit() {
     ymaps.ready().then(()=>{
       this.ymaps=new ymaps.Map("main_map",{
-        center: [50.450100, 30.523400],
+        center: [51.128433, 71.430546],
         zoom: 12,
         controls: []
       });

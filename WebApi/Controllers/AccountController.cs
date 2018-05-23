@@ -106,8 +106,8 @@ namespace WebApi.Controllers
                 new Claim("Id", user.Id.ToString()),
                 new Claim("Email", user.Email),
                 new Claim("Type", user.UserType.ToString()),
-                new Claim("ExpirationDateTime",expires.ToString("o", CultureInfo.InvariantCulture)) //HACK JwtSecurityTokenHandler cant use custom json serializer and
-                                                                                                    //default prop 'Expires' set unreadable value in javascript.
+                new Claim("ExpirationDateTime",expires.ToString("o", CultureInfo.InvariantCulture)), //HACK JwtSecurityTokenHandler cant use custom json serializer and
+                new Claim(ClaimTypes.NameIdentifier,user.Id.ToString())                                                                                    //default prop 'Expires' set unreadable value in javascript.
             });
             var roles = await this.UserManager.GetRolesAsync(user);
             foreach (var role in roles) {

@@ -14,18 +14,11 @@ namespace WebApi.Hub
 {
     //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class VehicleHub :  Microsoft.AspNetCore.SignalR.Hub {
-        public static ObservableList<VehicleDto> ActiveVehicles;
         private IHubContext<VehicleHub> context;
-        private VehicleManager _vehicleManager;
         public VehicleHub(IHubContext<VehicleHub> context) {
             this.context = context;
-            this._vehicleManager=new VehicleManager();
-            if (ActiveVehicles == null) {
-                ActiveVehicles = new ObservableList<VehicleDto>(_vehicleManager.GetVehicles());
-                ActiveVehicles.OnAdd += ActiveVehiclesOnOnAdd;
-                ActiveVehicles.OnRemove += ActiveVehiclesOnOnRemove;
-            }
-
+            VehicleManager2.GetInstance().ActiveVehicles.OnAdd += ActiveVehiclesOnOnAdd;
+            VehicleManager2.GetInstance().ActiveVehicles.OnRemove += ActiveVehiclesOnOnRemove;
         }
         private void ActiveVehiclesOnOnRemove(object sender, VehicleDto e) {
             this.ReserveCar(e);
@@ -43,7 +36,7 @@ namespace WebApi.Hub
         }
         public override Task OnConnectedAsync() {
             EventLogger.Info("UserConnected"+DateTime.Now.ToString());
-            Clients.Caller.SendAsync("onInitialize", ActiveVehicles);
+            Clients.Caller.SendAsync("onInitialize", VehicleManager2.GetInstance().ActiveVehicles);
             return base.OnConnectedAsync();
         }
     }

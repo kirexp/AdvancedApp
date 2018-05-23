@@ -35,6 +35,7 @@ namespace App1
            //var result= await service.CreateRentAsync(1);
 	        var z = 0;
             // webNavigatingEventArgs.Cancel = true;
+            this.Navigation.PushAsync()
         }
 	    private async Task CarList_OnItemTapped(object sender, ItemTappedEventArgs e) {
 	        var rentService = new RentService();
