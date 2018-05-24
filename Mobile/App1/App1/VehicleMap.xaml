@@ -1,8 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-            xmlns:local="clr-namespace:HelloApp;assembly:HelloApp"
-            xmlns:webview="clr-namespace:Xam.Plugin.WebView.Abstractions;assembly=Xam.Plugin.WebView.Abstractions"
             x:Class="App1.VehicleMap" CurrentPageChanged="OnTabChanged">
     <ContentPage BackgroundColor="White" x:Name="mapTab"    Icon="mapico.png" Title="Карта">
 

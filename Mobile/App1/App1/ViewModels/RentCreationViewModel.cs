@@ -4,20 +4,19 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Text;
 using System.Windows.Input;
+using App1.ApiDTO;
 using App1.Validation;
 using Xamarin.Forms;
 
-namespace App1.ViewModels
-{
-    public class RentCreationViewModel:BaseViewModel
-    {
+namespace App1.ViewModels {
+    public class RentCreationViewModel : BaseViewModel {
         public ObservableCollection<Zoo> Zoos { get; set; }
         private ValidatableObject<bool> _showRentInfo;
-        public ValidatableObject<bool> ShowRentInfo
-        {
+        public ValidatableObject<bool> ShowRentInfo {
             get { return _showRentInfo; }
             set { SetProperty(ref _showRentInfo, value); }
         }
+        public VehicleDto VehicleDto { get; set; }
         public RentCreationViewModel(INavigation navigation, INotifier notifier) : base(navigation, notifier) {
             Zoos = new ObservableCollection<Zoo>
             {
@@ -40,8 +39,7 @@ namespace App1.ViewModels
             this._showRentInfo = new ValidatableObject<bool>(false);
         }
     }
-    public class Zoo
-    {
+    public class Zoo {
         public string ImageUrl { get; set; }
         public string Name { get; set; }
     }
