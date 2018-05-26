@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -41,11 +44,28 @@ namespace App1.ViewModels
                 }
                 SettingsManager.Instance.AuthToken = result.Token.accessToken;
                 SettingsManager.Instance.IsAuthentithicated = true;
-                var payLoad = result.Token.accessToken.Split('.')[1];
-                var z1 = Convert.FromBase64String(payLoad);
-                var z2 = Encoding.UTF8.GetString(z1);
-                var data = JsonConvert.DeserializeObject<UserDto>(z2);
+                
+                var handler = new JwtSecurityTokenHandler();
+                var tokenS = handler.ReadToken(result.Token.accessToken) as JwtSecurityToken;
+
+                var exp1 = tokenS.Claims.First(claim => claim.Type == "exp").Value;
+                var ticks = long.Parse(exp1);
+                //var ts = new TimeSpan(ticks);
+
+                var expires = DateTime.Now.AddTicks(ticks);
+
+                //var exp2 = tokenS.Claims.First(claim => claim.Type == "ExpirationDateTime").Value;
+                //var date = DateTime.ParseExact(exp2, "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture);
+
+                var data = new UserDto {
+                    Email = tokenS.Claims.First(claim => claim.Type == "Email").Value,
+                    Id = long.Parse(tokenS.Claims.First(claim => claim.Type == "Id").Value),
+                    Type = tokenS.Claims.First(claim => claim.Type == "Type").Value,
+                    UserName = tokenS.Claims.First(claim => claim.Type == "unique_name").Value,
+                };
+
                 SettingsManager.Instance.UserName = data.UserName;
+                SettingsManager.Instance.Expires = expires;
                 App.SetMainPage();
             }
             catch (Exception ex)

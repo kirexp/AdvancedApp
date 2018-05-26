@@ -20,6 +20,7 @@ namespace App1.Extenssions
         private static readonly string UserNameDefault = string.Empty;
         private const string IsAuthKey = "is_auth";
         private const string JWTKey = "jwt_key";
+
         public string AuthToken
         {
             get { return AppSettings.GetValueOrDefault(JWTKey, ""); }
@@ -34,5 +35,6 @@ namespace App1.Extenssions
             set { AppSettings.AddOrUpdateValue(UserNameKey, value); }
         }
 
+        public DateTime Expires { get; set; }
     }
 }
