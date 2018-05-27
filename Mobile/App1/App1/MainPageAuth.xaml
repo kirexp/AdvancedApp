@@ -31,6 +31,10 @@
                                 VerticalOptions="End"
                                 Clicked="AboutPageBtn_Clicked"
                                 BackgroundColor="Transparent" TextColor="White"></Button>
+                        <Button Text="F.A.Q." FontSize="Small"
+                                VerticalOptions="End"
+                                Clicked="FaqBtn_Clicked"
+                                BackgroundColor="Transparent" TextColor="White"></Button>
                         <Button Text="Выход" FontSize="Small"
                                 VerticalOptions="End"
                                 Clicked="SignOutBtn_Clicked"

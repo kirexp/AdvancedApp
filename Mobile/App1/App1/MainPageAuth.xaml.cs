@@ -53,5 +53,10 @@ namespace App1
             this.Detail = new NavigationPage(new Cabinet());
             this.HideDetail();
         }
+
+	    private void FaqBtn_Clicked(object sender, EventArgs e) {
+	        this.Detail = new NavigationPage(new SupportService());
+	        this.HideDetail();
+        }
 	}
 }
