@@ -137,27 +137,37 @@ namespace WebApi.Signletone
                 return vehicleDto;
             }
         }
-        public  bool CreateRent(RentRequest requestData, out long rentId) {
-            rentId = 0;
-            using (var repository = new Repository<Rent>()) {
-                var userId = Thread.CurrentPrincipal.GetId();
-                var vehicle = repository.Load<Vehicle>(requestData.CarId);
-                if (vehicle == null) return false;
-                var rent = new Rent {
-                    Tenant = repository.Load<User>(userId),
-                    EndPoint = requestData.DestinationPoint,
-                    Payment = requestData.Payment,
-                    RentDate = DateTime.Now,
-                    RentStartTime = DateTime.Now,
-                    StartPoint = requestData.CurrentPosition,
-                    Vehicle = vehicle,
-                    Status = RentStatus.Active
-                };
-                repository.Insert(rent);
-                repository.Commit();
-                rentId = rent.Id;
-                return true;
+        public  bool CreateRent(RentRequest requestData, long userId, out long rentId) {
+            try {
+                rentId = 0;
+                using (var repository = new Repository<Rent>()) {
+                    var vehicleRep = new Repository<Vehicle>(repository);
+                    var vehicle = repository.Load<Vehicle>(requestData.CarId);
+                    if (vehicle == null) return false;
+                    vehicle.State.Status = VehicleRentStatus.Reserved;
+                    var rent = new Rent {
+                        Tenant = repository.Load<User>(userId),
+                        EndPoint = requestData.DestinationPoint,
+                        Payment = requestData.Payment,
+                        RentDate = DateTime.Now,
+                        RentStartTime = DateTime.Now,
+                        StartPoint = requestData.CurrentPosition,
+                        Vehicle = vehicle,
+                        Status = RentStatus.Active
+                    };
+                    vehicleRep.Update(vehicle);
+                    repository.Insert(rent);
+                    repository.Commit();
+                    rentId = rent.Id;
+                    return true;
+                }
             }
+            catch (Exception ex) {
+                GenLogger.Fatal($"CreateRent - {Thread.CurrentPrincipal.GetId()}",ex);
+                rentId = 0;
+                return false;
+            }
+
         }
         public  IList<VehicleDto> GetVehicles() {
             using (var repository = new Repository<Vehicle>()) {
@@ -174,31 +184,37 @@ namespace WebApi.Signletone
                 return freeCars;
             }
         }
-        public  bool UndoRent(RentUndoRequest requestData) {
-            using (var repository = new Repository<Rent>()) {
-                var userId = Thread.CurrentPrincipal.Identity;
-                var rent = repository.Get(requestData.RendId);
-                if (rent == null) return false;
-                rent.Status = RentStatus.InActive;
-                rent.RentEndTime = DateTime.Now;
-                rent.Vehicle.State.CurrentPosition.Latitude = requestData.CurrentPosition.Latitude;
-                rent.Vehicle.State.CurrentPosition.Longitude = requestData.CurrentPosition.Longitude;
-                rent.Vehicle.State.Status = VehicleRentStatus.Free;
-                repository.Update(rent);
-                repository.Commit();
-                this.ActiveVehicles.Add(new VehicleDto {
-                    Id = rent.Vehicle.Id,
-                    Brand = rent.Vehicle.Brand,
-                    Class = rent.Vehicle.Brand,
-                    Number = rent.Vehicle.Number,
-                    Cost = rent.Vehicle.CostPerMile,
-                    X=rent.Vehicle.State.CurrentPosition.Latitude,
-                    Y = rent.Vehicle.State.CurrentPosition.Longitude
-                });
-                return true;
+        public  bool UndoRent(RentUndoRequest requestData, long userId) {
+            try {
+                using (var repository = new Repository<Rent>()) {
+                    var rent = repository.Get(requestData.RendId);
+                    if (rent == null) return false;
+                    rent.Status = RentStatus.InActive;
+                    rent.RentEndTime = DateTime.Now;
+                    rent.Vehicle.State.CurrentPosition.Latitude = requestData.CurrentPosition.Latitude;
+                    rent.Vehicle.State.CurrentPosition.Longitude = requestData.CurrentPosition.Longitude;
+                    rent.Vehicle.State.Status = VehicleRentStatus.Free;
+                    repository.Update(rent);
+                    repository.Commit();
+                    this.ActiveVehicles.Add(new VehicleDto {
+                        Id = rent.Vehicle.Id,
+                        Brand = rent.Vehicle.Brand,
+                        Class = rent.Vehicle.Brand,
+                        Number = rent.Vehicle.Number,
+                        Cost = rent.Vehicle.CostPerMile,
+                        X = rent.Vehicle.State.CurrentPosition.Latitude,
+                        Y = rent.Vehicle.State.CurrentPosition.Longitude
+                    });
+                    return true;
+                }
             }
+            catch (Exception ex) {
+                GenLogger.Fatal($"UndoRent - { Thread.CurrentPrincipal.Identity.GetUserId()}",ex);
+                return false;
+            }
+
         }
-        public bool FinishRent(FinishRentRequest requestData) {
+        public bool FinishRent(FinishRentRequest requestData, long userId) {
             try {
                 using (var repository = new Repository<Rent>()) {
                     var currentRent = repository.Get(requestData.RentId);

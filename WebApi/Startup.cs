@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Threading;
 using System.Threading.Tasks;
 using DAL;
 using DAL.Entities.Account;
@@ -104,12 +105,26 @@ namespace WebApi
             app.UseSignalR(routes => {
                 routes.MapHub<VehicleHub>("/vehicle"); 
             });
-
+            app.UseMiddleware<AuthenticationMiddleware>();
             app.UseMvc(routes => {
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+        }
+    }
+    public class AuthenticationMiddleware
+    {
+        private RequestDelegate _next;
+        public AuthenticationMiddleware(RequestDelegate next)
+        {
+            _next = next;
+        }
+        public async Task Invoke(HttpContext context)
+        {
+            Thread.CurrentPrincipal = context.User;
+                await _next.Invoke(context);
+            
         }
     }
 }

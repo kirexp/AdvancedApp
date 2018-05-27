@@ -1,13 +1,17 @@
 ﻿using System.Linq;
+using System.Security.Claims;
+using System.Threading;
 using Common;
 using DAL.Entities;
 using DAL.Repositories;
 using DevExtreme.AspNet.Data;
 using Enums;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.ApiFolder;
+using WebApi.Auth;
 using WebApi.Models;
 
 namespace WebApi.Controllers
@@ -15,6 +19,9 @@ namespace WebApi.Controllers
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class CabinetController : Controller
     {
+        public CabinetController() {
+      
+        }
         public IActionResult GetCurrentRent() {
             using (var repository = new Repository<Rent>()) {
                 var currentRent = repository
