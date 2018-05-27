@@ -4,6 +4,7 @@
              x:Class="App1.SupportService">
     <ContentPage.Content>
         <StackLayout>
+             <Label Text="Испытываете проблемы с оплатой, бронью или еще с чем-то, звоните..."></Label>
             <Button Clicked="Call" Text="Позвонить в службу поддержки"></Button>
         </StackLayout>
     </ContentPage.Content>

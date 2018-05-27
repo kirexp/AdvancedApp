@@ -40,7 +40,7 @@ namespace App1 {
                 var model = BindingContext as RentCreationViewModel;
                 var rs = new RentService();
                 _rentViewModel.IsBusy = true;
-                var result = await rs.CreateRentAsync(model);
+                var result = await rs.CreateRentAsync(model.VehicleDto);
                 if (result.IsSuccess) {
                     SettingsManager.Instance.RentId = result.Data;
                     SettingsManager.Instance.HasRent = true;

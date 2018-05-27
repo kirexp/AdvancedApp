@@ -200,6 +200,7 @@ namespace WebApi.Signletone
                     if (rent == null) return false;
                     rent.Status = RentStatus.InActive;
                     rent.RentEndTime = DateTime.Now;
+                    rent.EndPoint = requestData.CurrentPosition;
                     rent.Vehicle.State.CurrentPosition.Latitude = requestData.CurrentPosition.Latitude;
                     rent.Vehicle.State.CurrentPosition.Longitude = requestData.CurrentPosition.Longitude;
                     rent.Vehicle.State.Status = VehicleRentStatus.Free;

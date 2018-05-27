@@ -19,25 +19,25 @@ namespace App1.Services {
         public RentService() {
             this._http = new Http();
         }
-        public async Task<SimpleResponse<int>> CreateRentAsync(RentCreationViewModel model) {
+        public async Task<SimpleResponse<int>> CreateRentAsync(VehicleDto model) {
 
             var lp = new LocationProvider();
             var position = await lp.GetGps();
-
+            
             //var addresses = await lp.GetAddressByPosition(position);
             //var address = addresses.FirstOrDefault();
 
             var data = new {
-                CarId = model.VehicleDto.Id,
+                CarId = model.Id,
                 CurrentPosition = new {
                     Longitude = position?.Longitude ?? 0.0D,
                     Latitude = position?.Latitude ?? 0.0D,
                     Address = "ул. Жубанова 8"
                 },
-                Payment = model.VehicleDto.Cost,
+                Payment = model.Cost,
                 DestinationPoint = new {
-                    Longitude = model.VehicleDto.X,
-                    Latitude = model.VehicleDto.Y,
+                    Longitude = model.X,
+                    Latitude = model.Y,
                     Address = ""
                 }
             };

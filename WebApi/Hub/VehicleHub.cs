@@ -27,11 +27,9 @@ namespace WebApi.Hub
             this.UnlockCar(e);
         }
         public Task UnlockCar(VehicleDto vehicle){
-            return this.Clients.All.SendAsync("onUnlocked", vehicle);
+            return this.context.Clients.All.SendAsync("onUnlocked", vehicle);
         }
         public Task ReserveCar(VehicleDto vehicle) {
-
-
             return this.context.Clients.All.SendAsync("onReserved", vehicle.Id);
         }
         public override Task OnConnectedAsync() {
