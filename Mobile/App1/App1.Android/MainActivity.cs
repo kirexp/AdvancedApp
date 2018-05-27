@@ -23,6 +23,7 @@ namespace App1.Droid {
             LoadApplication(new App());
             InitializeLocationManager();
         }
+        
 
         public void OnLocationChanged(Location location) {
             LastKnownLocation = location;

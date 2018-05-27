@@ -35,7 +35,7 @@ namespace App1.Services {
                     Address = ""
                 }
             };
-            var res = await _http.PostAsJson<SimpleResponse<long>>("Reserve/GetVehicle", data);
+            var res = await _http.PostAsJson<SimpleResponse<long>>("Reserve/CreateRent", data);
             return res;
 
         }
