@@ -28,6 +28,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\EntryLengthValidatorBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\EventToCommandBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Behaviors\LineColorBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Cabinet.xaml.cs">
+      <DependentUpon>Cabinet.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Converter\FirstValidationErrorConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Effects\EntryLineColorEffect.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extenssions\SettingsManager.cs" />
@@ -80,6 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)Gorilla.json" />
+    <None Include="$(MSBuildThisFileDirectory)html\ymaps.js" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)MainPageAuth.xaml">
@@ -113,6 +118,15 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)RentCreationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)html\HTMLPage1.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Cabinet.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>

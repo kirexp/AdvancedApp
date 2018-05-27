@@ -7,7 +7,7 @@ import { CabinetService } from '../../../../services/cabinet-service';
   styleUrls: ['./current-rent.component.css']
 })
 export class CurrentRentComponent implements OnInit {
-  private lastRent:Rent;
+  public lastRent:Rent;
   rentSummary:RentSummary;
   constructor(@Inject(CabinetService)private cabinetService :CabinetService) {
     this.lastRent=new Rent(); //hack

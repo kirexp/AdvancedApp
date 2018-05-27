@@ -17,6 +17,7 @@ namespace App1 {
             _vehicles = new ObservableCollection<VehicleDto>();
             _rentService = new RentService();
             InitializeComponent();
+            //this.viewBrowser.Source = new UrlWebViewSource {Url = "/html/HTMLPage1.html"};
             this.viewBrowser.Navigating += ViewBrowserOnNavigating;
             this.carList.ItemsSource = this._vehicles;
         }

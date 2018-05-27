@@ -8,6 +8,8 @@ namespace Enums
 {
     public enum RentStatus {
         InActive=0,
-        Active=1
+        Active=1,
+        Canceled=2,
+        Finished=3
     }
 }

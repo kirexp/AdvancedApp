@@ -20,7 +20,8 @@ namespace App1.Extenssions
         private static readonly string UserNameDefault = string.Empty;
         private const string IsAuthKey = "is_auth";
         private const string JWTKey = "jwt_key";
-
+        private const string HasActiveRentKey = "has_rent";
+        private const string RentIdKey = "rent_Id";
         public string AuthToken
         {
             get { return AppSettings.GetValueOrDefault(JWTKey, ""); }
@@ -34,7 +35,16 @@ namespace App1.Extenssions
             get { return AppSettings.GetValueOrDefault(UserNameKey, UserNameDefault); }
             set { AppSettings.AddOrUpdateValue(UserNameKey, value); }
         }
-
+        public bool HasRent
+        {
+            get { return AppSettings.GetValueOrDefault(HasActiveRentKey, false); }
+            set { AppSettings.AddOrUpdateValue(HasActiveRentKey, value); }
+        }
+        public long RentId
+        {
+            get { return AppSettings.GetValueOrDefault(RentIdKey, 0); }
+            set { AppSettings.AddOrUpdateValue(RentIdKey, value); }
+        }
         public DateTime Expires { get; set; }
     }
 }

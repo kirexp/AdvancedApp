@@ -31,6 +31,7 @@ export class CarMapComponent implements OnInit {
     this._hubConnection = new HubConnection(this.remote.baseUri+"/vehicle");
     this._hubConnection.start()
         .then(() => {
+           alert('Вы подключились к карте')
             console.log('Hub connection started')
         })
         .catch(() => {

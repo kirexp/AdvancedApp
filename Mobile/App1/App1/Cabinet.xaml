@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
+             x:Class="App1.Cabinet">
+    <ContentPage.Content>
+        <StackLayout Padding="5,5,5,5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="300"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="140"></ColumnDefinition>
+                    <ColumnDefinition Width="280"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Row="2" Grid.Column="0" Text="Отменить заказ" Clicked="Create"></Button>
+                <Button Grid.Row="2" Grid.Column="1" Text="Завершить заказ" Clicked="Create"></Button>
+                <Label Grid.Row="3"  Grid.Column="1"  Grid.ColumnSpan="2" Text="Данные о транспорте"  Margin="20,5,0,0"></Label>
+                <Switch Grid.Row="3" Grid.Column="0" IsToggled="{Binding ShowRentInfo.Value, Mode=TwoWay}"></Switch>
+                <Frame x:Name="dataFreme" Grid.Row="4" Grid.ColumnSpan="3" Grid.Column="0" HeightRequest="200" Margin="5,5,5,5">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"></RowDefinition>
+                            <RowDefinition Height="50"></RowDefinition>
+                            <RowDefinition Height="50"></RowDefinition>
+                            <RowDefinition Height="50"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+                            <ColumnDefinition Width="280"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Row="0" Grid.Column="0" Text="Номер"></Label>
+                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding VehicleDto.Number}"></Label>
+
+                        <Label Grid.Row="1" Grid.Column="0" Text="Брэнд"></Label>
+                        <Label Grid.Row="1" Grid.Column="1" Text="{Binding VehicleDto.Brand}"></Label>
+
+                        <Label Grid.Row="2" Grid.Column="0" Text="Класс"></Label>
+                        <Label Grid.Row="2" Grid.Column="1" Text="{Binding VehicleDto.Class}"></Label>
+
+                        <Label Grid.Row="3" Grid.Column="0" Text="Стоимость аренды"></Label>
+                        <Label Grid.Row="3" Grid.Column="1" Text="{Binding VehicleDto.Cost}"></Label>
+
+                    </Grid>
+                </Frame>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

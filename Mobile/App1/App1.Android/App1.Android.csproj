@@ -126,6 +126,13 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\userlogo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ymaps.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="html\HTMLPage1.html" />
+    <None Include="html\ymaps.js" />
+  </ItemGroup>
   <Import Project="..\App1\App1.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

@@ -12,13 +12,11 @@ namespace WebApi.Controllers
 {
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class ReserveController : Controller {
-        private VehicleManager _manager;
         public ReserveController() {
-            this._manager = new VehicleManager();
         }
         public SimpleResponse GetUnReservedVehicles() {
             try {
-                var freeCars= _manager.GetVehicles();
+                var freeCars = VehicleManager.GetInstance().GetVehicles();
                     return SimpleResponse.Success(freeCars);
             }
             catch (Exception ex) {
@@ -28,7 +26,7 @@ namespace WebApi.Controllers
         }
         [HttpGet]
         public SimpleResponse GetVehicle(long id) {
-             var vehicle = _manager.Find(id);
+             var vehicle = VehicleManager.GetInstance().Find(id);
             if (vehicle != null)
                 return SimpleResponse.Success(vehicle);
                 return SimpleResponse.Error("Не удалось найти данный автомобиль");
@@ -36,37 +34,53 @@ namespace WebApi.Controllers
         [HttpPost]
         public SimpleResponse CreateRent([FromBody]RentRequest model) {
             long rentId;
-            var result = this._manager.CreateRent(model,out rentId);
+            var manager = VehicleManager.GetInstance();
+            var result = manager.CreateRent(model,out rentId);
             if (result) {
-                var vehicleToRent = VehicleHub.ActiveVehicles.Single(x => x.Id == model.CarId);
-                VehicleHub.ActiveVehicles.Remove(vehicleToRent);
+                var vehicleToRent = manager.ActiveVehicles.Single(x => x.Id == model.CarId);
+                manager.ActiveVehicles.Remove(vehicleToRent);
                 return SimpleResponse.Success(rentId);
             }
                 return SimpleResponse.Error("Не удалось арендовать");
         }
         [HttpPost]
-        public SimpleResponse UnReserve([FromBody] RentUndoRequest model) {
-            VehicleDto vehicle;
-            var result = this._manager.UndoRent(model, out vehicle);
+        public SimpleResponse CancelRent([FromBody] RentUndoRequest model) {
+            var manager = VehicleManager.GetInstance();
+            var result = manager.UndoRent(model);
             if (result) {
-                VehicleHub.ActiveVehicles.Add(vehicle);
                 return SimpleResponse.Success();
             }
             return SimpleResponse.Error("Не удалось отменить аренду");
         }
+
+        public SimpleResponse FinishRent([FromBody] FinishRentRequest model) {
+            try {
+                VehicleManager.GetInstance().FinishRent(model);
+                return SimpleResponse.Success();
+            }
+            catch (Exception ex) {
+                return SimpleResponse.Error("Не удалось завершить аренду");
+            }
+
+        }
     }
 
-    public class RentRequest {
+    public class BaseRent {
         public long CarId { get; set; }
-        public Coordinates DestinationPoint { get; set; }
         public Coordinates CurrentPosition { get; set; }
+    }
+    public class RentRequest: BaseRent {
+        public Coordinates DestinationPoint { get; set; }
         public int Payment { get; set; }
 
     }
-    public class RentUndoRequest
-    {
+    public class RentUndoRequest {
         public long RendId { get; set; }
         public Coordinates CurrentPosition { get; set; }
+
+    }
+    public class FinishRentRequest : BaseRent {
+        public long RentId { get; set; }
 
     }
     public class CoordinatesDTO

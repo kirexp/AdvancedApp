@@ -17,8 +17,8 @@ namespace WebApi.Hub
         private IHubContext<VehicleHub> context;
         public VehicleHub(IHubContext<VehicleHub> context) {
             this.context = context;
-            VehicleManager2.GetInstance().ActiveVehicles.OnAdd += ActiveVehiclesOnOnAdd;
-            VehicleManager2.GetInstance().ActiveVehicles.OnRemove += ActiveVehiclesOnOnRemove;
+            VehicleManager.GetInstance().ActiveVehicles.OnAdd += ActiveVehiclesOnOnAdd;
+            VehicleManager.GetInstance().ActiveVehicles.OnRemove += ActiveVehiclesOnOnRemove;
         }
         private void ActiveVehiclesOnOnRemove(object sender, VehicleDto e) {
             this.ReserveCar(e);
@@ -36,7 +36,7 @@ namespace WebApi.Hub
         }
         public override Task OnConnectedAsync() {
             EventLogger.Info("UserConnected"+DateTime.Now.ToString());
-            Clients.Caller.SendAsync("onInitialize", VehicleManager2.GetInstance().ActiveVehicles);
+            Clients.Caller.SendAsync("onInitialize", VehicleManager.GetInstance().ActiveVehicles);
             return base.OnConnectedAsync();
         }
     }

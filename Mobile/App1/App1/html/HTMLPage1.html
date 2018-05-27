@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h1>asdasdasdas</h1>
+<div id="map" style="height: 400px; width: 400px"></div>
+<script src="~/ymaps.js">
+</script>
+<script>
+    ymaps.ready(function() {
+        var map = new ymaps.Map('map',
+            { center: position, zoom: 12 },
+            { searchControlProvider: 'yandex#search' }
+        );
+    });
+</script>
+</body>
+</html>

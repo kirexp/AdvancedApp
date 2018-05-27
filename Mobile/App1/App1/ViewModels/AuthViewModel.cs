@@ -52,7 +52,7 @@ namespace App1.ViewModels
                 var ticks = long.Parse(exp1);
                 //var ts = new TimeSpan(ticks);
 
-                var expires = DateTime.Now.AddTicks(ticks);
+                var expires = DateTime.Now.AddMilliseconds(ticks);
 
                 //var exp2 = tokenS.Claims.First(claim => claim.Type == "ExpirationDateTime").Value;
                 //var date = DateTime.ParseExact(exp2, "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture);
