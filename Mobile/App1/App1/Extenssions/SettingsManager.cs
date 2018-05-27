@@ -40,7 +40,7 @@ namespace App1.Extenssions
             get { return AppSettings.GetValueOrDefault(HasActiveRentKey, false); }
             set { AppSettings.AddOrUpdateValue(HasActiveRentKey, value); }
         }
-        public long RentId
+        public int RentId
         {
             get { return AppSettings.GetValueOrDefault(RentIdKey, 0); }
             set { AppSettings.AddOrUpdateValue(RentIdKey, value); }

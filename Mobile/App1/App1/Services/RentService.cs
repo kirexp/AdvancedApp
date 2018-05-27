@@ -19,7 +19,7 @@ namespace App1.Services {
         public RentService() {
             this._http = new Http();
         }
-        public async Task<SimpleResponse<long>> CreateRentAsync(RentCreationViewModel model) {
+        public async Task<SimpleResponse<int>> CreateRentAsync(RentCreationViewModel model) {
 
             var lp = new LocationProvider();
             var position = await lp.GetGps();
@@ -41,7 +41,7 @@ namespace App1.Services {
                     Address = ""
                 }
             };
-            var res = await _http.PostAsJson<SimpleResponse<long>>("Reserve/CreateRent", data);
+            var res = await _http.PostAsJson<SimpleResponse<int>>("Reserve/CreateRent", data);
             return res;
 
         }

@@ -25,7 +25,7 @@ namespace App1
 			InitializeComponent ();
 		    var alertNotifier = new DisplayAlertNotifier(this);
             if (SettingsManager.Instance.HasRent) {
-                BindingContext = this._rentViewModel = new RentCreationViewModel(Navigation, alertNotifier) { VehicleDto = Init().GetAwaiter().GetResult() };
+                BindingContext = this._rentViewModel = new RentCreationViewModel(Navigation, alertNotifier) { VehicleDto = Init(). };
             }
             else {
                 BindingContext = this._rentViewModel = new RentCreationViewModel(Navigation, alertNotifier) { HasRent = false};
@@ -34,7 +34,7 @@ namespace App1
 
         private async Task<VehicleDto> Init() {
             var rentId = SettingsManager.Instance.RentId;
-           var result = await this._http.GetAsync<VehicleDto>("/Reserve/GetRent?Id=" + rentId);
+           var result = await this._http.GetAsync<VehicleDto>("Reserve/GetRent?id=" + rentId);
             return result;
         }
 

@@ -125,26 +125,35 @@ namespace WebApi.Signletone
         }
 
         public VehicleDto CurrentRent(long id) {
-            using (var repository = new Repository<Rent>()) {
-                var rent = repository.Get(id);
-                var vehicleDto = new VehicleDto();
-                vehicleDto.Id = id;
-                vehicleDto.Brand = rent.Vehicle.Brand;
-                vehicleDto.Class = rent.Vehicle.Class;
-                vehicleDto.Cost = rent.Vehicle.CostPerMile;
-                vehicleDto.X = rent.Vehicle.State.CurrentPosition.Latitude;
-                vehicleDto.Y = rent.Vehicle.State.CurrentPosition.Longitude;
-                return vehicleDto;
+            try {
+                using (var repository = new Repository<Rent>())
+                {
+                    var rent = repository.Get(id);
+                    var vehicleDto = new VehicleDto();
+                    vehicleDto.Id = id;
+                    vehicleDto.Brand = rent.Vehicle.Brand;
+                    vehicleDto.Class = rent.Vehicle.Class;
+                    vehicleDto.Cost = rent.Vehicle.CostPerMile;
+                    vehicleDto.X = rent.Vehicle.State.CurrentPosition.Latitude;
+                    vehicleDto.Y = rent.Vehicle.State.CurrentPosition.Longitude;
+                    return vehicleDto;
+                }
             }
+            catch (Exception e) {
+                GenLogger.Error($"CurrentRent, Id={id}",e);
+                throw;
+            }
+
         }
         public  bool CreateRent(RentRequest requestData, long userId, out long rentId) {
             try {
                 rentId = 0;
                 using (var repository = new Repository<Rent>()) {
-                    var vehicleRep = new Repository<Vehicle>(repository);
+                    var stateRepository = new Repository<VehicleState>(repository);
                     var vehicle = repository.Load<Vehicle>(requestData.CarId);
+                    var state = stateRepository.Get(vehicle.State.Id);
                     if (vehicle == null) return false;
-                    vehicle.State.Status = VehicleRentStatus.Reserved;
+                    state.Status = VehicleRentStatus.Reserved;                   
                     var rent = new Rent {
                         Tenant = repository.Load<User>(userId),
                         EndPoint = requestData.DestinationPoint,
@@ -155,7 +164,7 @@ namespace WebApi.Signletone
                         Vehicle = vehicle,
                         Status = RentStatus.Active
                     };
-                    vehicleRep.Update(vehicle);
+                    stateRepository.Update(state);
                     repository.Insert(rent);
                     repository.Commit();
                     rentId = rent.Id;

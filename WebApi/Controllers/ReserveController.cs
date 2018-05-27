@@ -69,7 +69,8 @@ namespace WebApi.Controllers
         }
         [HttpGet]
         public SimpleResponse<VehicleDto> GetRent(long id) {
-           return SimpleResponse.Success(VehicleManager.GetInstance().CurrentRent(id));
+           var rent= VehicleManager.GetInstance().CurrentRent(id);
+           return SimpleResponse.Success(rent);
         }
     }
 

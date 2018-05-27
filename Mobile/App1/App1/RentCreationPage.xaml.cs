@@ -43,6 +43,7 @@ namespace App1 {
                 if (result.IsSuccess) {
                     SettingsManager.Instance.RentId = result.Data;
                     SettingsManager.Instance.HasRent = true;
+                   await this.Navigation.PushAsync(new Cabinet());
                 }
                 else {
                     await this.DisplayAlert("Внимание", $"Не удалось сделать аренду в связи с - {result.ErrorText}", "ok");
