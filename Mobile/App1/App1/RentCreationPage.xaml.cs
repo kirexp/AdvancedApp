@@ -40,8 +40,10 @@ namespace App1 {
                 var model = BindingContext as RentCreationViewModel;
                 var rs = new RentService();
                 var result = await rs.CreateRentAsync(model);
-                if(result.IsSuccess)
-                SettingsManager.Instance.RentId = result.Data;
+                if (result.IsSuccess) {
+                    SettingsManager.Instance.RentId = result.Data;
+                    return;
+                }
                 await this.DisplayAlert("Внимание", $"Не удалось сделать аренду в связи с - {result.ErrorText}", "ok");
             } else {
                 App.SetMainPage();

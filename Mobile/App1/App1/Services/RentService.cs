@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using App1.ApiDTO;
 using App1.Droid;
+using App1.Extenssions;
 using App1.ViewModels;
 using Newtonsoft.Json;
 
@@ -19,14 +21,18 @@ namespace App1.Services {
         }
         public async Task<SimpleResponse<long>> CreateRentAsync(RentCreationViewModel model) {
 
-            var location = MainActivity.LastKnownLocation;
+            var lp = new LocationProvider();
+            var position = await lp.GetGps();
+
+            //var addresses = await lp.GetAddressByPosition(position);
+            //var address = addresses.FirstOrDefault();
 
             var data = new {
                 CarId = model.VehicleDto.Id,
                 CurrentPosition = new {
-                    Longitude = location?.Longitude ?? 0.0D,
-                    Latitude = location?.Latitude ?? 0.0D,
-                    Address = ""
+                    Longitude = position?.Longitude ?? 0.0D,
+                    Latitude = position?.Latitude ?? 0.0D,
+                    Address = "ул. Жубанова 8"
                 },
                 Payment = model.VehicleDto.Cost,
                 DestinationPoint = new {
