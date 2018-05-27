@@ -50,8 +50,8 @@ namespace App1
 	    }
 
 	    private void CabinetBtn_Clicked(object sender, EventArgs e) {
-	        //this.Detail = new NavigationPage(new RentCreationPage());
-	        //this.HideDetail();
+            this.Detail = new NavigationPage(new Cabinet());
+            this.HideDetail();
         }
 	}
 }

@@ -16,6 +16,8 @@ namespace App1.ViewModels {
             get { return _showRentInfo; }
             set { SetProperty(ref _showRentInfo, value); }
         }
+        public bool HasRent { get; set; }
+        public bool HasntRent => !this.HasRent;
         public VehicleDto VehicleDto { get; set; }
         public RentCreationViewModel(INavigation navigation, INotifier notifier) : base(navigation, notifier) {
             Zoos = new ObservableCollection<Zoo>
