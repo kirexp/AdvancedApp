@@ -34,7 +34,9 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Converter\FirstValidationErrorConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Effects\EntryLineColorEffect.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extenssions\Orel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extenssions\SettingsManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extenssions\Utils.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\ObservableObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\DeviceHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)History.xaml.cs">

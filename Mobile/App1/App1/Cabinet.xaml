@@ -5,21 +5,21 @@
              x:Class="App1.Cabinet">
     <ContentPage.Content>
         <StackLayout Padding="5,5,5,5">
-            <Grid>
+            <Grid IsVisible="{Binding HasRent }">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="50"></RowDefinition>
                     <RowDefinition Height="50"></RowDefinition>
                     <RowDefinition Height="50"></RowDefinition>
                     <RowDefinition Height="300"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="140"></ColumnDefinition>
                     <ColumnDefinition Width="280"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Row="2" Grid.Column="0" Text="Отменить заказ" Clicked="Create"></Button>
-                <Button Grid.Row="2" Grid.Column="1" Text="Завершить заказ" Clicked="Create"></Button>
                 <Label Grid.Row="3"  Grid.Column="1"  Grid.ColumnSpan="2" Text="Данные о транспорте"  Margin="20,5,0,0"></Label>
                 <Switch Grid.Row="3" Grid.Column="0" IsToggled="{Binding ShowRentInfo.Value, Mode=TwoWay}"></Switch>
                 <Frame x:Name="dataFreme" Grid.Row="4" Grid.ColumnSpan="3" Grid.Column="0" HeightRequest="200" Margin="5,5,5,5">
@@ -51,7 +51,34 @@
 
                     </Grid>
                 </Frame>
+                <Button Grid.Row="5" Grid.ColumnSpan="2" Text="Отменить заказ" Clicked="CancelRent"></Button>
+                <Button Grid.Row="6" Grid.ColumnSpan="2" Text="Завершить заказ" Clicked="FinishRent"></Button>
+            </Grid>
+            <Grid IsVisible="{Binding HasntRent }">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="140"></ColumnDefinition>
+                    <ColumnDefinition Width="280"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="1" Margin="0,0,0,15" Text="Тут информация о клиенте, личные данные и тд..."></Label>
+                <Label Grid.Row="2" Margin="0,0,0,15" Text="Номер соц страхования"></Label>
+                <Label Grid.Row="3" Margin="0,0,0,15" Text="Номер телефона"></Label>
+                <Label Grid.Row="4" Margin="0,0,0,15" Text="Балланс"></Label>
+                <Label Grid.Row="5" Margin="0,0,0,15" Text="Иски"></Label>
+
             </Grid>
         </StackLayout>
+        <!--<StackLayout  >
+
+        </StackLayout>-->
     </ContentPage.Content>
 </ContentPage>
