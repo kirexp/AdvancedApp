@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using App1.ApiDTO;
+using App1.Droid;
 using App1.ViewModels;
 using Newtonsoft.Json;
 
@@ -17,11 +18,14 @@ namespace App1.Services {
             this._http = new Http();
         }
         public async Task<SimpleResponse<long>> CreateRentAsync(RentCreationViewModel model) {
+
+            var location = MainActivity.LastKnownLocation;
+
             var data = new {
                 CarId = model.VehicleDto.Id,
                 CurrentPosition = new {
-                    Longitude = model.VehicleDto.X,
-                    Latitude = model.VehicleDto.Y,
+                    Longitude = location?.Longitude ?? 0.0D,
+                    Latitude = location?.Latitude ?? 0.0D,
                     Address = ""
                 },
                 Payment = model.VehicleDto.Cost,
