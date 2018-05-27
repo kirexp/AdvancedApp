@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using App1.ApiDTO;
 using App1.Extenssions;
 using App1.Services;
+using App1.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -23,8 +25,10 @@ namespace App1 {
         }
         private async void ViewBrowserOnNavigating(object sender, WebNavigatingEventArgs webNavigatingEventArgs) {
             var service = new RentService();
-            //var result= await service.CreateRentAsync(1);
-            var z = 0;
+            var regex = Regex.Match(webNavigatingEventArgs.Url, "(carId=[\\d]{1,999})");
+            var id = int.Parse(regex.Value.Replace("carId=", ""));
+            var vehicleDto = await service.GetVehicle(id);
+            await this.Navigation.PushAsync(new RentCreationPage(vehicleDto));
             // webNavigatingEventArgs.Cancel = true;
             //this.Navigation.PushAsync()
         }

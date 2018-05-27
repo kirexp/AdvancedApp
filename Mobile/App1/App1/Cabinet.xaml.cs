@@ -25,7 +25,7 @@ namespace App1 {
             if (SettingsManager.Instance.HasRent) {
                 var task = Task.Run(async () => await Init());
                 task.ContinueWith(vTask => {
-                    BindingContext = new RentCreationViewModel(Navigation, alertNotifier) { VehicleDto = vTask.Result };
+                    BindingContext = new RentCreationViewModel(Navigation, alertNotifier) { VehicleDto = vTask.Result,HasRent = true};
                 }, TaskContinuationOptions.NotOnFaulted);
                 task.Wait();
             } else {
@@ -35,8 +35,8 @@ namespace App1 {
 
         private async Task<VehicleDto> Init() {
             var rentId = SettingsManager.Instance.RentId;
-           var result = await this._http.GetAsync<VehicleDto>("Reserve/GetRent?id=" + rentId);
-            return result;
+           var result = await this._http.GetAsync<SimpleResponse<VehicleDto>>("Reserve/GetRent?id=" + rentId);
+            return result.Data;
         }
 
         private async void CancelRent(object sender, EventArgs e) {
