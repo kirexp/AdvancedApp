@@ -15,8 +15,8 @@ using Xamarin.Forms.Xaml;
 namespace App1 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Cabinet : ContentPage {
-        private readonly RentCreationViewModel _rentViewModel;
-        private Http _http;
+        private RentCreationViewModel _rentViewModel;
+        private readonly Http _http;
 
         public Cabinet() {
             this._http = new Http();
@@ -25,7 +25,7 @@ namespace App1 {
             if (SettingsManager.Instance.HasRent) {
                 var task = Task.Run(async () => await Init());
                 task.ContinueWith(vTask => {
-                    BindingContext = new RentCreationViewModel(Navigation, alertNotifier) { VehicleDto = vTask.Result };
+                    BindingContext = _rentViewModel = new RentCreationViewModel(Navigation, alertNotifier) { VehicleDto = vTask.Result, HasRent = true };
                 }, TaskContinuationOptions.NotOnFaulted);
                 task.Wait();
             } else {
@@ -35,11 +35,12 @@ namespace App1 {
 
         private async Task<VehicleDto> Init() {
             var rentId = SettingsManager.Instance.RentId;
-           var result = await this._http.GetAsync<VehicleDto>("Reserve/GetRent?id=" + rentId);
-            return result;
+            var result = await this._http.GetAsync<SimpleResponse<VehicleDto>>("Reserve/GetRent?id=" + rentId);
+            return result.Data;
         }
 
         private async void CancelRent(object sender, EventArgs e) {
+            _rentViewModel.IsBusy = true;
             var rentId = SettingsManager.Instance.RentId;
 
             var lp = new LocationProvider();
@@ -53,14 +54,16 @@ namespace App1 {
                 RendId = rentId,
                 CurrentPosition = coord
             };
-            var result = await this._http.PostAsJson<SimpleResponse>("/Reserve/CancelRent", undoRequest);
+            var result = await this._http.PostAsJson<SimpleResponse>("Reserve/CancelRent", undoRequest);
             if (result.IsSuccess) {
                 SettingsManager.Instance.HasRent = false;
                 SettingsManager.Instance.RentId = 0;
+                await Navigation.PushAsync(new History());
             }
         }
 
         private async void FinishRent(object sender, EventArgs e) {
+            _rentViewModel.IsBusy = true;
             var rentId = SettingsManager.Instance.RentId;
 
             var lp = new LocationProvider();
@@ -74,10 +77,11 @@ namespace App1 {
                 RentId = rentId,
                 CurrentPosition = coord
             };
-            var result = await this._http.PostAsJson<SimpleResponse>("/Reserve/CancelRent", finisthRequest);
+            var result = await this._http.PostAsJson<SimpleResponse>("Reserve/FinishRent", finisthRequest);
             if (result.IsSuccess) {
                 SettingsManager.Instance.HasRent = false;
                 SettingsManager.Instance.RentId = 0;
+                await Navigation.PushAsync(new History());
             }
         }
     }

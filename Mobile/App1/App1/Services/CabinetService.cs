@@ -1,27 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using App1.ApiDTO;
-using Newtonsoft.Json;
 
-namespace App1.Services
-{
+namespace App1.Services {
     public class CabinetService {
         public async Task<RentViewModel> GetRent() {
-            var http= new Http();
-            return await http.GetAsync<RentViewModel>("/Cabinet/GetLastRent");
+            var http = new Http();
+            var response = await http.GetAsync<SimpleResponse<RentViewModel>>("/Cabinet/GetLastRent");
+            return response.Data;
         }
 
         public async Task<SummaryViewModel> GetSummary() {
             var http = new Http();
-            return await http.GetAsync<SummaryViewModel>("/Cabinet/GetSummary");
+            var response = await http.GetAsync<SimpleResponse<SummaryViewModel>>("/Cabinet/GetSummary");
+            return response.Data;
         }
     }
-    public class RentViewModel
-    {
+    public class RentViewModel {
         public string StartingPoint { get; set; }
         public string DestinationPoint { get; set; }
         public int WayLength { get; set; }
@@ -31,8 +26,7 @@ namespace App1.Services
     public class RentResponse : SimpleResponse<RentViewModel> {
 
     }
-    public class SummaryViewModel
-    {
+    public class SummaryViewModel {
         public int LongestRentWay { get; set; }
         public TimeSpan LongestRentTime { get; set; }
         public int SummaryLength { get; set; }

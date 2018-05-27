@@ -27,6 +27,10 @@ namespace App1 {
             if (SettingsManager.Instance.IsAuthentithicated && SettingsManager.Instance.Expires > DateTime.Now) {
                 this._rent = await _cabinetService.GetRent();
                 this._summary = await _cabinetService.GetSummary();
+                BindingContext = new {
+                    Summary = _summary,
+                    Rent = _rent
+                };
             } else {
                 App.SetMainPage();
             }
