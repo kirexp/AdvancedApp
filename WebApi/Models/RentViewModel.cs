@@ -58,7 +58,7 @@ namespace WebApi.Models
             TimeSpan longest = TimeSpan.Zero;
             foreach (var my in li) {
                 if (my.End.HasValue) {
-                    var substruction = my.Start.Subtract(my.End.Value);
+                    var substruction = my.End.Value.Subtract(my.Start);
                     if (substruction > longest) longest = substruction;
                 }
             }
@@ -69,8 +69,8 @@ namespace WebApi.Models
             TimeSpan longest = TimeSpan.Zero;
             foreach (var my in li) {
                 if (my.End.HasValue) {
-                    var substruction = my.Start.Subtract(my.End.Value);
-                    longest.Add(substruction);
+                    var substruction = my.End.Value.Subtract(my.Start);
+                    longest+= substruction;
                 }
             }
             return longest;
