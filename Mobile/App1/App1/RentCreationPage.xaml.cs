@@ -39,6 +39,7 @@ namespace App1 {
             if (SettingsManager.Instance.IsAuthentithicated && SettingsManager.Instance.Expires > DateTime.Now) {
                 var model = BindingContext as RentCreationViewModel;
                 var rs = new RentService();
+                _rentViewModel.IsBusy = true;
                 var result = await rs.CreateRentAsync(model);
                 if (result.IsSuccess) {
                     SettingsManager.Instance.RentId = result.Data;

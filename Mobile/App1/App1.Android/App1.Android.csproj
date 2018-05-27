@@ -90,6 +90,7 @@
     <Compile Include="Renderer\WebViewRenderer.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AndroidPhone.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Gorilla.json" />

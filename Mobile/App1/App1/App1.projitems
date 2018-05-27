@@ -67,6 +67,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)Services\AuthService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\CabinetService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\Http.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\IPhone.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SupportService.xaml.cs">
+      <DependentUpon>SupportService.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Validation\IValidationRule.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Validation\IValidity.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Validation\Rules\IsNotNullOrEmptyRule.cs" />
@@ -129,6 +134,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Cabinet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SupportService.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
