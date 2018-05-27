@@ -52,7 +52,6 @@ namespace WebApi.Controllers
             }
             return SimpleResponse.Error("Не удалось отменить аренду");
         }
-
         public SimpleResponse FinishRent([FromBody] FinishRentRequest model) {
             try {
                 VehicleManager.GetInstance().FinishRent(model);
@@ -62,6 +61,10 @@ namespace WebApi.Controllers
                 return SimpleResponse.Error("Не удалось завершить аренду");
             }
 
+        }
+
+        public SimpleResponse<VehicleDto> GetRent(long id) {
+           return SimpleResponse.Success(VehicleManager.GetInstance().CurrentRent(id));
         }
     }
 

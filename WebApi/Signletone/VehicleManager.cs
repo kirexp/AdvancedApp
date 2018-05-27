@@ -123,6 +123,20 @@ namespace WebApi.Signletone
                 return vehicleDto;
             }
         }
+
+        public VehicleDto CurrentRent(long id) {
+            using (var repository = new Repository<Rent>()) {
+                var rent = repository.Get(id);
+                var vehicleDto = new VehicleDto();
+                vehicleDto.Id = id;
+                vehicleDto.Brand = rent.Vehicle.Brand;
+                vehicleDto.Class = rent.Vehicle.Class;
+                vehicleDto.Cost = rent.Vehicle.CostPerMile;
+                vehicleDto.X = rent.Vehicle.State.CurrentPosition.Latitude;
+                vehicleDto.Y = rent.Vehicle.State.CurrentPosition.Longitude;
+                return vehicleDto;
+            }
+        }
         public  bool CreateRent(RentRequest requestData, out long rentId) {
             rentId = 0;
             using (var repository = new Repository<Rent>()) {

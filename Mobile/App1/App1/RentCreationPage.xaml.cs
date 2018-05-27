@@ -39,7 +39,10 @@ namespace App1 {
             if (SettingsManager.Instance.IsAuthentithicated && SettingsManager.Instance.Expires > DateTime.Now) {
                 var model = BindingContext as RentCreationViewModel;
                 var rs = new RentService();
-                await rs.CreateRentAsync(model);
+                var result = await rs.CreateRentAsync(model);
+                if(result.IsSuccess)
+                SettingsManager.Instance.RentId = result.Data;
+                await this.DisplayAlert("Внимание", $"Не удалось сделать аренду в связи с - {result.ErrorText}", "ok");
             } else {
                 App.SetMainPage();
             }
